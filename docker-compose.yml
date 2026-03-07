@@ -1,0 +1,6 @@
+services:
+  chanjinxamagig:
+    image: ghcr.io/slmingol/chanjinxamagig:main
+    ports:
+      - "3992:80"
+    restart: unless-stopped

@@ -4,6 +4,8 @@
 ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
+![Caddy](https://img.shields.io/badge/Caddy-%231F88C0.svg?style=flat&logo=caddy&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)
 
 A word ladder puzzle game inspired by Raddle.quest where you transform one word into another by changing one letter at a time.
@@ -55,14 +57,46 @@ python3 -m http.server 8000
 # Then visit http://localhost:8000
 ```
 
+### Docker Deployment
+
+Run with Docker Compose (recommended):
+
+```bash
+docker-compose up -d
+# Visit http://localhost:3992
+```
+
+Or run with Docker directly:
+
+```bash
+docker pull ghcr.io/slmingol/chanjinxamagig:main
+docker run -d -p 3992:80 ghcr.io/slmingol/chanjinxamagig:main
+```
+
+Build locally:
+
+```bash
+docker build -t chanjinxamagig .
+docker run -d -p 3992:80 chanjinxamagig
+```
+
 ## 📁 Project Structure
 
 ```
-raddle-clone/
-├── index.html      # Main HTML structure
-├── styles.css      # Styling and animations
-├── script.js       # Game logic and puzzles
-└── README.md       # This file
+chanjinxamagig/
+├── .github/
+│   └── workflows/
+│       ├── docker-publish.yml   # Docker build & publish CI/CD
+│       └── version-bump.yml     # Auto versioning workflow
+├── index.html                   # Main HTML structure
+├── styles.css                   # Styling and animations
+├── script.js                    # Game logic and puzzles
+├── Dockerfile                   # Docker container definition
+├── docker-compose.yml           # Docker Compose configuration
+├── Caddyfile                    # Caddy web server config
+├── .dockerignore               # Docker build exclusions
+├── VERSION                      # Semantic version tracking
+└── README.md                    # This file
 ```
 
 ## 🎨 Customization
