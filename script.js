@@ -473,6 +473,20 @@ function resetStats() {
 
 // Initialize game
 function initGame() {
+    // Check for puzzle parameter in URL (from archive page)
+    const urlParams = new URLSearchParams(window.location.search);
+    const puzzleParam = urlParams.get('puzzle');
+    if (puzzleParam !== null) {
+        const puzzleIndex = parseInt(puzzleParam, 10);
+        if (!isNaN(puzzleIndex) && puzzleIndex >= 0 && puzzleIndex < PUZZLES.length) {
+            currentPuzzleIndex = puzzleIndex;
+            // Clear saved state when loading from archive
+            clearGameState();
+        }
+        // Clear URL parameter after reading
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+    
     loadStats();
     const savedState = loadGameState();
     

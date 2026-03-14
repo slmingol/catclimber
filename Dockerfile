@@ -32,8 +32,11 @@ COPY custom-puzzles.json /app/
 
 # Copy all static files to Caddy's default serving directory
 COPY index.html /usr/share/caddy/index.html.tmp
+COPY archive.html /usr/share/caddy/
 COPY styles.css /usr/share/caddy/
+COPY archive-styles.css /usr/share/caddy/
 COPY script.js /usr/share/caddy/
+COPY archive-script.js /usr/share/caddy/
 COPY cat-climber-logo.png /usr/share/caddy/
 COPY collected-puzzles.json /usr/share/caddy/
 COPY Caddyfile /etc/caddy/Caddyfile

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive - Cat Climber</title>
+    <link rel="stylesheet" href="https://use.typekit.net/sih1hlv.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="archive-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="logo-link">
+                <img src="cat-climber-logo.png" alt="Cat Climber" class="logo">
+            </a>
+            <div class="header-buttons">
+                <button id="theme-btn" class="theme-btn" title="Theme">🌓</button>
+            </div>
+        </header>
+
+        <div class="archive-container">
+            <div class="archive-header">
+                <h1>Puzzle Archive</h1>
+                <div class="archive-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="total-count">0</span>
+                        <span class="stat-label">Total Puzzles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="scraped-count">0</span>
+                        <span class="stat-label">Scraped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="custom-count">0</span>
+                        <span class="stat-label">Custom</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="archive-filters">
+                <div class="filter-group">
+                    <label for="source-filter">Source:</label>
+                    <select id="source-filter">
+                        <option value="all">All Puzzles</option>
+                        <option value="scraped">Scraped Only</option>
+                        <option value="custom">Custom Only</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-order">Sort:</label>
+                    <select id="sort-order">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search by theme, start, or end word...">
+                </div>
+            </div>
+
+            <div class="archive-grid" id="archive-grid">
+                <!-- Puzzles will be loaded here -->
+            </div>
+
+            <div class="loading" id="loading">Loading puzzles...</div>
+            <div class="no-results" id="no-results" style="display: none;">
+                No puzzles found matching your filters.
+            </div>
+        </div>
+    </div>
+
+    <script src="archive-script.js"></script>
+</body>
+</html>
