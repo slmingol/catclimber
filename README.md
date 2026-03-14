@@ -4,7 +4,7 @@
   <img src="cat-climber-logo.png" alt="CAT·CLIMBER Logo" width="480">
 </p>
 
-![Version](https://img.shields.io/badge/Version-v1.1.67-blue?style=flat)
+![Version](https://img.shields.io/badge/Version-v1.1.68-blue?style=flat)
 ![Build](https://img.shields.io/github/actions/workflow/status/slmingol/cat-climber/docker-build.yml?branch=main&style=flat&label=Build)
 ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
@@ -49,16 +49,16 @@ From SAVE to PLAN:
 
 ### Local Development
 
-Simply open the `index.html` file in your web browser:
+Simply open the `public/index.html` file in your web browser:
 
 ```bash
-open index.html
+open public/index.html
 ```
 
 Or use a local server:
 
 ```bash
-python3 -m http.server 8000
+cd public && python3 -m http.server 8000
 # Then visit http://localhost:8000
 ```
 
@@ -128,27 +128,35 @@ cat-climber/
 ├── .github/
 │   └── workflows/
 │       └── docker-build.yml     # Docker build & publish CI/CD
-├── index.html                   # Main HTML structure
-├── styles.css                   # Styling and animations
-├── script.js                    # Game logic and puzzles
-├── daily-scraper.js             # Automated puzzle collection
-├── scraper.js                   # Batch puzzle scraper
-├── collected-puzzles.json       # Scraped puzzle database
+├── data/
+│   ├── collected-puzzles.json   # Scraped puzzle database
+│   └── custom-puzzles.json      # Custom puzzles
+├── public/
+│   ├── archive.html             # Archive page
+│   ├── archive-script.js        # Archive logic
+│   ├── archive-styles.css       # Archive styling
+│   ├── cat-climber-logo.png     # Logo image
+│   ├── index.html               # Main HTML structure
+│   ├── script.js                # Game logic
+│   └── styles.css               # Styling and animations
+├── scripts/
+│   ├── daily-scraper.js         # Automated puzzle collection
+│   ├── merge-puzzles.js         # Puzzle merge utility
+│   └── scraper.js               # Batch puzzle scraper
+├── Caddyfile                    # Caddy web server config
 ├── Dockerfile                   # Docker container definition
 ├── docker-compose.yml           # Docker Compose configuration
-├── Caddyfile                    # Caddy web server config
 ├── package.json                 # Node.js dependencies
-├── .dockerignore               # Docker build exclusions
-├── .gitignore                  # Git exclusions
-├── VERSION                      # Semantic version tracking
-└── README.md                    # This file
+├── PUZZLE-MANAGEMENT.md         # Puzzle management guide
+├── README.md                    # This file
+└── VERSION                      # Semantic version tracking
 ```
 
 ## 🎨 Customization
 
 ### Adding New Puzzles
 
-Edit the `PUZZLES` array in `script.js`:
+Edit the `PUZZLES` array in `public/script.js`:
 
 ```javascript
 {
@@ -183,7 +191,7 @@ npm install puppeteer
 **Scrape a single puzzle:**
 
 ```bash
-node scraper.js
+node scripts/scraper.js
 ```
 
 This scrapes today's puzzle and saves it to `puzzle.json`.
@@ -191,7 +199,7 @@ This scrapes today's puzzle and saves it to `puzzle.json`.
 **Batch scrape multiple puzzles:**
 
 ```bash
-node scraper.js batch <number> <start-date>
+node scripts/scraper.js batch <number> <start-date>
 ```
 
 Examples:
