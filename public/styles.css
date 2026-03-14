@@ -1270,6 +1270,35 @@ header {
         bottom: 8px;
         right: 8px;
     }
+    
+    /* Progressive reveal - hide rungs not in visible set */
+    .ladder-step-hidden {
+        display: none;
+    }
+    
+    /* Hidden section indicator */
+    .ladder-hidden-gap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 0;
+        background: transparent;
+        border-bottom: 2px solid var(--border-secondary);
+        position: relative;
+    }
+    
+    .ladder-hidden-gap-content {
+        font-size: 11px;
+        color: var(--text-tertiary);
+        background: var(--bg-tertiary);
+        padding: 4px 10px;
+        border-radius: 12px;
+        border: 1px solid var(--border-secondary);
+        font-family: "chivo-mono", ui-monospace, monospace;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
 }
 
 @media (max-width: 768px) {

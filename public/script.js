@@ -629,9 +629,64 @@ function getLetterChange(word1, word2) {
     return '';
 }
 
+// Helper function to check if we're on mobile
+function isMobileView() {
+    return window.innerWidth <= 480;
+}
+
+// Helper function to determine which rungs should be visible on mobile
+function getVisibleRungs() {
+    const totalRungs = currentPuzzle.solution.length;
+    const visibleSet = new Set();
+    
+    // If not mobile, show all rungs
+    if (!isMobileView()) {
+        for (let i = 0; i < totalRungs; i++) {
+            visibleSet.add(i);
+        }
+        return visibleSet;
+    }
+    
+    // Always show first and last words
+    visibleSet.add(0);
+    visibleSet.add(totalRungs - 1);
+    
+    // Show a few rungs at the top (after start word)
+    const topRungs = 2;
+    for (let i = 1; i <= Math.min(topRungs, totalRungs - 2); i++) {
+        visibleSet.add(i);
+    }
+    
+    // Show a few rungs at the bottom (before end word)
+    const bottomRungs = 2;
+    for (let i = Math.max(1, totalRungs - bottomRungs - 1); i < totalRungs - 1; i++) {
+        visibleSet.add(i);
+    }
+    
+    // Show rungs around solved words (2 above and 2 below each solved word)
+    const expandRange = 2;
+    for (let i = 1; i < totalRungs - 1; i++) {
+        const word = userSolution[i];
+        const isSolved = word && word.toUpperCase() === currentPuzzle.solution[i].toUpperCase();
+        
+        if (isSolved) {
+            // Add range around this solved word
+            for (let j = Math.max(1, i - expandRange); j <= Math.min(totalRungs - 2, i + expandRange); j++) {
+                visibleSet.add(j);
+            }
+        }
+    }
+    
+    return visibleSet;
+}
+
 // Render ladder steps
 function renderLadder() {
     ladderEl.innerHTML = '';
+    
+    const visibleRungs = getVisibleRungs();
+    const totalRungs = currentPuzzle.solution.length;
+    let lastVisibleIndex = -1;
     
     // Helper to check if a rung is accessible (adjacent to a filled word)
     function isRungAccessible(index) {
@@ -647,8 +702,28 @@ function renderLadder() {
     }
     
     currentPuzzle.solution.forEach((word, index) => {
+        const isVisible = visibleRungs.has(index);
+        
+        // Add hidden section indicator if there's a gap in visibility
+        if (isMobileView() && isVisible && lastVisibleIndex !== -1 && index > lastVisibleIndex + 1) {
+            const hiddenCount = index - lastVisibleIndex - 1;
+            const gapDiv = document.createElement('div');
+            gapDiv.className = 'ladder-hidden-gap';
+            gapDiv.innerHTML = `<div class="ladder-hidden-gap-content">${hiddenCount} hidden</div>`;
+            ladderEl.appendChild(gapDiv);
+        }
+        
+        if (isVisible) {
+            lastVisibleIndex = index;
+        }
+        
         const stepDiv = document.createElement('div');
         stepDiv.className = 'ladder-step';
+        
+        // Hide step on mobile if not in visible set
+        if (!isVisible) {
+            stepDiv.classList.add('ladder-step-hidden');
+        }
         
         // First word: show as static text
         if (index === 0) {
@@ -1654,6 +1729,18 @@ hintModal.addEventListener('keydown', (e) => {
         e.preventDefault();
         confirmHintReveal();
     }
+});
+
+// Window resize handler for progressive reveal on mobile
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    // Debounce resize events
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        if (currentPuzzle) {
+            renderLadder();
+        }
+    }, 250);
 });
 
 // Start the game
