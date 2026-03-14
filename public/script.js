@@ -1101,18 +1101,6 @@ function handleInputBlur(e) {
     }, 0);
 }
 
-// Check if two words differ by exactly one letter
-function differsByOneLetter(word1, word2) {
-    if (word1.length !== word2.length) return false;
-    
-    let differences = 0;
-    for (let i = 0; i < word1.length; i++) {
-        if (word1[i] !== word2[i]) differences++;
-    }
-    
-    return differences === 1;
-}
-
 // Check solution
 function checkSolution() {
     let allCorrect = true;
@@ -1122,8 +1110,6 @@ function checkSolution() {
         const index = parseInt(input.dataset.index);
         const userWord = userSolution[index];
         const correctWord = currentPuzzle.solution[index];
-        const prevWord = userSolution[index - 1];
-        const nextWord = userSolution[index + 1];
         
         input.classList.remove('correct', 'incorrect');
         const hintEl = input.parentElement.querySelector('.step-hint');
@@ -1134,17 +1120,8 @@ function checkSolution() {
             return;
         }
         
-        // Check if it differs by one letter from previous
-        if (!differsByOneLetter(userWord, prevWord)) {
-            input.classList.add('incorrect');
-            input.parentElement.style.background = 'rgba(244, 67, 54, 0.3)';
-            if (hintEl) hintEl.textContent = 'Must differ by 1 letter from above';
-            allCorrect = false;
-            return;
-        }
-        
-        // Check if matches correct answer
-        if (userWord === correctWord) {
+        // Check if matches correct answer (case-insensitive)
+        if (userWord.toUpperCase() === correctWord.toUpperCase()) {
             input.classList.add('correct');
             input.parentElement.style.background = 'rgba(76, 175, 80, 0.4)';
         } else {
