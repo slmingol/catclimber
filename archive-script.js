@@ -64,9 +64,11 @@ let filteredPuzzles = [];
 
 async function loadPuzzles() {
     try {
+        console.log('Loading puzzles...');
         const response = await fetch('/collected-puzzles.json');
         const data = await response.json();
         allPuzzles = data.puzzles || [];
+        console.log(`Loaded ${allPuzzles.length} puzzles`);
         
         updateStats();
         applyFilters();
@@ -144,6 +146,11 @@ function renderPuzzles() {
         }
         puzzlesByTheme[themeKey].push({ puzzle, index });
     });
+    
+    console.log('Themes found:', Object.keys(puzzlesByTheme));
+    console.log('Puzzle counts by theme:', Object.fromEntries(
+        Object.entries(puzzlesByTheme).map(([k, v]) => [k, v.length])
+    ));
     
     // Define category order matching raddle.quest archive
     const categoryOrder = [
