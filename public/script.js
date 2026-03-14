@@ -781,8 +781,7 @@ function processClue(clue) {
     let processedClue = clue;
     
     // First, replace ^ placeholders with actual words from the solution
-    // ^ refers to the previous word in the ladder
-    // We need to find which clue this is to determine the context
+    // BUT only if those words have been revealed (solved or are start/end words)
     const clueIndex = currentPuzzle.clues.indexOf(clue);
     if (clueIndex !== -1) {
         // Clue index i refers to solution word at index i+1
@@ -790,8 +789,25 @@ function processClue(clue) {
         const prevWordIndex = clueIndex;
         const prevWord = currentPuzzle.solution[prevWordIndex];
         
-        // Replace all ^ with the previous word
-        processedClue = processedClue.replace(/\^/g, prevWord);
+        // Check if the previous word has been revealed
+        let wordToShow = prevWord;
+        
+        // If it's not the start word (index 0) and not been solved, use placeholder
+        if (prevWordIndex > 0 && prevWordIndex < currentPuzzle.solution.length - 1) {
+            const userWord = userSolution[prevWordIndex];
+            const isSolved = userWord && 
+                            userWord.trim() !== '' && 
+                            userWord.length === prevWord.length &&
+                            userWord.toUpperCase() === prevWord.toUpperCase();
+            
+            if (!isSolved) {
+                // Replace with underscores matching the word length
+                wordToShow = '_'.repeat(prevWord.length);
+            }
+        }
+        
+        // Replace all ^ with the word (or placeholder)
+        processedClue = processedClue.replace(/\^/g, wordToShow);
     }
     
     // Highlight solved words (but always show all words)
