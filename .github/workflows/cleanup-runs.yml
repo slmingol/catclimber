@@ -1,0 +1,41 @@
+name: Cleanup Old Workflow Runs
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Delete old workflow runs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Fetching workflow runs..."
+          
+          # Keep the last 10 runs, delete the rest
+          gh run list \
+            --limit 200 \
+            --json databaseId \
+            --jq '.[10:] | .[].databaseId' \
+            --repo ${{ github.repository }} \
+          | xargs -I {} gh run delete {} --repo ${{ github.repository }} || true
+          
+          echo "Cleanup complete!"
+      
+      - name: Summary
+        run: |
+          TOTAL=$(gh run list --limit 200 --json databaseId --jq 'length' --repo ${{ github.repository }})
+          echo "### Workflow Cleanup Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Kept: Last 10 workflow runs" >> $GITHUB_STEP_SUMMARY
+          echo "- Current total: $TOTAL runs" >> $GITHUB_STEP_SUMMARY
