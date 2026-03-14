@@ -3,7 +3,7 @@
 ![CAT·CLIMBER Logo](catclimber-logo.png)
 
 ![Version](https://img.shields.io/badge/Version-v1.1.3-blue?style=flat)
-![Build](https://img.shields.io/github/actions/workflow/status/slmingol/chanjinxamagig/docker-build.yml?branch=main&style=flat&label=Build)
+![Build](https://img.shields.io/github/actions/workflow/status/slmingol/catclimber/docker-build.yml?branch=main&style=flat&label=Build)
 ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=flat&logo=javascript&logoColor=black)
