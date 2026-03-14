@@ -53,8 +53,8 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
     }
 });
 
-// Puzzle database
-const PUZZLES = [
+// Puzzle database - will be loaded from collected-puzzles.json
+let PUZZLES = [
     {
         start: "SAVE",
         end: "PLAN",
@@ -471,8 +471,29 @@ function resetStats() {
     }
 }
 
+// Load puzzles from collected database
+async function loadPuzzlesFromDatabase() {
+    try {
+        const response = await fetch('collected-puzzles.json');
+        if (!response.ok) {
+            throw new Error('Failed to load puzzle database');
+        }
+        const data = await response.json();
+        if (data.puzzles && Array.isArray(data.puzzles)) {
+            PUZZLES = data.puzzles;
+            console.log(`Loaded ${PUZZLES.length} puzzles from database`);
+        }
+    } catch (error) {
+        console.error('Error loading puzzles, using default set:', error);
+        // PUZZLES already has fallback puzzles
+    }
+}
+
 // Initialize game
-function initGame() {
+async function initGame() {
+    // Load puzzles from database first
+    await loadPuzzlesFromDatabase();
+    
     // Check for puzzle parameter in URL (from archive page)
     const urlParams = new URLSearchParams(window.location.search);
     const puzzleParam = urlParams.get('puzzle');
@@ -1610,4 +1631,6 @@ hintModal.addEventListener('keydown', (e) => {
 });
 
 // Start the game
-initGame();
+(async () => {
+    await initGame();
+})();
