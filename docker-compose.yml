@@ -1,5 +1,5 @@
 services:
-  catclimber:
+  cat-climber:
     image: ghcr.io/slmingol/cat-climber:latest
     ports:
       - "3992:80"

@@ -1,7 +1,7 @@
 # CAT·CLIMBER - Word Ladder Puzzle Game
 
 <p align="center">
-  <img src="catclimber-logo.png" alt="CAT·CLIMBER Logo" width="480">
+  <img src="cat-climber-logo.png" alt="CAT·CLIMBER Logo" width="480">
 </p>
 
 ![Version](https://img.shields.io/badge/Version-v1.1.9-blue?style=flat)
@@ -81,8 +81,8 @@ docker run -d -p 3992:80 ghcr.io/slmingol/cat-climber:main
 Build locally:
 
 ```bash
-docker build -t catclimber .
-docker run -d -p 3992:80 catclimber
+docker build -t cat-climber .
+docker run -d -p 3992:80 cat-climber
 ```
 
 ## � CI/CD and Versioning

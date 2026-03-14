@@ -36,7 +36,7 @@ COPY scraper.js /app/
 COPY index.html /usr/share/caddy/index.html.tmp
 COPY styles.css /usr/share/caddy/
 COPY script.js /usr/share/caddy/
-COPY catclimber-logo.png /usr/share/caddy/
+COPY cat-climber-logo.png /usr/share/caddy/
 COPY collected-puzzles.json /usr/share/caddy/
 COPY Caddyfile /etc/caddy/Caddyfile
 
