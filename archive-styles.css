@@ -164,30 +164,6 @@
     gap: 16px;
 }
 
-.date-section {
-    margin-bottom: 32px;
-}
-
-.date-section:last-child {
-    margin-bottom: 0;
-}
-
-.date-header {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin: 0 0 12px 0;
-    padding-left: 12px;
-    border-left: 3px solid var(--border-secondary);
-    font-family: "chivo", sans-serif;
-}
-
-.date-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-}
-
 .puzzle-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-primary);
