@@ -135,57 +135,78 @@ function renderPuzzles() {
     
     noResults.style.display = 'none';
     
-    // Group puzzles by month
+    // Group puzzles by date first, then by month for section headers
     const puzzlesByMonth = {};
+    const puzzlesByDate = {};
+    
     filteredPuzzles.forEach((puzzle, index) => {
         const date = new Date(puzzle.date);
         const monthKey = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+        const dateKey = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        
         if (!puzzlesByMonth[monthKey]) {
             puzzlesByMonth[monthKey] = [];
         }
-        puzzlesByMonth[monthKey].push({ puzzle, index });
+        if (!puzzlesByDate[dateKey]) {
+            puzzlesByDate[dateKey] = [];
+        }
+        
+        puzzlesByMonth[monthKey].push(dateKey);
+        puzzlesByDate[dateKey].push({ puzzle, index });
     });
     
-    // Render with month headers
+    // Render with month and date headers
     let html = '';
     Object.keys(puzzlesByMonth).forEach(monthKey => {
-        const puzzlesInMonth = puzzlesByMonth[monthKey];
+        const uniqueDates = [...new Set(puzzlesByMonth[monthKey])];
         
         html += `
             <div class="month-section">
                 <h2 class="month-header">${monthKey}</h2>
-                <div class="month-grid">
         `;
         
-        puzzlesInMonth.forEach(({ puzzle, index }) => {
-            const source = puzzle.source || 'scraped';
-            const clueCount = puzzle.clues?.length || 0;
-            const ladderLength = puzzle.solution?.length || 0;
+        uniqueDates.forEach(dateKey => {
+            const puzzlesOnDate = puzzlesByDate[dateKey];
             
             html += `
-                <div class="puzzle-card" onclick="openPuzzle(${index})">
-                    <div class="puzzle-card-header">
-                        <div class="puzzle-date">${formatDate(puzzle.date)}</div>
-                        <div class="puzzle-source ${source}">${source}</div>
-                    </div>
-                    <div class="puzzle-words">
-                        <div class="puzzle-transform">
-                            <span>${puzzle.start}</span>
-                            <span class="puzzle-arrow">→</span>
-                            <span>${puzzle.end}</span>
+                <div class="date-section">
+                    <h3 class="date-header">${dateKey}</h3>
+                    <div class="date-grid">
+            `;
+            
+            puzzlesOnDate.forEach(({ puzzle, index }) => {
+                const source = puzzle.source || 'scraped';
+                const clueCount = puzzle.clues?.length || 0;
+                const ladderLength = puzzle.solution?.length || 0;
+                
+                html += `
+                    <div class="puzzle-card" onclick="openPuzzle(${index})">
+                        <div class="puzzle-card-header">
+                            <div class="puzzle-source ${source}">${source}</div>
+                        </div>
+                        <div class="puzzle-words">
+                            <div class="puzzle-transform">
+                                <span>${puzzle.start}</span>
+                                <span class="puzzle-arrow">→</span>
+                                <span>${puzzle.end}</span>
+                            </div>
+                        </div>
+                        ${puzzle.theme ? `<div class="puzzle-theme">${puzzle.theme}</div>` : ''}
+                        <div class="puzzle-stats">
+                            ${clueCount > 0 ? `<div class="puzzle-stat">📝 ${clueCount} clues</div>` : ''}
+                            ${ladderLength > 0 ? `<div class="puzzle-stat">🪜 ${ladderLength} steps</div>` : ''}
                         </div>
                     </div>
-                    ${puzzle.theme ? `<div class="puzzle-theme">${puzzle.theme}</div>` : ''}
-                    <div class="puzzle-stats">
-                        ${clueCount > 0 ? `<div class="puzzle-stat">📝 ${clueCount} clues</div>` : ''}
-                        ${ladderLength > 0 ? `<div class="puzzle-stat">🪜 ${ladderLength} steps</div>` : ''}
+                `;
+            });
+            
+            html += `
                     </div>
                 </div>
             `;
         });
         
         html += `
-                </div>
             </div>
         `;
     });
