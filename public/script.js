@@ -780,6 +780,20 @@ function renderLadder() {
 function processClue(clue) {
     let processedClue = clue;
     
+    // First, replace ^ placeholders with actual words from the solution
+    // ^ refers to the previous word in the ladder
+    // We need to find which clue this is to determine the context
+    const clueIndex = currentPuzzle.clues.indexOf(clue);
+    if (clueIndex !== -1) {
+        // Clue index i refers to solution word at index i+1
+        // The ^ refers to the word at index i (previous word in ladder)
+        const prevWordIndex = clueIndex;
+        const prevWord = currentPuzzle.solution[prevWordIndex];
+        
+        // Replace all ^ with the previous word
+        processedClue = processedClue.replace(/\^/g, prevWord);
+    }
+    
     // Replace solution words with ____ if they haven't been solved yet
     // Only process middle words (not start/end which are always visible)
     for (let i = 1; i < currentPuzzle.solution.length - 1; i++) {
