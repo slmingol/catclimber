@@ -381,7 +381,7 @@ header {
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.05em;
     padding: 12px;
     color: var(--text-primary);
     font-family: "chivo-mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -436,7 +436,7 @@ header {
     text-transform: uppercase;
     border: none;
     text-align: center;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.05em;
     background: transparent;
     color: var(--text-primary);
     font-family: "chivo-mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
