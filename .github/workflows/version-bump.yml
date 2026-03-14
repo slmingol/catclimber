@@ -86,7 +86,7 @@ jobs:
       
       - name: Update index.html
         run: |
-          sed -i "s/<div class=\"version-number\">v[0-9]\+\.[0-9]\+\.[0-9]\+<\/div>/<div class=\"version-number\">v${{ steps.bump.outputs.new_version }}<\/div>/" index.html
+          sed -i "s/<div class=\"app-version\">v__VERSION__<\/div>/<div class=\"app-version\">v${{ steps.bump.outputs.new_version }}<\/div>/" public/index.html
       
       - name: Update README.md badge
         run: |
@@ -96,7 +96,7 @@ jobs:
       
       - name: Commit and push changes
         run: |
-          git add VERSION index.html README.md
+          git add VERSION public/index.html README.md
           git commit -m "chore: bump version to v${{ steps.bump.outputs.new_version }} [skip version]" || exit 0
           git push
       
