@@ -145,11 +145,41 @@ function renderPuzzles() {
         puzzlesByTheme[themeKey].push({ puzzle, index });
     });
     
-    // Sort themes by the date of their first puzzle (newest first)
+    // Define category order matching raddle.quest archive
+    const categoryOrder = [
+        'Best Picture nominees',
+        'Opposites',
+        'Light vs Dark',
+        'Temperature',
+        'Speed',
+        'Emotions',
+        'Colors',
+        'Weather',
+        'Astronomy',
+        'Metals',
+        'Food',
+        'Literature',
+        'Economics',
+        'Safety',
+        'Life Balance',
+        'Word Transformations'
+    ];
+    
+    // Sort themes by predefined order, then alphabetically for any new themes
     const sortedThemes = Object.keys(puzzlesByTheme).sort((a, b) => {
-        const dateA = new Date(puzzlesByTheme[a][0].puzzle.date);
-        const dateB = new Date(puzzlesByTheme[b][0].puzzle.date);
-        return dateB - dateA;
+        const indexA = categoryOrder.indexOf(a);
+        const indexB = categoryOrder.indexOf(b);
+        
+        // If both are in the order list, use that order
+        if (indexA !== -1 && indexB !== -1) {
+            return indexA - indexB;
+        }
+        // If only A is in the list, it comes first
+        if (indexA !== -1) return -1;
+        // If only B is in the list, it comes first
+        if (indexB !== -1) return 1;
+        // Neither in list, sort alphabetically
+        return a.localeCompare(b);
     });
     
     // Render with theme headers
