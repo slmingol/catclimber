@@ -550,17 +550,23 @@ header {
 }
 
 .clue {
-    padding: 6px 4px 3px 4px;
-    background: transparent;
-    border: 1px solid var(--border-secondary);
-    border-radius: 4px;
+    padding: 8px 8px 4px 8px;
+    background: #1f2937;
+    border: 1px solid #4b5563;
+    border-radius: 6px;
     font-size: 17px;
     line-height: 1.5;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: var(--text-primary);
+    color: #e5e7eb;
     font-family: "chivo-mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-weight: 200;
+}
+
+[data-theme="light"] .clue {
+    background: #ffffff;
+    border-color: #d1d5db;
+    color: #1f2937;
 }
 
 .clue:hover {
