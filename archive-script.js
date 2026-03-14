@@ -160,7 +160,7 @@ function renderPuzzles() {
         html += `
             <div class="month-section">
                 <h2 class="month-header">${themeKey}</h2>
-                <div class="month-grid">
+                <div class="puzzle-list">
         `;
         
         puzzlesInTheme.forEach(({ puzzle, index }) => {
@@ -169,21 +169,17 @@ function renderPuzzles() {
             const ladderLength = puzzle.solution?.length || 0;
             
             html += `
-                <div class="puzzle-card" onclick="openPuzzle(${index})">
-                    <div class="puzzle-card-header">
-                        <div class="puzzle-date">${formatDate(puzzle.date)}</div>
-                        <div class="puzzle-source ${source}">${source}</div>
+                <div class="puzzle-row" onclick="openPuzzle(${index})">
+                    <div class="puzzle-date">${formatDate(puzzle.date)}</div>
+                    <div class="puzzle-transform">
+                        <span class="puzzle-start">${puzzle.start}</span>
+                        <span class="puzzle-arrow">→</span>
+                        <span class="puzzle-end">${puzzle.end}</span>
                     </div>
-                    <div class="puzzle-words">
-                        <div class="puzzle-transform">
-                            <span>${puzzle.start}</span>
-                            <span class="puzzle-arrow">→</span>
-                            <span>${puzzle.end}</span>
-                        </div>
-                    </div>
-                    <div class="puzzle-stats">
-                        ${clueCount > 0 ? `<div class="puzzle-stat">📝 ${clueCount} clues</div>` : ''}
-                        ${ladderLength > 0 ? `<div class="puzzle-stat">🪜 ${ladderLength} steps</div>` : ''}
+                    <div class="puzzle-meta">
+                        ${clueCount > 0 ? `<span class="puzzle-stat">📝 ${clueCount}</span>` : ''}
+                        ${ladderLength > 0 ? `<span class="puzzle-stat">🪜 ${ladderLength}</span>` : ''}
+                        <span class="puzzle-source ${source}">${source}</span>
                     </div>
                 </div>
             `;
