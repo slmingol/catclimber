@@ -4,7 +4,7 @@
   <img src="catclimber-logo.png" alt="CAT·CLIMBER Logo" width="480">
 </p>
 
-![Version](https://img.shields.io/badge/Version-v1.1.6-blue?style=flat)
+![Version](https://img.shields.io/badge/Version-v1.1.7-blue?style=flat)
 ![Build](https://img.shields.io/github/actions/workflow/status/slmingol/catclimber/docker-build.yml?branch=main&style=flat&label=Build)
 ![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
