@@ -156,9 +156,7 @@ function renderPuzzles() {
         'Speed',
         'Emotions',
         'Colors',
-        '
-
-Weather',
+        'Weather',
         'Astronomy',
         'Metals',
         'Food',
