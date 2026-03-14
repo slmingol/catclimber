@@ -120,8 +120,20 @@ async function getTodaysPuzzle() {
 
 // Run if called directly
 if (require.main === module) {
-    getTodaysPuzzle().then(() => {
+    getTodaysPuzzle().then((puzzleData) => {
         console.log('Daily scrape complete');
+        
+        // Merge with custom puzzles
+        if (puzzleData) {
+            console.log('Running merge with custom puzzles...');
+            const { execSync } = require('child_process');
+            try {
+                execSync('node merge-puzzles.js', { cwd: __dirname, stdio: 'inherit' });
+            } catch (err) {
+                console.error('Warning: Merge script failed:', err.message);
+            }
+        }
+        
         process.exit(0);
     }).catch(err => {
         console.error('Fatal error:', err);

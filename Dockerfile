@@ -27,6 +27,8 @@ RUN npm install --production
 # Copy scraper scripts
 COPY daily-scraper.js /app/
 COPY scraper.js /app/
+COPY merge-puzzles.js /app/
+COPY custom-puzzles.json /app/
 
 # Copy all static files to Caddy's default serving directory
 COPY index.html /usr/share/caddy/index.html.tmp
