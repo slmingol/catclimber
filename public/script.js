@@ -971,10 +971,15 @@ function showClueHint(index) {
             incrementStat('totalHints', 1);
         }
         
+        // Lock this word permanently
+        lockedWords.add(index);
+        
         // Update input
         const input = document.querySelector(`input[data-index="${index}"]`);
         if (input) {
             input.value = correctWord;
+            input.readOnly = true;
+            input.classList.add('completed');
         }
         
         // Mark clue as used and clear revealed state
@@ -989,11 +994,31 @@ function showClueHint(index) {
         
         setTimeout(() => {
             renderClues(); // Re-render to move clue to used section
-            renderLadder();
-            // Focus next input
+            
+            // Focus next input without re-rendering ladder
+            // This keeps keyboard open on mobile
             const nextInput = document.querySelector(`input[data-index="${index + 1}"]`);
-            if (nextInput) {
+            if (nextInput && !nextInput.disabled) {
                 nextInput.focus();
+                
+                // Add hint button to next input if needed
+                const nextStep = nextInput.parentElement;
+                const nextWord = userSolution[index + 1];
+                const isNextFilled = nextWord && nextWord.trim() !== '';
+                const hasHintBtn = nextStep.querySelector('.hint-btn');
+                
+                if (!isNextFilled && !hasHintBtn) {
+                    const hintBtn = document.createElement('button');
+                    hintBtn.className = 'hint-btn';
+                    hintBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6c0 2 1 3 2 4l2 2v2h4v-2l2-2c1-1 2-2 2-4a6 6 0 0 0-6-6z"></path><path d="M10 18h4"></path><path d="M11 20h2"></path></svg>`;
+                    hintBtn.title = 'Show clue for this word';
+                    hintBtn.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        showClueHint(index + 1);
+                    });
+                    nextStep.appendChild(hintBtn);
+                }
             }
         }, 150);
         return;
@@ -1089,32 +1114,60 @@ function handleInput(e) {
         e.target.readOnly = true;
         e.target.classList.add('completed');
         
-        // Small delay to let user see their completed word before re-render
+        // Check if all words are now filled
+        let allFilled = true;
+        for (let i = 1; i < userSolution.length - 1; i++) {
+            if (!userSolution[i] || userSolution[i].trim() === '') {
+                allFilled = false;
+                break;
+            }
+        }
+        
+        // Small delay to let user see their completed word
         setTimeout(() => {
             renderClues(); // Re-render clues to move to used section
-            renderLadder();
             
-            // Check if all words are now filled
-            let allFilled = true;
-            for (let i = 1; i < userSolution.length - 1; i++) {
-                if (!userSolution[i] || userSolution[i].trim() === '') {
-                    allFilled = false;
-                    break;
-                }
-            }
-            
-            // If all filled, auto-check the solution
+            // Only re-render ladder if all words are filled (for final check)
+            // This prevents keyboard closing on mobile during normal input
             if (allFilled) {
+                renderLadder();
                 setTimeout(() => {
                     checkSolution();
                 }, 300);
             } else {
-                // Focus next available input
+                // Don't re-render ladder, just focus next available input
+                // This keeps keyboard open on mobile
                 for (let i = index + 1; i < currentPuzzle.solution.length - 1; i++) {
                     const nextInput = document.querySelector(`input[data-index="${i}"]`);
                     if (nextInput && !nextInput.disabled) {
                         nextInput.focus();
                         break;
+                    }
+                }
+                
+                // Update only the necessary UI elements without full re-render
+                // Add hint buttons to newly accessible rungs
+                const nextIndex = index + 1;
+                if (nextIndex < currentPuzzle.solution.length - 1) {
+                    const nextStep = document.querySelector(`input[data-index="${nextIndex}"]`)?.parentElement;
+                    if (nextStep) {
+                        // Check if hint button needs to be added
+                        const nextWord = userSolution[nextIndex];
+                        const isNextFilled = nextWord && nextWord.trim() !== '';
+                        const hasHintBtn = nextStep.querySelector('.hint-btn');
+                        
+                        if (!isNextFilled && !hasHintBtn) {
+                            const hintBtn = document.createElement('button');
+                            hintBtn.className = 'hint-btn';
+                            hintBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6c0 2 1 3 2 4l2 2v2h4v-2l2-2c1-1 2-2 2-4a6 6 0 0 0-6-6z"></path><path d="M10 18h4"></path><path d="M11 20h2"></path></svg>`;
+                            hintBtn.title = 'Show clue for this word';
+                            hintBtn.addEventListener('click', (event) => {
+                                event.preventDefault();
+                                event.stopPropagation();
+                                showClueHint(nextIndex);
+                            });
+                            nextStep.appendChild(hintBtn);
+                        }
                     }
                 }
             }
@@ -1733,11 +1786,16 @@ hintModal.addEventListener('keydown', (e) => {
 
 // Window resize handler for progressive reveal on mobile
 let resizeTimeout;
+let lastWindowWidth = window.innerWidth;
 window.addEventListener('resize', () => {
     // Debounce resize events
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-        if (currentPuzzle) {
+        // Only re-render if width changed (not just height from keyboard)
+        // This prevents keyboard appearance from triggering re-render on mobile
+        const currentWidth = window.innerWidth;
+        if (currentWidth !== lastWindowWidth && currentPuzzle) {
+            lastWindowWidth = currentWidth;
             renderLadder();
         }
     }, 250);
