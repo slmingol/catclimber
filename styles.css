@@ -558,6 +558,7 @@ header {
     transition: all 0.2s ease;
     color: var(--text-primary);
     font-family: "chivo-mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 200;
 }
 
 .clue:hover {
