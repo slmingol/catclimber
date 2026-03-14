@@ -480,8 +480,18 @@ async function loadPuzzlesFromDatabase() {
         }
         const data = await response.json();
         if (data.puzzles && Array.isArray(data.puzzles)) {
-            PUZZLES = data.puzzles;
-            console.log(`Loaded ${PUZZLES.length} puzzles from database`);
+            // Filter to only include puzzles with complete solutions
+            PUZZLES = data.puzzles.filter(p => 
+                p.solution && 
+                Array.isArray(p.solution) && 
+                p.solution.length >= 2 &&
+                p.solution.every(word => word && word.length > 0)
+            );
+            console.log(`Loaded ${PUZZLES.length} complete puzzles from database (filtered from ${data.puzzles.length} total)`);
+            
+            if (PUZZLES.length === 0) {
+                console.warn('No complete puzzles found in database, using default set');
+            }
         }
     } catch (error) {
         console.error('Error loading puzzles, using default set:', error);

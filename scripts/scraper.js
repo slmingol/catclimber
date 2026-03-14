@@ -157,7 +157,38 @@ async function scrapePuzzleByDate(dateStr) {
         console.log(`\nScraping ${url}...`);
         
         await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
-        await new Promise(resolve => setTimeout(resolve, 3000)); // Just wait 3 seconds instead of checking content length
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        
+        // Try to click "Show full ladder" or reveal button to get the solution
+        try {
+            console.log('  Looking for reveal button...');
+            
+            // Wait for and click the "Show full ladder" button
+            const clicked = await page.evaluate(() => {
+                // Find all buttons and links
+                const elements = Array.from(document.querySelectorAll('button, a, div[role="button"], span'));
+                for (const el of elements) {
+                    const text = el.textContent.toLowerCase();
+                    if (text.includes('show full ladder') || 
+                        text.includes('reveal') || 
+                        text.includes('show answer') ||
+                        text.includes('solution')) {
+                        el.click();
+                        return true;
+                    }
+                }
+                return false;
+            });
+            
+            if (clicked) {
+                console.log('  Clicked reveal button, waiting for solution...');
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Wait longer for solution to appear
+            } else {
+                console.log('  No reveal button found');
+            }
+        } catch (e) {
+            console.log(`  Error clicking reveal: ${e.message}`);
+        }
         
         const puzzleData = await page.evaluate(() => {
             const data = {
@@ -187,6 +218,60 @@ async function scrapePuzzleByDate(dateStr) {
             const themeMatch = fullText.match(/Raddle #\d+\s+([^\n]+?)(?:\s+From|$)/);
             if (themeMatch) data.theme = themeMatch[1].trim();
             
+            // Extract solution ladder - look for filled inputs or revealed words
+            // First try to find input elements with values
+            const inputs = Array.from(document.querySelectorAll('input[type="text"], input:not([type])'));
+            const solutionWords = [];
+            
+            inputs.forEach(input => {
+                const value = input.value.trim().toUpperCase();
+                if (value && value.length >= 2 && /^[A-Z\s']+$/.test(value)) {
+                    solutionWords.push(value);
+                }
+            });
+            
+            // If we got solution words from inputs, use them
+            if (solutionWords.length >= 2) {
+                data.solution = solutionWords;
+            } else {
+                // Try to extract from page text - look for ladder structure
+                // The ladder appears as words in sequence after clicking reveal
+                const textContent = document.body.textContent;
+                
+                // Look for pattern like "WORD1 WORD2 WORD3" between start and end
+                if (data.start && data.end) {
+                    // Extract words that appear in ladder context
+                    const ladderSection = textContent.match(new RegExp(
+                        data.start + '[\\s\\S]{0,500}?' + data.end, 'i'
+                    ));
+                    
+                    if (ladderSection) {
+                        // Find all uppercase words in this section
+                        const words = ladderSection[0].match(/\b[A-Z]{2,}[A-Z\s']*\b/g) || [];
+                        const uniqueWords = [...new Set(words)].filter(w => 
+                            w.length >= data.start.length && 
+                            w !== 'BATTLE' || words.indexOf(w) === words.lastIndexOf(w) // Keep if not duplicate or is start/end
+                        );
+                        
+                        if (uniqueWords.length >= 2) {
+                            data.solution = uniqueWords;
+                        }
+                    }
+                }
+                
+                // If still no solution, create empty array with proper length
+                if (data.solution.length === 0) {
+                    // Look for ladder length indicator like "(6)"
+                    const lengthMatch = textContent.match(/\((\d+)\)/);
+                    if (lengthMatch) {
+                        const steps = parseInt(lengthMatch[1]);
+                        data.solution = new Array(steps + 1).fill('');
+                        if (data.start) data.solution[0] = data.start;
+                        if (data.end) data.solution[steps] = data.end;
+                    }
+                }
+            }
+            
             // Extract clues - they contain the start word as placeholder
             const cluesSection = fullText.match(/Clues, out of order\s+([\s\S]*?)(?=About this|$)/i);
             if (cluesSection && data.start) {
@@ -205,6 +290,9 @@ async function scrapePuzzleByDate(dateStr) {
             
             return data;
         });
+        
+        // Mark as scraped and add source
+        puzzleData.source = 'scraped';
         
         await browser.close();
         return puzzleData;
@@ -241,7 +329,8 @@ async function batchScrapePuzzles(startDate, numDays = 10) {
         const puzzle = await scrapePuzzleByDate(dateStr);
         if (puzzle && puzzle.start && puzzle.end) {
             puzzles.push(puzzle);
-            console.log(`✓ ${puzzle.start} → ${puzzle.end} (${puzzle.clues.length} clues)`);
+            const solStatus = puzzle.solution && puzzle.solution.length > 0 ? `✓ ${puzzle.solution.length} steps` : '✗ no solution';
+            console.log(`✓ ${puzzle.start} → ${puzzle.end} (${puzzle.clues.length} clues, ${solStatus})`);
         } else {
             console.log(`✗ Failed to scrape ${dateStr}`);
         }
