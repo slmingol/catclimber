@@ -1360,6 +1360,148 @@ To import collected puzzles:
     alert(instructions);
 });
 
+// Export Database as JSON
+const exportDbBtn = document.getElementById('export-db-btn');
+if (exportDbBtn) {
+    exportDbBtn.addEventListener('click', async () => {
+        try {
+            const response = await fetch('collected-puzzles.json');
+            const data = await response.json();
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `cat-climber-puzzles-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            exportDbBtn.textContent = '✓ Exported!';
+            setTimeout(() => {
+                exportDbBtn.textContent = '📥 Export Database (JSON)';
+            }, 2000);
+        } catch (error) {
+            alert('Error exporting database: ' + error.message);
+        }
+    });
+}
+
+// Export Database as CSV
+const exportCsvBtn = document.getElementById('export-csv-btn');
+if (exportCsvBtn) {
+    exportCsvBtn.addEventListener('click', async () => {
+        try {
+            const response = await fetch('collected-puzzles.json');
+            const data = await response.json();
+            
+            // Create CSV header
+            let csv = 'Date,Start,End,Theme,Solution,Steps,Clue Count,Source\n';
+            
+            // Add each puzzle
+            data.puzzles.forEach(p => {
+                const solution = (p.solution || []).join(' → ');
+                const clueCount = (p.clues || []).length;
+                const source = p.custom ? 'Custom' : 'Scraped';
+                const theme = (p.theme || '').replace(/,/g, ';'); // Escape commas
+                
+                csv += `"${p.date}","${p.start}","${p.end}","${theme}","${solution}",${p.solution.length},${clueCount},${source}\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `cat-climber-puzzles-${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            exportCsvBtn.textContent = '✓ Exported!';
+            setTimeout(() => {
+                exportCsvBtn.textContent = '📊 Export as CSV';
+            }, 2000);
+        } catch (error) {
+            alert('Error exporting CSV: ' + error.message);
+        }
+    });
+}
+
+// Import Database
+const importFileInput = document.getElementById('import-file-input');
+if (importFileInput) {
+    importFileInput.addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        try {
+            const text = await file.text();
+            const importedData = JSON.parse(text);
+            
+            if (!importedData.puzzles || !Array.isArray(importedData.puzzles)) {
+                throw new Error('Invalid file format. Expected {puzzles: [...]} structure.');
+            }
+            
+            // Fetch current database
+            const response = await fetch('collected-puzzles.json');
+            const currentData = await response.json();
+            
+            // Merge puzzles (avoid duplicates by date+start+end)
+            const existingKeys = new Set(
+                currentData.puzzles.map(p => `${p.date}-${p.start}-${p.end}`)
+            );
+            
+            const newPuzzles = importedData.puzzles.filter(p => {
+                const key = `${p.date}-${p.start}-${p.end}`;
+                return !existingKeys.has(key);
+            });
+            
+            if (newPuzzles.length === 0) {
+                alert('No new puzzles to import. All puzzles already exist.');
+                importFileInput.value = '';
+                return;
+            }
+            
+            // Show merge results
+            const confirmMsg = `Found ${newPuzzles.length} new puzzle(s) to import.\n\n` +
+                `Current database: ${currentData.count} puzzles\n` +
+                `After import: ${currentData.count + newPuzzles.length} puzzles\n\n` +
+                `Note: This only previews the merge. The actual database file is read-only.\n` +
+                `To permanently add these puzzles, you need to update the collected-puzzles.json file on the server.`;
+            
+            alert(confirmMsg);
+            
+            // Generate merged JSON for download
+            const mergedData = {
+                count: currentData.count + newPuzzles.length,
+                collected: new Date().toISOString(),
+                puzzles: [...newPuzzles, ...currentData.puzzles].sort((a, b) => 
+                    new Date(b.date) - new Date(a.date)
+                )
+            };
+            
+            // Download merged file
+            const blob = new Blob([JSON.stringify(mergedData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `merged-puzzles-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+        } catch (error) {
+            alert('Error importing file: ' + error.message);
+        }
+        
+        // Reset input
+        importFileInput.value = '';
+    });
+}
+
 // Hint Modal event listeners
 hintOkBtn.addEventListener('click', confirmHintReveal);
 hintCancelBtn.addEventListener('click', cancelHintReveal);

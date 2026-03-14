@@ -244,6 +244,21 @@
                 </div>
                 
                 <div class="admin-section">
+                    <h3>Export / Import Database</h3>
+                    <div class="export-import-controls">
+                        <button id="export-db-btn" class="btn">📥 Export Database (JSON)</button>
+                        <button id="export-csv-btn" class="btn">📊 Export as CSV</button>
+                        <div style="margin-top: 16px;">
+                            <label for="import-file-input" class="btn" style="cursor: pointer;">
+                                📤 Import Database
+                            </label>
+                            <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                            <p class="admin-note" style="margin-top: 8px; font-size: 12px;">Import will merge with existing puzzles</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
                     <h3>Load Collected Puzzles</h3>
                     <p class="admin-note">To load scraped puzzles into the game, copy puzzles from <code>collected-puzzles.json</code> to the PUZZLES array in <code>script.js</code>.</p>
                     <button id="show-import-btn" class="btn">Show Import Instructions</button>
