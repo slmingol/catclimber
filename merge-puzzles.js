@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Merge custom and scraped puzzles intelligently
- * Priority: scraped puzzles override custom puzzles for the same date
- * Custom puzzles fill gaps in the scraped data
+ * Merge local and upstream puzzles intelligently
+ * Priority: upstream puzzles (raddle.quest) override local puzzles for the same date
+ * Local puzzles fill gaps in the upstream data
  */
 
 const fs = require('fs');
@@ -24,33 +24,38 @@ function normalizeDate(dateStr) {
 }
 
 function main() {
-    const scrapedData = loadJSON('collected-puzzles.json');
-    const customData = loadJSON('custom-puzzles.json');
+    const upstreamData = loadJSON('collected-puzzles.json');
+    const localData = loadJSON('custom-puzzles.json');
     
-    console.log(`Loaded ${scrapedData.puzzles?.length || 0} scraped puzzles`);
-    console.log(`Loaded ${customData.puzzles?.length || 0} custom puzzles`);
+    console.log(`Loaded ${upstreamData.puzzles?.length || 0} upstream puzzles`);
+    console.log(`Loaded ${localData.puzzles?.length || 0} local puzzles`);
     
     // Create a map for quick lookups
    const puzzlesByDate = new Map();
     
-    // Add custom puzzles first (lower priority)
-    if (customData.puzzles) {
-        customData.puzzles.forEach(puzzle => {
+    // Add local puzzles first (lower priority)
+    if (localData.puzzles) {
+        localData.puzzles.forEach(puzzle => {
             const normalized = normalizeDate(puzzle.date);
             puzzlesByDate.set(normalized, {
                 ...puzzle,
-                source: 'custom'
+                source: 'local'
             });
         });
     }
     
-    // Add scraped puzzles (higher priority - will override customs)
-    if (scrapedData.puzzles) {
-        scrapedData.puzzles.forEach(puzzle => {
+    // Add upstream puzzles (higher priority - will override local)
+    if (upstreamData.puzzles) {
+        upstreamData.puzzles.forEach(puzzle => {
             const normalized = normalizeDate(puzzle.date);
+            // Normalize old source values
+            let source = puzzle.source || 'upstream';
+            if (source === 'scraped') source = 'upstream';
+            if (source === 'custom') source = 'local';
+            
             puzzlesByDate.set(normalized, {
                 ...puzzle,
-                source: puzzle.source || 'scraped'
+                source: source
             });
         });
     }
@@ -70,13 +75,13 @@ function main() {
     
     fs.writeFileSync('collected-puzzles.json', JSON.stringify(result, null, 2));
     
-    const scrapedCount = allPuzzles.filter(p => p.source === 'scraped' || !p.source).length;
-    const customCount = allPuzzles.filter(p => p.source === 'custom').length;
+    const upstreamCount = allPuzzles.filter(p => p.source === 'upstream' || !p.source).length;
+    const localCount = allPuzzles.filter(p => p.source === 'local').length;
     
     console.log(`\nMerge complete:`);
     console.log(`  Total puzzles: ${result.count}`);
-    console.log(`  Scraped: ${scrapedCount}`);
-    console.log(`  Custom: ${customCount}`);
+    console.log(`  Upstream (raddle.quest): ${upstreamCount}`);
+    console.log(`  Local (custom): ${localCount}`);
     console.log(`  Saved to collected-puzzles.json`);
 }
 

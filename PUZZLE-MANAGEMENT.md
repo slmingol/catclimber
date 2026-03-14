@@ -1,34 +1,34 @@
 # Puzzle Management System
 
-This project combines **scraped puzzles** from raddle.quest with **custom puzzles** you create.
+This project combines **upstream puzzles** from raddle.quest with **local puzzles** you create.
 
 ## Files
 
-- `custom-puzzles.json` - Your handcrafted puzzles (15 puzzles)
-- `collected-puzzles.json` - Merged collection of scraped + custom puzzles
+- `custom-puzzles.json` - Your handcrafted local puzzles (15 puzzles)
+- `collected-puzzles.json` - Merged collection of upstream + local puzzles
 - `merge-puzzles.js` - Intelligent merge script
-- `daily-scraper.js` - Daily cron job that scrapes and merges
+- `daily-scraper.js` - Daily cron job that scrapes upstream and merges
 
 ## How It Works
 
-1. **Priority System**: Scraped puzzles take priority over custom puzzles for the same date
-2. **Gap Filling**: Custom puzzles fill dates where no scraped puzzle exists
+1. **Priority System**: Upstream puzzles (raddle.quest) take priority over local puzzles for the same date
+2. **Gap Filling**: Local puzzles fill dates where no upstream puzzle exists
 3. **Automatic Merging**: Daily scraper runs merge automatically after adding new puzzles
 
 ## Current Status
 
 - **Total puzzles**: 382
-- **Scraped** (from raddle.quest): 378
-- **Custom** (your puzzles): 4 active (11 overridden by scraped data)
+- **Upstream** (from raddle.quest): 378
+- **Local** (your custom puzzles): 4 active (11 overridden by upstream data)
 
-### Custom Puzzles in Use
+### Local Puzzles in Use
 
 - March 11, 2026: MEAT → tACO (Food)
 - March 14, 2026: BLUE → PINK (Colors)  
 - March 15, 2026: MOON → STAR (Astronomy)
 - March 16, 2026: FIRE → SAFE (Safety)
 
-## Adding New Custom Puzzles
+## Adding New Local Puzzles
 
 1. **Edit `custom-puzzles.json`** - Add your puzzle to the `puzzles` array
 2. **Run merge**: `node merge-puzzles.js`

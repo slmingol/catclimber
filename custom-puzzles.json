@@ -23,7 +23,7 @@
       "theme": "Word Transformations",
       "description": "The best things we SAVE aren't always tangible. Sometimes we need a careful PLAN to protect what truly matters, transforming simple intentions into meaningful actions through small, deliberate changes.",
       "date": "March 7, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "COLD",
@@ -44,7 +44,7 @@
       "theme": "Temperature",
       "description": "A COLD morning transforms gradually as the sun rises, each degree bringing subtle shifts in how we feel. By afternoon, the same air that made us shiver now feels WARM and welcoming, proving that comfort is just COLD given time and patience.",
       "date": "March 7, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "HEAD",
@@ -67,7 +67,7 @@
       "theme": "Opposites",
       "description": "Every journey needs two markers: the starting HEAD and the finishing TAIL. Like a coin spinning through air, we flip between these opposites, never quite one or the other until we finally land and see which side faces up.",
       "date": "March 7, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "WORK",
@@ -92,7 +92,7 @@
       "theme": "Life Balance",
       "description": "Finding the balance between WORK and PLAY defines a life well-lived. Too much responsibility crushes the spirit, while too much leisure leaves us unfulfilled—the sweet spot lies somewhere between these extremes, where obligation meets joy.",
       "date": "March 7, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "LOVE",
@@ -111,7 +111,7 @@
       "theme": "Emotions",
       "description": "LOVE and HATE sit closer together than we'd like to admit. These twin emotions, seemingly opposite, share the same intensity and passion—only their direction differs, making the journey between them surprisingly short yet infinitely complex.",
       "date": "March 7, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "FAST",
@@ -138,7 +138,7 @@
       "theme": "Speed",
       "description": "Racing through life FAST, we often miss what matters most. Only when we finally embrace going SLOW do we discover that velocity isn't everything—sometimes the longest path teaches us more than the quickest route ever could.",
       "date": "March 7, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "RAIN",
@@ -163,7 +163,7 @@
       "theme": "Weather",
       "description": "Spring RAIN and winter SNOW are siblings separated by temperature. Both fall from clouds, both nourish the earth, yet one flows while the other drifts—proving that nature's transformations often require just the smallest shift in conditions.",
       "date": "March 8, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "IRON",
@@ -188,7 +188,7 @@
       "theme": "Metals",
       "description": "Medieval alchemists spent lifetimes trying to transmute common IRON into precious GOLD. While they never achieved their literal goal, they discovered something more valuable: true transformation comes through patience, wisdom, and carefully measured steps forward.",
       "date": "March 9, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "DARK",
@@ -209,7 +209,7 @@
       "theme": "Light vs Dark",
       "description": "Moving from DARK to LITE isn't about banishing shadows entirely—it's about finding the first spark that breaks the blackness. Even the smallest illumination can guide us forward, proving that enlightenment begins with a single, simple change.",
       "date": "March 10, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "MEAT",
@@ -232,7 +232,7 @@
       "theme": "Food",
       "description": "The journey from raw MEAT to a perfect TACO illustrates culinary alchemy at its finest. Through heat, spices, and technique, simple ingredients transform into complex flavors—each step of preparation adding depth until something entirely new emerges.",
       "date": "March 11, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "BOOK",
@@ -253,7 +253,7 @@
       "theme": "Literature",
       "description": "A BOOK remains just bound paper until someone opens it to READ. That act of reading transforms static text into living stories, transporting us from our comfortable chairs into adventures we never imagined, all through the magic of words.",
       "date": "March 12, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "RICH",
@@ -278,7 +278,7 @@
       "theme": "Economics",
       "description": "The distance between RICH and POOR is shorter than it appears. Fortunes rise and fall, circumstances shift unexpectedly, and what seems permanent today may vanish tomorrow—teaching us that true wealth lies in resilience, not in what we temporarily hold.",
       "date": "March 13, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "BLUE",
@@ -303,7 +303,7 @@
       "theme": "Colors",
       "description": "Watch the sky transform from deep BLUE to soft PINK during sunset. This daily metamorphosis reminds us that colors exist on a spectrum, and the journey from one hue to another passes through shades we rarely pause to appreciate.",
       "date": "March 14, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "MOON",
@@ -328,7 +328,7 @@
       "theme": "Astronomy",
       "description": "Ancient sailors navigated by both MOON and STAR, each celestial body offering its own guidance. While one waxes and wanes, the others remain constant—together they map the heavens, showing us that even the night sky tells stories of transformation and permanence.",
       "date": "March 15, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "FIRE",
@@ -347,7 +347,7 @@
       "theme": "Safety",
       "description": "Running from FIRE toward somewhere SAFE is instinct, but the transformation between danger and security happens through deliberate choices. What once threatened to consume us can become controlled, useful, even comforting when we learn to contain and direct it properly.",
       "date": "March 16, 2026",
-      "source": "custom"
+      "source": "local"
     }
   ]
 }

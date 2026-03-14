@@ -123,9 +123,9 @@ if (require.main === module) {
     getTodaysPuzzle().then((puzzleData) => {
         console.log('Daily scrape complete');
         
-        // Merge with custom puzzles
+        // Merge with local puzzles
         if (puzzleData) {
-            console.log('Running merge with custom puzzles...');
+            console.log('Running merge with local puzzles...');
             const { execSync } = require('child_process');
             try {
                 execSync('node merge-puzzles.js', { cwd: __dirname, stdio: 'inherit' });

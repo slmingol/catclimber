@@ -1,6 +1,6 @@
 {
   "count": 382,
-  "collected": "2026-03-14T15:55:46.301Z",
+  "collected": "2026-03-14T16:01:03.990Z",
   "puzzles": [
     {
       "start": "CATERPILLAR",
@@ -23,7 +23,7 @@
       "theme": "",
       "date": "Tue, February 25, 2025",
       "url": "https://raddle.quest/2025/02/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DAY",
@@ -44,7 +44,7 @@
       "theme": "",
       "date": "Wed, February 26, 2025",
       "url": "https://raddle.quest/2025/02/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WEST",
@@ -66,7 +66,7 @@
       "theme": "",
       "date": "Thu, February 27, 2025",
       "url": "https://raddle.quest/2025/02/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PINKY",
@@ -87,7 +87,7 @@
       "theme": "",
       "date": "Fri, February 28, 2025",
       "url": "https://raddle.quest/2025/02/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SEQUEL",
@@ -108,7 +108,7 @@
       "theme": "",
       "date": "Sat, March 1, 2025",
       "url": "https://raddle.quest/2025/03/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FLOW",
@@ -128,7 +128,7 @@
       "theme": "",
       "date": "Sun, March 2, 2025",
       "url": "https://raddle.quest/2025/03/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STAFF",
@@ -150,7 +150,7 @@
       "theme": "",
       "date": "Mon, March 3, 2025",
       "url": "https://raddle.quest/2025/03/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PSYCHIC",
@@ -172,7 +172,7 @@
       "theme": "",
       "date": "Tue, March 4, 2025",
       "url": "https://raddle.quest/2025/03/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HEART",
@@ -194,7 +194,7 @@
       "theme": "",
       "date": "Wed, March 5, 2025",
       "url": "https://raddle.quest/2025/03/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TRAP",
@@ -214,7 +214,7 @@
       "theme": "",
       "date": "Thu, March 6, 2025",
       "url": "https://raddle.quest/2025/03/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TURN",
@@ -237,7 +237,7 @@
       "theme": "",
       "date": "Fri, March 7, 2025",
       "url": "https://raddle.quest/2025/03/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LINK",
@@ -257,7 +257,7 @@
       "theme": "",
       "date": "Sat, March 8, 2025",
       "url": "https://raddle.quest/2025/03/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "QUARTER",
@@ -280,7 +280,7 @@
       "theme": "",
       "date": "Sun, March 9, 2025",
       "url": "https://raddle.quest/2025/03/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SHIP",
@@ -299,7 +299,7 @@
       "theme": "",
       "date": "Mon, March 10, 2025",
       "url": "https://raddle.quest/2025/03/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HOLLOW",
@@ -321,7 +321,7 @@
       "theme": "",
       "date": "Tue, March 11, 2025",
       "url": "https://raddle.quest/2025/03/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HOUSE",
@@ -343,7 +343,7 @@
       "theme": "",
       "date": "Wed, March 12, 2025",
       "url": "https://raddle.quest/2025/03/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FLAG",
@@ -365,7 +365,7 @@
       "theme": "",
       "date": "Thu, March 13, 2025",
       "url": "https://raddle.quest/2025/03/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "POINT",
@@ -386,7 +386,7 @@
       "theme": "",
       "date": "Fri, March 14, 2025",
       "url": "https://raddle.quest/2025/03/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "JOKER",
@@ -409,7 +409,7 @@
       "theme": "",
       "date": "Sat, March 15, 2025",
       "url": "https://raddle.quest/2025/03/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STAR",
@@ -433,7 +433,7 @@
       "theme": "",
       "date": "Sun, March 16, 2025",
       "url": "https://raddle.quest/2025/03/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BOW",
@@ -451,7 +451,7 @@
       "theme": "",
       "date": "Mon, March 17, 2025",
       "url": "https://raddle.quest/2025/03/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LUCKY",
@@ -472,7 +472,7 @@
       "theme": "",
       "date": "Tue, March 18, 2025",
       "url": "https://raddle.quest/2025/03/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PAUSE",
@@ -492,7 +492,7 @@
       "theme": "",
       "date": "Wed, March 19, 2025",
       "url": "https://raddle.quest/2025/03/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MACHINE",
@@ -514,7 +514,7 @@
       "theme": "",
       "date": "Thu, March 20, 2025",
       "url": "https://raddle.quest/2025/03/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CASE",
@@ -537,7 +537,7 @@
       "theme": "",
       "date": "Fri, March 21, 2025",
       "url": "https://raddle.quest/2025/03/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "COMBINE",
@@ -561,7 +561,7 @@
       "theme": "",
       "date": "Sat, March 22, 2025",
       "url": "https://raddle.quest/2025/03/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BOARD",
@@ -582,7 +582,7 @@
       "theme": "",
       "date": "Sun, March 23, 2025",
       "url": "https://raddle.quest/2025/03/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RING",
@@ -604,7 +604,7 @@
       "theme": "",
       "date": "Mon, March 24, 2025",
       "url": "https://raddle.quest/2025/03/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SEARCH",
@@ -628,7 +628,7 @@
       "theme": "",
       "date": "Tue, March 25, 2025",
       "url": "https://raddle.quest/2025/03/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RANDOM",
@@ -650,7 +650,7 @@
       "theme": "",
       "date": "Wed, March 26, 2025",
       "url": "https://raddle.quest/2025/03/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PLAY",
@@ -671,7 +671,7 @@
       "theme": "",
       "date": "Thu, March 27, 2025",
       "url": "https://raddle.quest/2025/03/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LOOP",
@@ -693,7 +693,7 @@
       "theme": "",
       "date": "Fri, March 28, 2025",
       "url": "https://raddle.quest/2025/03/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DRAW",
@@ -715,7 +715,7 @@
       "theme": "",
       "date": "Sat, March 29, 2025",
       "url": "https://raddle.quest/2025/03/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "COMPASS",
@@ -738,7 +738,7 @@
       "theme": "",
       "date": "Sun, March 30, 2025",
       "url": "https://raddle.quest/2025/03/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ROUTE",
@@ -758,7 +758,7 @@
       "theme": "",
       "date": "Mon, March 31, 2025",
       "url": "https://raddle.quest/2025/03/31",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BIG",
@@ -777,7 +777,7 @@
       "theme": "",
       "date": "Tue, April 1, 2025",
       "url": "https://raddle.quest/2025/04/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RICH",
@@ -799,7 +799,7 @@
       "theme": "",
       "date": "Wed, April 2, 2025",
       "url": "https://raddle.quest/2025/04/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SUNNY",
@@ -822,7 +822,7 @@
       "theme": "",
       "date": "Thu, April 3, 2025",
       "url": "https://raddle.quest/2025/04/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "YO LA",
@@ -846,7 +846,7 @@
       "theme": "",
       "date": "Fri, April 4, 2025",
       "url": "https://raddle.quest/2025/04/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WAX",
@@ -866,7 +866,7 @@
       "theme": "",
       "date": "Sat, April 5, 2025",
       "url": "https://raddle.quest/2025/04/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MERCE",
@@ -889,7 +889,7 @@
       "theme": "",
       "date": "Sun, April 6, 2025",
       "url": "https://raddle.quest/2025/04/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "EXPLOSIONS",
@@ -912,7 +912,7 @@
       "theme": "",
       "date": "Mon, April 7, 2025",
       "url": "https://raddle.quest/2025/04/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TINDER",
@@ -935,7 +935,7 @@
       "theme": "",
       "date": "Tue, April 8, 2025",
       "url": "https://raddle.quest/2025/04/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "OK",
@@ -955,7 +955,7 @@
       "theme": "",
       "date": "Wed, April 9, 2025",
       "url": "https://raddle.quest/2025/04/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BIG",
@@ -975,7 +975,7 @@
       "theme": "",
       "date": "Thu, April 10, 2025",
       "url": "https://raddle.quest/2025/04/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ANDREW",
@@ -999,7 +999,7 @@
       "theme": "",
       "date": "Fri, April 11, 2025",
       "url": "https://raddle.quest/2025/04/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ORVILLE",
@@ -1024,7 +1024,7 @@
       "theme": "",
       "date": "Sat, April 12, 2025",
       "url": "https://raddle.quest/2025/04/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "NEKO",
@@ -1044,7 +1044,7 @@
       "theme": "",
       "date": "Sun, April 13, 2025",
       "url": "https://raddle.quest/2025/04/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PASS",
@@ -1065,7 +1065,7 @@
       "theme": "",
       "date": "Mon, April 14, 2025",
       "url": "https://raddle.quest/2025/04/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLOOD",
@@ -1088,7 +1088,7 @@
       "theme": "",
       "date": "Tue, April 15, 2025",
       "url": "https://raddle.quest/2025/04/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "UNLEAVENED",
@@ -1111,7 +1111,7 @@
       "theme": "",
       "date": "Wed, April 16, 2025",
       "url": "https://raddle.quest/2025/04/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MATZAH",
@@ -1131,7 +1131,7 @@
       "theme": "",
       "date": "Thu, April 17, 2025",
       "url": "https://raddle.quest/2025/04/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GOAT",
@@ -1151,7 +1151,7 @@
       "theme": "",
       "date": "Fri, April 18, 2025",
       "url": "https://raddle.quest/2025/04/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FOUR",
@@ -1172,7 +1172,7 @@
       "theme": "",
       "date": "Sat, April 19, 2025",
       "url": "https://raddle.quest/2025/04/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DAYENU",
@@ -1192,7 +1192,7 @@
       "theme": "",
       "date": "Sun, April 20, 2025",
       "url": "https://raddle.quest/2025/04/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLUE",
@@ -1213,7 +1213,7 @@
       "theme": "",
       "date": "Mon, April 21, 2025",
       "url": "https://raddle.quest/2025/04/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MOUNT",
@@ -1233,7 +1233,7 @@
       "theme": "",
       "date": "Tue, April 22, 2025",
       "url": "https://raddle.quest/2025/04/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ROGUE",
@@ -1256,7 +1256,7 @@
       "theme": "",
       "date": "Wed, April 23, 2025",
       "url": "https://raddle.quest/2025/04/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SNAP",
@@ -1274,7 +1274,7 @@
       "theme": "",
       "date": "Thu, April 24, 2025",
       "url": "https://raddle.quest/2025/04/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TIGER",
@@ -1296,7 +1296,7 @@
       "theme": "",
       "date": "Fri, April 25, 2025",
       "url": "https://raddle.quest/2025/04/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MORNING",
@@ -1317,7 +1317,7 @@
       "theme": "",
       "date": "Sat, April 26, 2025",
       "url": "https://raddle.quest/2025/04/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLACK EYED",
@@ -1339,7 +1339,7 @@
       "theme": "",
       "date": "Sun, April 27, 2025",
       "url": "https://raddle.quest/2025/04/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LARK",
@@ -1360,7 +1360,7 @@
       "theme": "",
       "date": "Mon, April 28, 2025",
       "url": "https://raddle.quest/2025/04/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BUTTER",
@@ -1380,7 +1380,7 @@
       "theme": "",
       "date": "Tue, April 29, 2025",
       "url": "https://raddle.quest/2025/04/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FORGET ME",
@@ -1401,7 +1401,7 @@
       "theme": "",
       "date": "Wed, April 30, 2025",
       "url": "https://raddle.quest/2025/04/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CLUE",
@@ -1422,7 +1422,7 @@
       "theme": "",
       "date": "Thu, May 1, 2025",
       "url": "https://raddle.quest/2025/05/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ANT",
@@ -1445,7 +1445,7 @@
       "theme": "",
       "date": "Fri, May 2, 2025",
       "url": "https://raddle.quest/2025/05/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "THIS IS",
@@ -1467,7 +1467,7 @@
       "theme": "",
       "date": "Sat, May 3, 2025",
       "url": "https://raddle.quest/2025/05/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FRIEND",
@@ -1488,7 +1488,7 @@
       "theme": "",
       "date": "Sun, May 4, 2025",
       "url": "https://raddle.quest/2025/05/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "I LOVE YOU",
@@ -1509,7 +1509,7 @@
       "theme": "",
       "date": "Mon, May 5, 2025",
       "url": "https://raddle.quest/2025/05/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DEATH",
@@ -1531,7 +1531,7 @@
       "theme": "",
       "date": "Tue, May 6, 2025",
       "url": "https://raddle.quest/2025/05/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SEX",
@@ -1551,7 +1551,7 @@
       "theme": "",
       "date": "Wed, May 7, 2025",
       "url": "https://raddle.quest/2025/05/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SAMUEL",
@@ -1573,7 +1573,7 @@
       "theme": "",
       "date": "Thu, May 8, 2025",
       "url": "https://raddle.quest/2025/05/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PREVOST",
@@ -1594,7 +1594,7 @@
       "theme": "",
       "date": "Fri, May 9, 2025",
       "url": "https://raddle.quest/2025/05/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CHICAGO",
@@ -1616,7 +1616,7 @@
       "theme": "",
       "date": "Sat, May 10, 2025",
       "url": "https://raddle.quest/2025/05/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MOTHERS",
@@ -1638,7 +1638,7 @@
       "theme": "",
       "date": "Sun, May 11, 2025",
       "url": "https://raddle.quest/2025/05/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MINCE",
@@ -1661,7 +1661,7 @@
       "theme": "",
       "date": "Mon, May 12, 2025",
       "url": "https://raddle.quest/2025/05/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "OH",
@@ -1683,7 +1683,7 @@
       "theme": "",
       "date": "Tue, May 13, 2025",
       "url": "https://raddle.quest/2025/05/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SUNSET",
@@ -1704,7 +1704,7 @@
       "theme": "",
       "date": "Wed, May 14, 2025",
       "url": "https://raddle.quest/2025/05/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BUENA",
@@ -1727,7 +1727,7 @@
       "theme": "",
       "date": "Thu, May 15, 2025",
       "url": "https://raddle.quest/2025/05/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DEAD",
@@ -1750,7 +1750,7 @@
       "theme": "",
       "date": "Fri, May 16, 2025",
       "url": "https://raddle.quest/2025/05/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MAYBE",
@@ -1772,7 +1772,7 @@
       "theme": "",
       "date": "Sat, May 17, 2025",
       "url": "https://raddle.quest/2025/05/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DORIAN",
@@ -1793,7 +1793,7 @@
       "theme": "",
       "date": "Sun, May 18, 2025",
       "url": "https://raddle.quest/2025/05/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PHILOSOPHER",
@@ -1813,7 +1813,7 @@
       "theme": "",
       "date": "Mon, May 19, 2025",
       "url": "https://raddle.quest/2025/05/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CANNIBAL",
@@ -1835,7 +1835,7 @@
       "theme": "",
       "date": "Tue, May 20, 2025",
       "url": "https://raddle.quest/2025/05/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PIXIE",
@@ -1856,7 +1856,7 @@
       "theme": "",
       "date": "Wed, May 21, 2025",
       "url": "https://raddle.quest/2025/05/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GAMBLER",
@@ -1877,7 +1877,7 @@
       "theme": "",
       "date": "Thu, May 22, 2025",
       "url": "https://raddle.quest/2025/05/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PROFESSOR",
@@ -1899,7 +1899,7 @@
       "theme": "",
       "date": "Fri, May 23, 2025",
       "url": "https://raddle.quest/2025/05/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SNAKE CHARMER",
@@ -1923,7 +1923,7 @@
       "theme": "",
       "date": "Sat, May 24, 2025",
       "url": "https://raddle.quest/2025/05/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DAMSEL",
@@ -1943,7 +1943,7 @@
       "theme": "",
       "date": "Sun, May 25, 2025",
       "url": "https://raddle.quest/2025/05/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DECORATION",
@@ -1965,7 +1965,7 @@
       "theme": "",
       "date": "Mon, May 26, 2025",
       "url": "https://raddle.quest/2025/05/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WASTED",
@@ -1986,7 +1986,7 @@
       "theme": "",
       "date": "Tue, May 27, 2025",
       "url": "https://raddle.quest/2025/05/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ESPRESSO",
@@ -2008,7 +2008,7 @@
       "theme": "",
       "date": "Wed, May 28, 2025",
       "url": "https://raddle.quest/2025/05/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ZOE",
@@ -2029,7 +2029,7 @@
       "theme": "",
       "date": "Thu, May 29, 2025",
       "url": "https://raddle.quest/2025/05/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ESA",
@@ -2051,7 +2051,7 @@
       "theme": "",
       "date": "Fri, May 30, 2025",
       "url": "https://raddle.quest/2025/05/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DOLL",
@@ -2071,7 +2071,7 @@
       "theme": "",
       "date": "Sat, May 31, 2025",
       "url": "https://raddle.quest/2025/05/31",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BIRD",
@@ -2089,7 +2089,7 @@
       "theme": "",
       "date": "Sun, June 1, 2025",
       "url": "https://raddle.quest/2025/06/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STROBE",
@@ -2110,7 +2110,7 @@
       "theme": "",
       "date": "Mon, June 2, 2025",
       "url": "https://raddle.quest/2025/06/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PRIDE",
@@ -2127,7 +2127,7 @@
       "theme": "",
       "date": "Month From PRIDE to MONTH  ← Previous Tue, June 3, 2025",
       "url": "https://raddle.quest/2025/06/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RAINBOW",
@@ -2147,7 +2147,7 @@
       "theme": "",
       "date": "Month From RAINBOW to FLAG  ← Previous Wed, June 4, 2025",
       "url": "https://raddle.quest/2025/06/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BORN",
@@ -2172,7 +2172,7 @@
       "theme": "",
       "date": "Month From BORN to WAY  ← Previous Thu, June 5, 2025",
       "url": "https://raddle.quest/2025/06/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GOOD LUCK",
@@ -2194,7 +2194,7 @@
       "theme": "",
       "date": "Month From GOOD LUCK to BABE  ← Previous Fri, June 6, 2025",
       "url": "https://raddle.quest/2025/06/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RAINING",
@@ -2216,7 +2216,7 @@
       "theme": "",
       "date": "Month From RAINING to MEN  ← Previous Sat, June 7, 2025",
       "url": "https://raddle.quest/2025/06/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DANCING",
@@ -2239,7 +2239,7 @@
       "theme": "",
       "date": "Month From DANCING to QUEEN  ← Previous Sun, June 8, 2025",
       "url": "https://raddle.quest/2025/06/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TRUE",
@@ -2261,7 +2261,7 @@
       "theme": "",
       "date": "Month From TRUE to COLORS  ← Previous Mon, June 9, 2025",
       "url": "https://raddle.quest/2025/06/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LAMB",
@@ -2281,7 +2281,7 @@
       "theme": "",
       "date": "Tue, June 10, 2025",
       "url": "https://raddle.quest/2025/06/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PUPPY",
@@ -2302,7 +2302,7 @@
       "theme": "",
       "date": "Wed, June 11, 2025",
       "url": "https://raddle.quest/2025/06/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "KITTEN",
@@ -2324,7 +2324,7 @@
       "theme": "",
       "date": "Thu, June 12, 2025",
       "url": "https://raddle.quest/2025/06/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CALF",
@@ -2347,7 +2347,7 @@
       "theme": "",
       "date": "Fri, June 13, 2025",
       "url": "https://raddle.quest/2025/06/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CHICK",
@@ -2370,7 +2370,7 @@
       "theme": "",
       "date": "Sat, June 14, 2025",
       "url": "https://raddle.quest/2025/06/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FAWN",
@@ -2390,7 +2390,7 @@
       "theme": "",
       "date": "Sun, June 15, 2025",
       "url": "https://raddle.quest/2025/06/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TRAFFIC",
@@ -2412,7 +2412,7 @@
       "theme": "",
       "date": "Mon, June 16, 2025",
       "url": "https://raddle.quest/2025/06/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "IRONING",
@@ -2435,7 +2435,7 @@
       "theme": "",
       "date": "Tue, June 17, 2025",
       "url": "https://raddle.quest/2025/06/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ELEVATOR",
@@ -2457,7 +2457,7 @@
       "theme": "",
       "date": "Wed, June 18, 2025",
       "url": "https://raddle.quest/2025/06/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ICE CREAM",
@@ -2479,7 +2479,7 @@
       "theme": "",
       "date": "Thu, June 19, 2025",
       "url": "https://raddle.quest/2025/06/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GOLF",
@@ -2502,7 +2502,7 @@
       "theme": "",
       "date": "Fri, June 20, 2025",
       "url": "https://raddle.quest/2025/06/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLOOD",
@@ -2524,7 +2524,7 @@
       "theme": "",
       "date": "Sat, June 21, 2025",
       "url": "https://raddle.quest/2025/06/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DUST",
@@ -2546,7 +2546,7 @@
       "theme": "",
       "date": "Sun, June 22, 2025",
       "url": "https://raddle.quest/2025/06/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MINT",
@@ -2566,7 +2566,7 @@
       "theme": "",
       "date": "Mon, June 23, 2025",
       "url": "https://raddle.quest/2025/06/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PEACH",
@@ -2585,7 +2585,7 @@
       "theme": "",
       "date": "Tue, June 24, 2025",
       "url": "https://raddle.quest/2025/06/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CHERRY",
@@ -2607,7 +2607,7 @@
       "theme": "",
       "date": "Wed, June 25, 2025",
       "url": "https://raddle.quest/2025/06/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CORN",
@@ -2626,7 +2626,7 @@
       "theme": "",
       "date": "Thu, June 26, 2025",
       "url": "https://raddle.quest/2025/06/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RASPBERRY",
@@ -2648,7 +2648,7 @@
       "theme": "",
       "date": "Fri, June 27, 2025",
       "url": "https://raddle.quest/2025/06/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BIG",
@@ -2667,7 +2667,7 @@
       "theme": "",
       "date": "Sat, June 28, 2025",
       "url": "https://raddle.quest/2025/06/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TOMATO",
@@ -2688,7 +2688,7 @@
       "theme": "",
       "date": "Sun, June 29, 2025",
       "url": "https://raddle.quest/2025/06/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SPINNING",
@@ -2711,7 +2711,7 @@
       "theme": "",
       "date": "Mon, June 30, 2025",
       "url": "https://raddle.quest/2025/06/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FLUSH",
@@ -2732,7 +2732,7 @@
       "theme": "",
       "date": "Tue, July 1, 2025",
       "url": "https://raddle.quest/2025/07/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SODA",
@@ -2752,7 +2752,7 @@
       "theme": "",
       "date": "Wed, July 2, 2025",
       "url": "https://raddle.quest/2025/07/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CIRCULAR",
@@ -2774,7 +2774,7 @@
       "theme": "",
       "date": "Thu, July 3, 2025",
       "url": "https://raddle.quest/2025/07/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "UNITED",
@@ -2796,7 +2796,7 @@
       "theme": "",
       "date": "Fri, July 4, 2025",
       "url": "https://raddle.quest/2025/07/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "COTTON",
@@ -2818,7 +2818,7 @@
       "theme": "",
       "date": "Sat, July 5, 2025",
       "url": "https://raddle.quest/2025/07/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "METRIC",
@@ -2840,7 +2840,7 @@
       "theme": "",
       "date": "Sun, July 6, 2025",
       "url": "https://raddle.quest/2025/07/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PEDAL",
@@ -2861,7 +2861,7 @@
       "theme": "",
       "date": "Mon, July 7, 2025",
       "url": "https://raddle.quest/2025/07/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BASKET",
@@ -2882,7 +2882,7 @@
       "theme": "",
       "date": "Tue, July 8, 2025",
       "url": "https://raddle.quest/2025/07/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FOOD",
@@ -2899,7 +2899,7 @@
       "theme": "",
       "date": "Wed, July 9, 2025",
       "url": "https://raddle.quest/2025/07/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HANDLEBAR",
@@ -2921,7 +2921,7 @@
       "theme": "",
       "date": "Thu, July 10, 2025",
       "url": "https://raddle.quest/2025/07/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TIRE",
@@ -2942,7 +2942,7 @@
       "theme": "",
       "date": "Fri, July 11, 2025",
       "url": "https://raddle.quest/2025/07/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FERRIS",
@@ -2962,7 +2962,7 @@
       "theme": "",
       "date": "Sat, July 12, 2025",
       "url": "https://raddle.quest/2025/07/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HOT",
@@ -2982,7 +2982,7 @@
       "theme": "",
       "date": "Sun, July 13, 2025",
       "url": "https://raddle.quest/2025/07/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CLARK",
@@ -3005,7 +3005,7 @@
       "theme": "",
       "date": "Mon, July 14, 2025",
       "url": "https://raddle.quest/2025/07/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DAILY",
@@ -3028,7 +3028,7 @@
       "theme": "",
       "date": "Tue, July 15, 2025",
       "url": "https://raddle.quest/2025/07/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "KAL",
@@ -3046,7 +3046,7 @@
       "theme": "",
       "date": "Thu, July 17, 2025",
       "url": "https://raddle.quest/2025/07/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LOIS",
@@ -3065,7 +3065,7 @@
       "theme": "",
       "date": "Fri, July 18, 2025",
       "url": "https://raddle.quest/2025/07/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BULLET",
@@ -3086,7 +3086,7 @@
       "theme": "",
       "date": "Sat, July 19, 2025",
       "url": "https://raddle.quest/2025/07/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MAN",
@@ -3106,7 +3106,7 @@
       "theme": "",
       "date": "Sun, July 20, 2025",
       "url": "https://raddle.quest/2025/07/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "INNIE",
@@ -3127,7 +3127,7 @@
       "theme": "",
       "date": "Mon, July 21, 2025",
       "url": "https://raddle.quest/2025/07/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MACRO",
@@ -3148,7 +3148,7 @@
       "theme": "",
       "date": "Tue, July 22, 2025",
       "url": "https://raddle.quest/2025/07/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "OPTICS",
@@ -3171,7 +3171,7 @@
       "theme": "",
       "date": "Wed, July 23, 2025",
       "url": "https://raddle.quest/2025/07/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WAFFLE",
@@ -3193,7 +3193,7 @@
       "theme": "",
       "date": "Thu, July 24, 2025",
       "url": "https://raddle.quest/2025/07/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DEFIANT",
@@ -3215,7 +3215,7 @@
       "theme": "",
       "date": "Fri, July 25, 2025",
       "url": "https://raddle.quest/2025/07/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WOE",
@@ -3236,7 +3236,7 @@
       "theme": "",
       "date": "Sat, July 26, 2025",
       "url": "https://raddle.quest/2025/07/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LUMON",
@@ -3257,7 +3257,7 @@
       "theme": "",
       "date": "Sun, July 27, 2025",
       "url": "https://raddle.quest/2025/07/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WHITE",
@@ -3277,7 +3277,7 @@
       "theme": "",
       "date": "Mon, July 28, 2025",
       "url": "https://raddle.quest/2025/07/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLACK",
@@ -3298,7 +3298,7 @@
       "theme": "",
       "date": "Tue, July 29, 2025",
       "url": "https://raddle.quest/2025/07/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ABBOTT",
@@ -3317,7 +3317,7 @@
       "theme": "",
       "date": "Wed, July 30, 2025",
       "url": "https://raddle.quest/2025/07/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LAST",
@@ -3338,7 +3338,7 @@
       "theme": "",
       "date": "Thu, July 31, 2025",
       "url": "https://raddle.quest/2025/07/31",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "YES",
@@ -3358,7 +3358,7 @@
       "theme": "",
       "date": "Fri, August 1, 2025",
       "url": "https://raddle.quest/2025/08/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SLOW",
@@ -3377,7 +3377,7 @@
       "theme": "",
       "date": "Sat, August 2, 2025",
       "url": "https://raddle.quest/2025/08/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MIRACLE",
@@ -3400,7 +3400,7 @@
       "theme": "",
       "date": "Sun, August 3, 2025",
       "url": "https://raddle.quest/2025/08/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LASER",
@@ -3420,7 +3420,7 @@
       "theme": "",
       "date": "Mon, August 4, 2025",
       "url": "https://raddle.quest/2025/08/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TREND",
@@ -3440,7 +3440,7 @@
       "theme": "",
       "date": "Tue, August 5, 2025",
       "url": "https://raddle.quest/2025/08/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BOXER",
@@ -3461,7 +3461,7 @@
       "theme": "",
       "date": "Wed, August 6, 2025",
       "url": "https://raddle.quest/2025/08/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LAB",
@@ -3481,7 +3481,7 @@
       "theme": "",
       "date": "Thu, August 7, 2025",
       "url": "https://raddle.quest/2025/08/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SHEPHERD",
@@ -3501,7 +3501,7 @@
       "theme": "",
       "date": "Fri, August 8, 2025",
       "url": "https://raddle.quest/2025/08/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MALTESE",
@@ -3523,7 +3523,7 @@
       "theme": "",
       "date": "Sat, August 9, 2025",
       "url": "https://raddle.quest/2025/08/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "POM",
@@ -3544,7 +3544,7 @@
       "theme": "",
       "date": "Sun, August 10, 2025",
       "url": "https://raddle.quest/2025/08/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "YANKEE",
@@ -3568,7 +3568,7 @@
       "theme": "",
       "date": "Mon, August 11, 2025",
       "url": "https://raddle.quest/2025/08/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DOGS",
@@ -3589,7 +3589,7 @@
       "theme": "",
       "date": "Tue, August 12, 2025",
       "url": "https://raddle.quest/2025/08/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "JAWS",
@@ -3611,7 +3611,7 @@
       "theme": "",
       "date": "Wed, August 13, 2025",
       "url": "https://raddle.quest/2025/08/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MORTAL",
@@ -3631,7 +3631,7 @@
       "theme": "",
       "date": "Thu, August 14, 2025",
       "url": "https://raddle.quest/2025/08/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SALAD",
@@ -3651,7 +3651,7 @@
       "theme": "",
       "date": "Fri, August 15, 2025",
       "url": "https://raddle.quest/2025/08/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BREVITY",
@@ -3672,7 +3672,7 @@
       "theme": "",
       "date": "Sat, August 16, 2025",
       "url": "https://raddle.quest/2025/08/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WORLD",
@@ -3694,7 +3694,7 @@
       "theme": "",
       "date": "Sun, August 17, 2025",
       "url": "https://raddle.quest/2025/08/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MOOSE",
@@ -3711,7 +3711,7 @@
       "theme": "",
       "date": "Mon, August 18, 2025",
       "url": "https://raddle.quest/2025/08/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BUTTER",
@@ -3731,7 +3731,7 @@
       "theme": "",
       "date": "Tue, August 19, 2025",
       "url": "https://raddle.quest/2025/08/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RUM",
@@ -3753,7 +3753,7 @@
       "theme": "",
       "date": "Wed, August 20, 2025",
       "url": "https://raddle.quest/2025/08/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RAINBOW",
@@ -3775,7 +3775,7 @@
       "theme": "",
       "date": "Thu, August 21, 2025",
       "url": "https://raddle.quest/2025/08/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ROCKY",
@@ -3797,7 +3797,7 @@
       "theme": "",
       "date": "Fri, August 22, 2025",
       "url": "https://raddle.quest/2025/08/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WAFFLE",
@@ -3819,7 +3819,7 @@
       "theme": "",
       "date": "Sat, August 23, 2025",
       "url": "https://raddle.quest/2025/08/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BANANA",
@@ -3840,7 +3840,7 @@
       "theme": "",
       "date": "Sun, August 24, 2025",
       "url": "https://raddle.quest/2025/08/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GIMME",
@@ -3861,7 +3861,7 @@
       "theme": "",
       "date": "Mon, August 25, 2025",
       "url": "https://raddle.quest/2025/08/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RUBY",
@@ -3880,7 +3880,7 @@
       "theme": "",
       "date": "Tue, August 26, 2025",
       "url": "https://raddle.quest/2025/08/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WILD",
@@ -3903,7 +3903,7 @@
       "theme": "",
       "date": "Wed, August 27, 2025",
       "url": "https://raddle.quest/2025/08/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PAINT",
@@ -3925,7 +3925,7 @@
       "theme": "",
       "date": "Thu, August 28, 2025",
       "url": "https://raddle.quest/2025/08/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SYMPATHY",
@@ -3948,7 +3948,7 @@
       "theme": "",
       "date": "Fri, August 29, 2025",
       "url": "https://raddle.quest/2025/08/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "UNDER",
@@ -3971,7 +3971,7 @@
       "theme": "",
       "date": "Sat, August 30, 2025",
       "url": "https://raddle.quest/2025/08/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BROWN",
@@ -3990,7 +3990,7 @@
       "theme": "",
       "date": "Sun, August 31, 2025",
       "url": "https://raddle.quest/2025/08/31",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PENNY",
@@ -4012,7 +4012,7 @@
       "theme": "",
       "date": "Mon, September 1, 2025",
       "url": "https://raddle.quest/2025/09/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GHOST",
@@ -4035,7 +4035,7 @@
       "theme": "",
       "date": "Tue, September 2, 2025",
       "url": "https://raddle.quest/2025/09/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LEATHER",
@@ -4056,7 +4056,7 @@
       "theme": "",
       "date": "Wed, September 3, 2025",
       "url": "https://raddle.quest/2025/09/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLAIR",
@@ -4079,7 +4079,7 @@
       "theme": "",
       "date": "Thu, September 4, 2025",
       "url": "https://raddle.quest/2025/09/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CANDY",
@@ -4100,7 +4100,7 @@
       "theme": "",
       "date": "Fri, September 5, 2025",
       "url": "https://raddle.quest/2025/09/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PIN",
@@ -4118,7 +4118,7 @@
       "theme": "",
       "date": "Sat, September 6, 2025",
       "url": "https://raddle.quest/2025/09/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "THE",
@@ -4140,7 +4140,7 @@
       "theme": "",
       "date": "Sun, September 7, 2025",
       "url": "https://raddle.quest/2025/09/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WEEK",
@@ -4161,7 +4161,7 @@
       "theme": "",
       "date": "Mon, September 8, 2025",
       "url": "https://raddle.quest/2025/09/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "OVER",
@@ -4182,7 +4182,7 @@
       "theme": "",
       "date": "Tue, September 9, 2025",
       "url": "https://raddle.quest/2025/09/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MID",
@@ -4203,7 +4203,7 @@
       "theme": "",
       "date": "Wed, September 10, 2025",
       "url": "https://raddle.quest/2025/09/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FORT",
@@ -4223,7 +4223,7 @@
       "theme": "",
       "date": "Thu, September 11, 2025",
       "url": "https://raddle.quest/2025/09/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TO",
@@ -4244,7 +4244,7 @@
       "theme": "",
       "date": "Fri, September 12, 2025",
       "url": "https://raddle.quest/2025/09/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FERRIS",
@@ -4267,7 +4267,7 @@
       "theme": "",
       "date": "Sat, September 13, 2025",
       "url": "https://raddle.quest/2025/09/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ELEVATED",
@@ -4289,7 +4289,7 @@
       "theme": "",
       "date": "Sun, September 14, 2025",
       "url": "https://raddle.quest/2025/09/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DEEP",
@@ -4309,7 +4309,7 @@
       "theme": "",
       "date": "Mon, September 15, 2025",
       "url": "https://raddle.quest/2025/09/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SIXTEEN",
@@ -4331,7 +4331,7 @@
       "theme": "",
       "date": "Tue, September 16, 2025",
       "url": "https://raddle.quest/2025/09/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "IMPROV",
@@ -4352,7 +4352,7 @@
       "theme": "",
       "date": "Wed, September 17, 2025",
       "url": "https://raddle.quest/2025/09/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TWO",
@@ -4373,7 +4373,7 @@
       "theme": "",
       "date": "Thu, September 18, 2025",
       "url": "https://raddle.quest/2025/09/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ROLLER",
@@ -4393,7 +4393,7 @@
       "theme": "",
       "date": "Fri, September 19, 2025",
       "url": "https://raddle.quest/2025/09/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HOUSE",
@@ -4413,7 +4413,7 @@
       "theme": "",
       "date": "Sat, September 20, 2025",
       "url": "https://raddle.quest/2025/09/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ITALIAN",
@@ -4435,7 +4435,7 @@
       "theme": "",
       "date": "Sun, September 21, 2025",
       "url": "https://raddle.quest/2025/09/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TUMBLE",
@@ -4454,7 +4454,7 @@
       "theme": "",
       "date": "Mon, September 22, 2025",
       "url": "https://raddle.quest/2025/09/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LOWER",
@@ -4475,7 +4475,7 @@
       "theme": "",
       "date": "Tue, September 23, 2025",
       "url": "https://raddle.quest/2025/09/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SOPHOMORE",
@@ -4497,7 +4497,7 @@
       "theme": "",
       "date": "Wed, September 24, 2025",
       "url": "https://raddle.quest/2025/09/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DOUBLE",
@@ -4518,7 +4518,7 @@
       "theme": "",
       "date": "Thu, September 25, 2025",
       "url": "https://raddle.quest/2025/09/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "KITCHEN",
@@ -4541,7 +4541,7 @@
       "theme": "",
       "date": "Fri, September 26, 2025",
       "url": "https://raddle.quest/2025/09/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GUM",
@@ -4563,7 +4563,7 @@
       "theme": "",
       "date": "Sat, September 27, 2025",
       "url": "https://raddle.quest/2025/09/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PHOBIA",
@@ -4584,7 +4584,7 @@
       "theme": "",
       "date": "Sun, September 28, 2025",
       "url": "https://raddle.quest/2025/09/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TOMATO",
@@ -4605,7 +4605,7 @@
       "theme": "",
       "date": "Mon, September 29, 2025",
       "url": "https://raddle.quest/2025/09/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STREET",
@@ -4625,7 +4625,7 @@
       "theme": "",
       "date": "Tue, September 30, 2025",
       "url": "https://raddle.quest/2025/09/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ROMANTIC",
@@ -4647,7 +4647,7 @@
       "theme": "",
       "date": "Wed, October 1, 2025",
       "url": "https://raddle.quest/2025/10/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LEGENDS",
@@ -4668,7 +4668,7 @@
       "theme": "",
       "date": "Thu, October 2, 2025",
       "url": "https://raddle.quest/2025/10/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ZERO",
@@ -4691,7 +4691,7 @@
       "theme": "",
       "date": "Fri, October 3, 2025",
       "url": "https://raddle.quest/2025/10/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CROSS",
@@ -4711,7 +4711,7 @@
       "theme": "",
       "date": "Sat, October 4, 2025",
       "url": "https://raddle.quest/2025/10/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ACROSS",
@@ -4734,7 +4734,7 @@
       "theme": "",
       "date": "Sun, October 5, 2025",
       "url": "https://raddle.quest/2025/10/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "IMPROVISATIONAL",
@@ -4756,7 +4756,7 @@
       "theme": "",
       "date": "Mon, October 6, 2025",
       "url": "https://raddle.quest/2025/10/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MAKE",
@@ -4779,7 +4779,7 @@
       "theme": "",
       "date": "Tue, October 7, 2025",
       "url": "https://raddle.quest/2025/10/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "NEVER",
@@ -4801,7 +4801,7 @@
       "theme": "",
       "date": "Wed, October 8, 2025",
       "url": "https://raddle.quest/2025/10/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TAKE",
@@ -4822,7 +4822,7 @@
       "theme": "",
       "date": "Thu, October 9, 2025",
       "url": "https://raddle.quest/2025/10/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BUZZER",
@@ -4844,7 +4844,7 @@
       "theme": "",
       "date": "Fri, October 10, 2025",
       "url": "https://raddle.quest/2025/10/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "NOISE",
@@ -4865,7 +4865,7 @@
       "theme": "",
       "date": "Sat, October 11, 2025",
       "url": "https://raddle.quest/2025/10/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GOLDEN",
@@ -4886,7 +4886,7 @@
       "theme": "",
       "date": "Sun, October 12, 2025",
       "url": "https://raddle.quest/2025/10/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MOLE",
@@ -4909,7 +4909,7 @@
       "theme": "",
       "date": "Mon, October 13, 2025",
       "url": "https://raddle.quest/2025/10/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RAIN",
@@ -4931,7 +4931,7 @@
       "theme": "",
       "date": "Tue, October 14, 2025",
       "url": "https://raddle.quest/2025/10/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FIELD",
@@ -4954,7 +4954,7 @@
       "theme": "",
       "date": "Wed, October 15, 2025",
       "url": "https://raddle.quest/2025/10/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MOUNTAIN",
@@ -4975,7 +4975,7 @@
       "theme": "",
       "date": "Thu, October 16, 2025",
       "url": "https://raddle.quest/2025/10/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PUT OUT",
@@ -4996,7 +4996,7 @@
       "theme": "",
       "date": "Fri, October 17, 2025",
       "url": "https://raddle.quest/2025/10/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SAHARA",
@@ -5016,7 +5016,7 @@
       "theme": "",
       "date": "Sat, October 18, 2025",
       "url": "https://raddle.quest/2025/10/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HARD",
@@ -5036,7 +5036,7 @@
       "theme": "",
       "date": "Sun, October 19, 2025",
       "url": "https://raddle.quest/2025/10/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PRIVATE",
@@ -5057,7 +5057,7 @@
       "theme": "",
       "date": "Mon, October 20, 2025",
       "url": "https://raddle.quest/2025/10/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LOCKED",
@@ -5076,7 +5076,7 @@
       "theme": "",
       "date": "Tue, October 21, 2025",
       "url": "https://raddle.quest/2025/10/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MURDER",
@@ -5097,7 +5097,7 @@
       "theme": "",
       "date": "Wed, October 22, 2025",
       "url": "https://raddle.quest/2025/10/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLACK",
@@ -5118,7 +5118,7 @@
       "theme": "",
       "date": "Thu, October 23, 2025",
       "url": "https://raddle.quest/2025/10/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RED",
@@ -5139,7 +5139,7 @@
       "theme": "",
       "date": "Fri, October 24, 2025",
       "url": "https://raddle.quest/2025/10/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TWIST",
@@ -5160,7 +5160,7 @@
       "theme": "",
       "date": "Sat, October 25, 2025",
       "url": "https://raddle.quest/2025/10/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CRUELLA",
@@ -5182,7 +5182,7 @@
       "theme": "",
       "date": "Sun, October 26, 2025",
       "url": "https://raddle.quest/2025/10/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "AUSTIN",
@@ -5204,7 +5204,7 @@
       "theme": "",
       "date": "Mon, October 27, 2025",
       "url": "https://raddle.quest/2025/10/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WONDER",
@@ -5225,7 +5225,7 @@
       "theme": "",
       "date": "Tue, October 28, 2025",
       "url": "https://raddle.quest/2025/10/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DOROTHY",
@@ -5247,7 +5247,7 @@
       "theme": "",
       "date": "Wed, October 29, 2025",
       "url": "https://raddle.quest/2025/10/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CHARLIE",
@@ -5268,7 +5268,7 @@
       "theme": "",
       "date": "Thu, October 30, 2025",
       "url": "https://raddle.quest/2025/10/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GEORGE",
@@ -5291,7 +5291,7 @@
       "theme": "",
       "date": "Fri, October 31, 2025",
       "url": "https://raddle.quest/2025/10/31",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TINKER",
@@ -5311,7 +5311,7 @@
       "theme": "",
       "date": "Sat, November 1, 2025",
       "url": "https://raddle.quest/2025/11/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLOCK",
@@ -5332,7 +5332,7 @@
       "theme": "",
       "date": "Sun, November 2, 2025",
       "url": "https://raddle.quest/2025/11/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BOUNCY",
@@ -5353,7 +5353,7 @@
       "theme": "",
       "date": "Mon, November 3, 2025",
       "url": "https://raddle.quest/2025/11/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CORN",
@@ -5374,7 +5374,7 @@
       "theme": "",
       "date": "Tue, November 4, 2025",
       "url": "https://raddle.quest/2025/11/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "EGG",
@@ -5395,7 +5395,7 @@
       "theme": "",
       "date": "Wed, November 5, 2025",
       "url": "https://raddle.quest/2025/11/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BEER",
@@ -5417,7 +5417,7 @@
       "theme": "",
       "date": "Thu, November 6, 2025",
       "url": "https://raddle.quest/2025/11/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FOUR",
@@ -5439,7 +5439,7 @@
       "theme": "",
       "date": "Fri, November 7, 2025",
       "url": "https://raddle.quest/2025/11/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CAPTURE",
@@ -5461,7 +5461,7 @@
       "theme": "",
       "date": "Sat, November 8, 2025",
       "url": "https://raddle.quest/2025/11/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SUNDAY",
@@ -5485,7 +5485,7 @@
       "theme": "",
       "date": "Sun, November 9, 2025",
       "url": "https://raddle.quest/2025/11/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RED",
@@ -5507,7 +5507,7 @@
       "theme": "",
       "date": "Mon, November 10, 2025",
       "url": "https://raddle.quest/2025/11/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BEANS",
@@ -5529,7 +5529,7 @@
       "theme": "",
       "date": "Tue, November 11, 2025",
       "url": "https://raddle.quest/2025/11/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LUST",
@@ -5548,7 +5548,7 @@
       "theme": "",
       "date": "Thu, November 13, 2025",
       "url": "https://raddle.quest/2025/11/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "KINGDOM",
@@ -5570,7 +5570,7 @@
       "theme": "",
       "date": "Fri, November 14, 2025",
       "url": "https://raddle.quest/2025/11/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RADIO",
@@ -5592,7 +5592,7 @@
       "theme": "",
       "date": "Sat, November 15, 2025",
       "url": "https://raddle.quest/2025/11/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HEAD",
@@ -5613,7 +5613,7 @@
       "theme": "",
       "date": "Sun, November 16, 2025",
       "url": "https://raddle.quest/2025/11/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SIGNAL",
@@ -5635,7 +5635,7 @@
       "theme": "",
       "date": "Mon, November 17, 2025",
       "url": "https://raddle.quest/2025/11/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "NINE",
@@ -5657,7 +5657,7 @@
       "theme": "",
       "date": "Tue, November 18, 2025",
       "url": "https://raddle.quest/2025/11/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HEAVENS",
@@ -5678,7 +5678,7 @@
       "theme": "",
       "date": "Wed, November 19, 2025",
       "url": "https://raddle.quest/2025/11/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RAGS",
@@ -5699,7 +5699,7 @@
       "theme": "",
       "date": "Thu, November 20, 2025",
       "url": "https://raddle.quest/2025/11/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DRESSED",
@@ -5721,7 +5721,7 @@
       "theme": "",
       "date": "Fri, November 21, 2025",
       "url": "https://raddle.quest/2025/11/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HELL",
@@ -5744,7 +5744,7 @@
       "theme": "",
       "date": "Sat, November 22, 2025",
       "url": "https://raddle.quest/2025/11/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ROAST",
@@ -5766,7 +5766,7 @@
       "theme": "",
       "date": "Sun, November 23, 2025",
       "url": "https://raddle.quest/2025/11/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GREEN",
@@ -5789,7 +5789,7 @@
       "theme": "",
       "date": "Mon, November 24, 2025",
       "url": "https://raddle.quest/2025/11/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MACY'S",
@@ -5811,7 +5811,7 @@
       "theme": "",
       "date": "Tue, November 25, 2025",
       "url": "https://raddle.quest/2025/11/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SWEET",
@@ -5832,7 +5832,7 @@
       "theme": "",
       "date": "Wed, November 26, 2025",
       "url": "https://raddle.quest/2025/11/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GIVING",
@@ -5853,7 +5853,7 @@
       "theme": "",
       "date": "Thu, November 27, 2025",
       "url": "https://raddle.quest/2025/11/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PUMPKIN",
@@ -5874,7 +5874,7 @@
       "theme": "",
       "date": "Fri, November 28, 2025",
       "url": "https://raddle.quest/2025/11/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ALICE'S",
@@ -5895,7 +5895,7 @@
       "theme": "",
       "date": "Sat, November 29, 2025",
       "url": "https://raddle.quest/2025/11/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ADELE",
@@ -5913,7 +5913,7 @@
       "theme": "",
       "date": "Sun, November 30, 2025",
       "url": "https://raddle.quest/2025/11/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CURRY",
@@ -5934,7 +5934,7 @@
       "theme": "",
       "date": "Mon, December 1, 2025",
       "url": "https://raddle.quest/2025/12/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PILLOW",
@@ -5956,7 +5956,7 @@
       "theme": "",
       "date": "Tue, December 2, 2025",
       "url": "https://raddle.quest/2025/12/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GRUMPY",
@@ -5977,7 +5977,7 @@
       "theme": "",
       "date": "Wed, December 3, 2025",
       "url": "https://raddle.quest/2025/12/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STRAY",
@@ -5999,7 +5999,7 @@
       "theme": "",
       "date": "Thu, December 4, 2025",
       "url": "https://raddle.quest/2025/12/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STAR",
@@ -6021,7 +6021,7 @@
       "theme": "",
       "date": "Fri, December 5, 2025",
       "url": "https://raddle.quest/2025/12/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BODY",
@@ -6043,7 +6043,7 @@
       "theme": "",
       "date": "Sat, December 6, 2025",
       "url": "https://raddle.quest/2025/12/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CODE",
@@ -6065,7 +6065,7 @@
       "theme": "",
       "date": "Sun, December 7, 2025",
       "url": "https://raddle.quest/2025/12/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RES",
@@ -6087,7 +6087,7 @@
       "theme": "",
       "date": "Mon, December 8, 2025",
       "url": "https://raddle.quest/2025/12/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CURSED",
@@ -6107,7 +6107,7 @@
       "theme": "",
       "date": "Tue, December 9, 2025",
       "url": "https://raddle.quest/2025/12/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SKY",
@@ -6127,7 +6127,7 @@
       "theme": "",
       "date": "Wed, December 10, 2025",
       "url": "https://raddle.quest/2025/12/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SO",
@@ -6147,7 +6147,7 @@
       "theme": "",
       "date": "Thu, December 11, 2025",
       "url": "https://raddle.quest/2025/12/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STATION",
@@ -6169,7 +6169,7 @@
       "theme": "",
       "date": "Fri, December 12, 2025",
       "url": "https://raddle.quest/2025/12/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ARK",
@@ -6188,7 +6188,7 @@
       "theme": "",
       "date": "Sat, December 13, 2025",
       "url": "https://raddle.quest/2025/12/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ETERNAL",
@@ -6210,7 +6210,7 @@
       "theme": "",
       "date": "Sun, December 14, 2025",
       "url": "https://raddle.quest/2025/12/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LIME",
@@ -6232,7 +6232,7 @@
       "theme": "",
       "date": "Mon, December 15, 2025",
       "url": "https://raddle.quest/2025/12/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FLASH",
@@ -6252,7 +6252,7 @@
       "theme": "",
       "date": "Tue, December 16, 2025",
       "url": "https://raddle.quest/2025/12/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "NEON",
@@ -6274,7 +6274,7 @@
       "theme": "",
       "date": "Wed, December 17, 2025",
       "url": "https://raddle.quest/2025/12/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CANDLE",
@@ -6295,7 +6295,7 @@
       "theme": "",
       "date": "Thu, December 18, 2025",
       "url": "https://raddle.quest/2025/12/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "STOP",
@@ -6314,7 +6314,7 @@
       "theme": "",
       "date": "Fri, December 19, 2025",
       "url": "https://raddle.quest/2025/12/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ELECTRIC",
@@ -6337,7 +6337,7 @@
       "theme": "",
       "date": "Sat, December 20, 2025",
       "url": "https://raddle.quest/2025/12/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "THIS IS",
@@ -6358,7 +6358,7 @@
       "theme": "",
       "date": "Sun, December 21, 2025",
       "url": "https://raddle.quest/2025/12/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SORRY",
@@ -6379,7 +6379,7 @@
       "theme": "",
       "date": "Mon, December 22, 2025",
       "url": "https://raddle.quest/2025/12/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SEANCE",
@@ -6400,7 +6400,7 @@
       "theme": "",
       "date": "Tue, December 23, 2025",
       "url": "https://raddle.quest/2025/12/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SMOKE",
@@ -6424,7 +6424,7 @@
       "theme": "",
       "date": "Wed, December 24, 2025",
       "url": "https://raddle.quest/2025/12/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SPLIT",
@@ -6444,7 +6444,7 @@
       "theme": "",
       "date": "Thu, December 25, 2025",
       "url": "https://raddle.quest/2025/12/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLACK",
@@ -6466,7 +6466,7 @@
       "theme": "",
       "date": "Fri, December 26, 2025",
       "url": "https://raddle.quest/2025/12/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DARN",
@@ -6487,7 +6487,7 @@
       "theme": "",
       "date": "Sat, December 27, 2025",
       "url": "https://raddle.quest/2025/12/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RICE",
@@ -6509,7 +6509,7 @@
       "theme": "",
       "date": "Sun, December 28, 2025",
       "url": "https://raddle.quest/2025/12/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LIFE",
@@ -6530,7 +6530,7 @@
       "theme": "",
       "date": "Mon, December 29, 2025",
       "url": "https://raddle.quest/2025/12/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TITAN",
@@ -6552,7 +6552,7 @@
       "theme": "",
       "date": "Tue, December 30, 2025",
       "url": "https://raddle.quest/2025/12/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WAKE UP",
@@ -6575,7 +6575,7 @@
       "theme": "",
       "date": "Wed, December 31, 2025",
       "url": "https://raddle.quest/2025/12/31",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ADIEU",
@@ -6596,7 +6596,7 @@
       "theme": "",
       "date": "Thu, January 1, 2026",
       "url": "https://raddle.quest/2026/01/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BAYOU",
@@ -6617,7 +6617,7 @@
       "theme": "",
       "date": "Fri, January 2, 2026",
       "url": "https://raddle.quest/2026/01/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CLUB",
@@ -6636,7 +6636,7 @@
       "theme": "",
       "date": "Sat, January 3, 2026",
       "url": "https://raddle.quest/2026/01/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DOLLAR",
@@ -6658,7 +6658,7 @@
       "theme": "",
       "date": "Sun, January 4, 2026",
       "url": "https://raddle.quest/2026/01/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ELIZABETH II",
@@ -6681,7 +6681,7 @@
       "theme": "",
       "date": "Mon, January 5, 2026",
       "url": "https://raddle.quest/2026/01/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FLIGHT",
@@ -6703,7 +6703,7 @@
       "theme": "",
       "date": "Tue, January 6, 2026",
       "url": "https://raddle.quest/2026/01/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GUM",
@@ -6724,7 +6724,7 @@
       "theme": "",
       "date": "Wed, January 7, 2026",
       "url": "https://raddle.quest/2026/01/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HOTEL",
@@ -6744,7 +6744,7 @@
       "theme": "",
       "date": "Thu, January 8, 2026",
       "url": "https://raddle.quest/2026/01/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "IRVING",
@@ -6764,7 +6764,7 @@
       "theme": "",
       "date": "Fri, January 9, 2026",
       "url": "https://raddle.quest/2026/01/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "JAWS",
@@ -6779,7 +6779,7 @@
       "theme": "",
       "date": "Sat, January 10, 2026",
       "url": "https://raddle.quest/2026/01/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "KIWI",
@@ -6802,7 +6802,7 @@
       "theme": "",
       "date": "Sun, January 11, 2026",
       "url": "https://raddle.quest/2026/01/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LLAMA",
@@ -6824,7 +6824,7 @@
       "theme": "",
       "date": "Mon, January 12, 2026",
       "url": "https://raddle.quest/2026/01/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MANGO",
@@ -6845,7 +6845,7 @@
       "theme": "",
       "date": "Tue, January 13, 2026",
       "url": "https://raddle.quest/2026/01/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MOLASSES",
@@ -6866,7 +6866,7 @@
       "theme": "",
       "date": "Wed, January 14, 2026",
       "url": "https://raddle.quest/2026/01/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PENNY",
@@ -6887,7 +6887,7 @@
       "theme": "",
       "date": "Thu, January 15, 2026",
       "url": "https://raddle.quest/2026/01/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "YEW",
@@ -6908,7 +6908,7 @@
       "theme": "",
       "date": "Fri, January 16, 2026",
       "url": "https://raddle.quest/2026/01/16",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PUZZLE",
@@ -6930,7 +6930,7 @@
       "theme": "",
       "date": "Sat, January 17, 2026",
       "url": "https://raddle.quest/2026/01/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SHADOW",
@@ -6952,7 +6952,7 @@
       "theme": "",
       "date": "Sun, January 18, 2026",
       "url": "https://raddle.quest/2026/01/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "I HAVE",
@@ -6973,7 +6973,7 @@
       "theme": "",
       "date": "Mon, January 19, 2026",
       "url": "https://raddle.quest/2026/01/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CIVIL",
@@ -6996,7 +6996,7 @@
       "theme": "",
       "date": "Tue, January 20, 2026",
       "url": "https://raddle.quest/2026/01/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MARCH",
@@ -7015,7 +7015,7 @@
       "theme": "",
       "date": "Wed, January 21, 2026",
       "url": "https://raddle.quest/2026/01/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MONTGOMERY",
@@ -7037,7 +7037,7 @@
       "theme": "",
       "date": "Thu, January 22, 2026",
       "url": "https://raddle.quest/2026/01/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LETTER",
@@ -7057,7 +7057,7 @@
       "theme": "",
       "date": "Fri, January 23, 2026",
       "url": "https://raddle.quest/2026/01/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "LINCOLN",
@@ -7077,7 +7077,7 @@
       "theme": "",
       "date": "Sat, January 24, 2026",
       "url": "https://raddle.quest/2026/01/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SCREECH",
@@ -7099,7 +7099,7 @@
       "theme": "",
       "date": "Sun, January 25, 2026",
       "url": "https://raddle.quest/2026/01/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WHOOPING",
@@ -7120,7 +7120,7 @@
       "theme": "",
       "date": "Mon, January 26, 2026",
       "url": "https://raddle.quest/2026/01/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PURPLE",
@@ -7143,7 +7143,7 @@
       "theme": "",
       "date": "Tue, January 27, 2026",
       "url": "https://raddle.quest/2026/01/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CHIHUAHUAN",
@@ -7165,7 +7165,7 @@
       "theme": "",
       "date": "Wed, January 28, 2026",
       "url": "https://raddle.quest/2026/01/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ANDEAN",
@@ -7187,7 +7187,7 @@
       "theme": "",
       "date": "Thu, January 29, 2026",
       "url": "https://raddle.quest/2026/01/29",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "RESPLENDENT",
@@ -7209,7 +7209,7 @@
       "theme": "",
       "date": "Fri, January 30, 2026",
       "url": "https://raddle.quest/2026/01/30",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SCARLET",
@@ -7231,7 +7231,7 @@
       "theme": "",
       "date": "Sat, January 31, 2026",
       "url": "https://raddle.quest/2026/01/31",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TOCO",
@@ -7251,7 +7251,7 @@
       "theme": "",
       "date": "Sun, February 1, 2026",
       "url": "https://raddle.quest/2026/02/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GROUND",
@@ -7274,7 +7274,7 @@
       "theme": "",
       "date": "Mon, February 2, 2026",
       "url": "https://raddle.quest/2026/02/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GROUND",
@@ -7295,7 +7295,7 @@
       "theme": "",
       "date": "Tue, February 3, 2026",
       "url": "https://raddle.quest/2026/02/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GROUND",
@@ -7316,7 +7316,7 @@
       "theme": "",
       "date": "Wed, February 4, 2026",
       "url": "https://raddle.quest/2026/02/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GROUND",
@@ -7340,7 +7340,7 @@
       "theme": "",
       "date": "Thu, February 5, 2026",
       "url": "https://raddle.quest/2026/02/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GROUND",
@@ -7361,7 +7361,7 @@
       "theme": "",
       "date": "Fri, February 6, 2026",
       "url": "https://raddle.quest/2026/02/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SUPER",
@@ -7384,7 +7384,7 @@
       "theme": "",
       "date": "Sat, February 7, 2026",
       "url": "https://raddle.quest/2026/02/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SHOT",
@@ -7405,7 +7405,7 @@
       "theme": "",
       "date": "Sun, February 8, 2026",
       "url": "https://raddle.quest/2026/02/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BACKSIDE",
@@ -7427,7 +7427,7 @@
       "theme": "",
       "date": "Mon, February 9, 2026",
       "url": "https://raddle.quest/2026/02/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "OMEGA",
@@ -7448,7 +7448,7 @@
       "theme": "",
       "date": "Tue, February 10, 2026",
       "url": "https://raddle.quest/2026/02/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "GUNDERSEN",
@@ -7470,7 +7470,7 @@
       "theme": "",
       "date": "Wed, February 11, 2026",
       "url": "https://raddle.quest/2026/02/11",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TRIPLE",
@@ -7492,7 +7492,7 @@
       "theme": "",
       "date": "Thu, February 12, 2026",
       "url": "https://raddle.quest/2026/02/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "NOSE",
@@ -7514,7 +7514,7 @@
       "theme": "",
       "date": "Fri, February 13, 2026",
       "url": "https://raddle.quest/2026/02/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FORTNER",
@@ -7537,7 +7537,7 @@
       "theme": "",
       "date": "Sat, February 14, 2026",
       "url": "https://raddle.quest/2026/02/14",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HERRING",
@@ -7559,7 +7559,7 @@
       "theme": "",
       "date": "Sun, February 15, 2026",
       "url": "https://raddle.quest/2026/02/15",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CAMEL",
@@ -7580,7 +7580,7 @@
       "theme": "",
       "date": "Tue, February 17, 2026",
       "url": "https://raddle.quest/2026/02/17",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SKI",
@@ -7599,7 +7599,7 @@
       "theme": "",
       "date": "Wed, February 18, 2026",
       "url": "https://raddle.quest/2026/02/18",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "CLAP",
@@ -7620,7 +7620,7 @@
       "theme": "",
       "date": "Thu, February 19, 2026",
       "url": "https://raddle.quest/2026/02/19",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "HEATED",
@@ -7641,7 +7641,7 @@
       "theme": "",
       "date": "Fri, February 20, 2026",
       "url": "https://raddle.quest/2026/02/20",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "ITALY",
@@ -7661,7 +7661,7 @@
       "theme": "",
       "date": "Sat, February 21, 2026",
       "url": "https://raddle.quest/2026/02/21",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SLIVER",
@@ -7682,7 +7682,7 @@
       "theme": "",
       "date": "Sun, February 22, 2026",
       "url": "https://raddle.quest/2026/02/22",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MARCH",
@@ -7704,7 +7704,7 @@
       "theme": "",
       "date": "Mon, February 23, 2026",
       "url": "https://raddle.quest/2026/02/23",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PEARL",
@@ -7723,7 +7723,7 @@
       "theme": "",
       "date": "Tue, February 24, 2026",
       "url": "https://raddle.quest/2026/02/24",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "WITCH",
@@ -7745,7 +7745,7 @@
       "theme": "",
       "date": "Wed, February 25, 2026",
       "url": "https://raddle.quest/2026/02/25",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "DOC",
@@ -7764,7 +7764,7 @@
       "theme": "",
       "date": "Thu, February 26, 2026",
       "url": "https://raddle.quest/2026/02/26",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BISCUIT",
@@ -7785,7 +7785,7 @@
       "theme": "",
       "date": "Fri, February 27, 2026",
       "url": "https://raddle.quest/2026/02/27",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TOMMY",
@@ -7806,7 +7806,7 @@
       "theme": "",
       "date": "Sat, February 28, 2026",
       "url": "https://raddle.quest/2026/02/28",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PAY",
@@ -7827,7 +7827,7 @@
       "theme": "",
       "date": "Sun, March 1, 2026",
       "url": "https://raddle.quest/2026/03/01",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PAINT",
@@ -7848,7 +7848,7 @@
       "theme": "",
       "date": "Mon, March 2, 2026",
       "url": "https://raddle.quest/2026/03/02",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PAGE",
@@ -7869,7 +7869,7 @@
       "theme": "",
       "date": "Tue, March 3, 2026",
       "url": "https://raddle.quest/2026/03/03",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PAIN",
@@ -7889,7 +7889,7 @@
       "theme": "",
       "date": "Wed, March 4, 2026",
       "url": "https://raddle.quest/2026/03/04",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "PALE",
@@ -7909,7 +7909,7 @@
       "theme": "",
       "date": "Thu, March 5, 2026",
       "url": "https://raddle.quest/2026/03/05",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "FRANK",
@@ -7930,7 +7930,7 @@
       "theme": "Best Picture nominees",
       "date": "Fri, March 6, 2026",
       "url": "https://raddle.quest/2026/03/06",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SAVE",
@@ -7951,7 +7951,7 @@
       "theme": "Best Picture nominees",
       "date": "Sat, March 7, 2026",
       "url": "https://raddle.quest/2026/03/07",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SENTIMENTAL",
@@ -7974,7 +7974,7 @@
       "theme": "Best Picture nominees",
       "date": "Sun, March 8, 2026",
       "url": "https://raddle.quest/2026/03/08",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "SECRET",
@@ -7994,7 +7994,7 @@
       "theme": "Best Picture nominees",
       "date": "Mon, March 9, 2026",
       "url": "https://raddle.quest/2026/03/09",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "TRAIN",
@@ -8016,7 +8016,7 @@
       "theme": "Best Picture nominees",
       "date": "Tue, March 10, 2026",
       "url": "https://raddle.quest/2026/03/10",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MEAT",
@@ -8039,7 +8039,7 @@
       "theme": "Food",
       "description": "The journey from raw MEAT to a perfect TACO illustrates culinary alchemy at its finest. Through heat, spices, and technique, simple ingredients transform into complex flavors—each step of preparation adding depth until something entirely new emerges.",
       "date": "March 11, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "HAM",
@@ -8061,7 +8061,7 @@
       "theme": "Best Picture nominees",
       "date": "Thu, March 12, 2026",
       "url": "https://raddle.quest/2026/03/12",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "MARTY",
@@ -8083,7 +8083,7 @@
       "theme": "Best Picture nominees",
       "date": "Fri, March 13, 2026",
       "url": "https://raddle.quest/2026/03/13",
-      "source": "scraped"
+      "source": "upstream"
     },
     {
       "start": "BLUE",
@@ -8108,7 +8108,7 @@
       "theme": "Colors",
       "description": "Watch the sky transform from deep BLUE to soft PINK during sunset. This daily metamorphosis reminds us that colors exist on a spectrum, and the journey from one hue to another passes through shades we rarely pause to appreciate.",
       "date": "March 14, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "MOON",
@@ -8133,7 +8133,7 @@
       "theme": "Astronomy",
       "description": "Ancient sailors navigated by both MOON and STAR, each celestial body offering its own guidance. While one waxes and wanes, the others remain constant—together they map the heavens, showing us that even the night sky tells stories of transformation and permanence.",
       "date": "March 15, 2026",
-      "source": "custom"
+      "source": "local"
     },
     {
       "start": "FIRE",
@@ -8152,7 +8152,7 @@
       "theme": "Safety",
       "description": "Running from FIRE toward somewhere SAFE is instinct, but the transformation between danger and security happens through deliberate choices. What once threatened to consume us can become controlled, useful, even comforting when we learn to contain and direct it properly.",
       "date": "March 16, 2026",
-      "source": "custom"
+      "source": "local"
     }
   ]
 }
