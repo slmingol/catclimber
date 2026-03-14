@@ -638,9 +638,37 @@ function renderLadder() {
                 input.style.opacity = '0.4';
                 input.style.cursor = 'not-allowed';
             } else if (isLocked) {
-                // Make locked words read-only
+                // Make locked words read-only and prevent all interaction
                 input.readOnly = true;
                 input.classList.add('completed');
+                input.style.cursor = 'not-allowed';
+                
+                // Add event listeners to block editing attempts
+                input.addEventListener('keydown', (e) => {
+                    if (lockedWords.has(index)) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+                input.addEventListener('input', (e) => {
+                    if (lockedWords.has(index)) {
+                        e.preventDefault();
+                        e.target.value = userSolution[index] || '';
+                        return false;
+                    }
+                });
+                input.addEventListener('paste', (e) => {
+                    if (lockedWords.has(index)) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+                input.addEventListener('cut', (e) => {
+                    if (lockedWords.has(index)) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
             }
             
             // Create placeholder with emoji boxes

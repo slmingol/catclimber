@@ -1,6 +1,6 @@
 services:
   catclimber:
-    image: ghcr.io/slmingol/catclimber:main
+    image: ghcr.io/slmingol/chanjinxamagig:latest
     ports:
       - "3992:80"
     restart: unless-stopped
