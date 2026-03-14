@@ -551,21 +551,16 @@ header {
 
 .clue {
     padding: 6px 4px 3px 4px;
-    background: rgba(55, 48, 163, 0.6);
+    background: transparent;
     border: 1px solid var(--border-secondary);
     border-radius: 4px;
     font-size: 17px;
     line-height: 1.5;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: rgba(243, 244, 246, 1);
+    color: var(--text-primary);
     font-family: "chivo-mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-weight: 200;
-}
-
-[data-theme="light"] .clue {
-    background: rgba(187, 247, 208, 0.7);
-    color: #1a1a1a;
 }
 
 .clue:hover {
@@ -581,18 +576,19 @@ header {
 }
 
 .clue-revealed-word {
-    background: rgba(76, 175, 80, 0.5);
-    color: #fff;
-    font-weight: 700;
-    padding: 2px 4px;
+    background: rgba(55, 48, 163, 0.6);
+    color: rgba(243, 244, 246, 1);
+    font-weight: 200;
+    padding: 6px 4px 3px 4px;
     border-radius: 3px;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    border: 1px solid var(--border-secondary);
 }
 
 [data-theme="light"] .clue-revealed-word {
-    background: rgba(76, 175, 80, 0.6);
-    color: #fff;
+    background: rgba(187, 247, 208, 0.7);
+    color: #1a1a1a;
 }
 
 .used-clues .clue {
