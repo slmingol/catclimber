@@ -440,19 +440,18 @@ header {
     border-left: none;
     border-radius: 0 16px 16px 0;
     cursor: pointer;
-    display: none; /* Hide by default */
+    display: flex; /* Always visible */
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
     padding-left: 6px;
+    opacity: 0.6;
 }
 
-/* Show hint button only when input is focused */
-.ladder-input:focus ~ .hint-btn {
-    display: flex;
-}
-
+/* Highlight hint button when input is focused or button is hovered */
+.ladder-input:focus ~ .hint-btn,
 .hint-btn:hover {
+    opacity: 1;
     background: var(--accent-bg-hover);
     border-color: var(--accent-border);
 }

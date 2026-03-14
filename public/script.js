@@ -729,20 +729,18 @@ function renderLadder() {
             
             stepDiv.appendChild(input);
             
-            // Add hint button to all middle rungs (not start/end)
-            if (index > 0 && index < currentPuzzle.solution.length - 1) {
+            // Add hint button to accessible rungs only (adjacent to filled words)
+            if (isRungAccessible(index)) {
                 const hintBtn = document.createElement('button');
                 hintBtn.className = 'hint-btn';
                 hintBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6c0 2 1 3 2 4l2 2v2h4v-2l2-2c1-1 2-2 2-4a6 6 0 0 0-6-6z"></path><path d="M10 18h4"></path><path d="M11 20h2"></path></svg>`;
                 hintBtn.title = 'Show clue for this word';
                 hintBtn.addEventListener('click', (e) => {
-                    console.log('Hint button clicked for index:', index);
                     e.preventDefault();
                     e.stopPropagation();
                     showClueHint(index);
                 });
                 stepDiv.appendChild(hintBtn);
-                console.log(`Hint button added for rung ${index}`);
             }
             
             // Add hint span for validation feedback
@@ -896,13 +894,9 @@ function showClueHint(index) {
     }
     
     // First click: show confirmation modal
-    console.log('showClueHint called for index:', index);
-    console.log('hintModal element:', hintModal);
-    
     if (hintModal) {
         hintModal.style.display = 'flex';
         hintModal.dataset.targetIndex = index;
-        console.log('Modal display set to:', hintModal.style.display);
         // Focus the modal to enable keyboard shortcuts
         setTimeout(() => hintModal.focus(), 0);
     } else {
