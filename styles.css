@@ -310,7 +310,7 @@ header {
 
 .puzzle-main {
     display: grid;
-    grid-template-columns: 423px 743px;
+    grid-template-columns: 423px 706px;
     gap: 40px;
     margin-bottom: 40px;
 }
