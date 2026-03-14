@@ -296,7 +296,8 @@ let lockedWords = new Set(); // Track which word indices are locked after comple
 const startWordEl = document.getElementById('start-word');
 const endWordEl = document.getElementById('end-word');
 const puzzleDateEl = document.getElementById('puzzle-date');
-const puzzleThemeEl = document.getElementById('puzzle-theme');
+const puzzleNumberTextEl = document.getElementById('puzzle-number-text');
+const puzzleThemeTextEl = document.getElementById('puzzle-theme-text');
 const ladderEl = document.getElementById('ladder');
 const cluesEl = document.getElementById('clues');
 const checkBtn = document.getElementById('check-btn');
@@ -543,7 +544,8 @@ function renderPuzzle() {
         puzzleDateEl.textContent = currentPuzzle.date;
     }
     
-    puzzleThemeEl.textContent = `#${currentPuzzleIndex + 1} • ${currentPuzzle.theme}`;
+    puzzleNumberTextEl.textContent = `#${currentPuzzleIndex + 1}`;
+    puzzleThemeTextEl.textContent = currentPuzzle.theme;
     
     // Render ladder
     renderLadder();

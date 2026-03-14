@@ -230,12 +230,25 @@ header {
     font-size: 11px;
     color: var(--text-primary);
     margin-bottom: 8px;
-    display: inline-block;
-    background: var(--bg-button);
+    display: inline-flex;
     border: 1px solid var(--border-secondary);
     border-radius: 20px;
-    padding: 2px 8px;
+    overflow: hidden;
     font-weight: 600;
+}
+
+.puzzle-number-left {
+    background: rgba(100, 100, 150, 0.4);
+    padding: 2px 8px;
+}
+
+.puzzle-number-right {
+    background: var(--bg-button);
+    padding: 2px 8px;
+}
+
+[data-theme="light"] .puzzle-number-left {
+    background: rgba(100, 100, 150, 0.2);
 }
 
 .puzzle-header h2 {
