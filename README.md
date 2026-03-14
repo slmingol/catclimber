@@ -1,6 +1,6 @@
 # CAT·CLIMBER - Word Ladder Puzzle Game
 
-![CAT·CLIMBER Logo](catclimber-logo.png)
+<img src="catclimber-logo.png" alt="CAT·CLIMBER Logo" width="150">
 
 ![Version](https://img.shields.io/badge/Version-v1.1.4-blue?style=flat)
 ![Build](https://img.shields.io/github/actions/workflow/status/slmingol/catclimber/docker-build.yml?branch=main&style=flat&label=Build)
