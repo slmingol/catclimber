@@ -845,7 +845,7 @@ function updateLetterChangeBoxes(completedIndex) {
                 existingBox.remove();
             }
             
-            // Add new letter change box only if both words are revealed
+            // Add new letter change box - prev word to completed word
             const prevWord = getRevealedWord(prevIndex);
             const currentWord = getRevealedWord(completedIndex);
             
@@ -855,6 +855,7 @@ function updateLetterChangeBoxes(completedIndex) {
                     const changeBox = document.createElement('div');
                     changeBox.className = 'letter-change-box';
                     changeBox.textContent = change;
+                    changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
                     prevStep.appendChild(changeBox);
                 }
             }
@@ -872,9 +873,9 @@ function updateLetterChangeBoxes(completedIndex) {
                 existingBox.remove();
             }
             
-            // Add new letter change box as soon as current word is revealed
+            // Add new letter change box - completed word to next word
             const currentWord = getRevealedWord(completedIndex);
-            const nextWord = currentPuzzle.solution[nextIndex]; // Always use solution for next word
+            const nextWord = currentPuzzle.solution[nextIndex]; // Always use solution
             
             if (currentWord && nextWord && currentWord.length === nextWord.length) {
                 const change = getLetterChange(currentWord, nextWord);
@@ -882,6 +883,7 @@ function updateLetterChangeBoxes(completedIndex) {
                     const changeBox = document.createElement('div');
                     changeBox.className = 'letter-change-box';
                     changeBox.textContent = change;
+                    changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
                     currentStep.appendChild(changeBox);
                 }
             }
