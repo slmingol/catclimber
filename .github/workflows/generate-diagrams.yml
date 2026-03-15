@@ -27,13 +27,19 @@ jobs:
         with:
           node-version: '20'
       
-      - name: Install dependencies
+      - name: Install Excalidraw CLI
         run: |
-          npm install puppeteer
+          npm install -g excalidraw-cli
       
       - name: Generate PNGs from Excalidraw files
         run: |
-          node scripts/export-diagrams.js
+          for file in docs/diagrams/*.excalidraw; do
+            if [ -f "$file" ]; then
+              output="${file%.excalidraw}.png"
+              echo "Converting $file to $output"
+              excalidraw-cli "$file" "$output"
+            fi
+          done
       
       - name: Configure Git
         run: |
