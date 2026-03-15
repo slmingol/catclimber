@@ -669,47 +669,25 @@ function getDescriptiveTextFromClue(clue) {
         return quotedMatch[1];
     }
     
-    // Extract pattern "^ ___, text" → grab text after comma, but clean it
-    // Example: "^ ___, one skilled at ^s" → "one skilled at"
-    const underscoreCommaPattern = /\^\s+___,\s+(.+?)(?:\s+\^|$)/i;
-    const underscoreMatch = clue.match(underscoreCommaPattern);
-    if (underscoreMatch) {
-        let extracted = underscoreMatch[1].trim();
-        // Remove ^ placeholders
-        extracted = extracted.replace(/\^s?/g, '').trim();
-        // Take first 1-3 words only
-        const words = extracted.split(/\s+/).slice(0, 3).join(' ');
-        return words;
+    // Extract simple "is/are/was" patterns
+    // "A ^ is the fourth-highest ___" → "is a"
+    // "A ^ is a ___" → "is a"
+    if (lower.includes('^ is a') || lower.includes('^ is an') || lower.includes('^ is the')) {
+        return 'is a';
+    }
+    if (lower.includes('^ are') || lower.includes('^ was') || lower.includes('^ were')) {
+        return lower.includes('^ are') ? 'are' : 'was';
     }
     
-    // Extract pattern "___ ^, text" → grab text after comma
-    // Example: "___ ^, a way to score" → "a way to"
-    const commaAfterCaretPattern = /___\s+\^,\s+(.+)$/i;
-    const commaMatch = clue.match(commaAfterCaretPattern);
-    if (commaMatch) {
-        let extracted = commaMatch[1].trim();
-        // Take first 1-3 words only
-        const words = extracted.split(/\s+/).slice(0, 3).join(' ');
-        return words;
+    // Extract "runs on a" type patterns - keep only first 1-2 words
+    const runsPattern = /\^\s+(runs on|works on|lives in|comes from|goes to)\s+/i;
+    const runsMatch = clue.match(runsPattern);
+    if (runsMatch) {
+        return runsMatch[1];
     }
     
-    // Extract text between "^ " and markers
-    // Examples: "A ^ runs on a ___", "A ^ is a ___"
-    const betweenPattern = /\^\s+([^_^]+?)(?:\s+___|\s+to\s+(?:get|obtain)|,|$)/i;
-    const match = clue.match(betweenPattern);
-    if (match) {
-        let extracted = match[1].trim();
-        // Clean up
-        extracted = extracted.replace(/^(a|an|the)\s+/i, '');
-        extracted = extracted.replace(/[,.]$/, '');
-        
-        // Shorten to max 3 words
-        const words = extracted.split(/\s+/);
-        if (words.length >= 1) {
-            return words.slice(0, 3).join(' ');
-        }
-    }
-    
+    // For anything else, don't try to extract - return empty to show ellipsis
+    // This includes complex patterns like "one skilled at", "a kind of", etc.
     return '';
 }
 
