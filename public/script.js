@@ -313,6 +313,7 @@ const hintOkBtn = document.getElementById('hint-ok-btn');
 const hintCancelBtn = document.getElementById('hint-cancel-btn');
 const usedCluesEl = document.getElementById('used-clues');
 const usedCluesHeading = document.getElementById('used-clues-heading');
+const cluesHeading = document.getElementById('clues-heading');
 const aboutContentEl = document.getElementById('about-content');
 const victorySection = document.getElementById('victory-section');
 const victoryContent = document.getElementById('victory-content');
@@ -544,6 +545,10 @@ async function initGame() {
 function loadPuzzle(index, isRestoring = false) {
     currentPuzzle = PUZZLES[index % PUZZLES.length];
     currentPuzzleIndex = index;
+    
+    // Reset clue headers to default "out of order" state
+    cluesHeading.textContent = 'Clues, out of order';
+    usedCluesHeading.textContent = 'Used clues';
     
     // Check if we're loading a new puzzle (not restoring state)
     if (!isRestoring && (!userSolution || userSolution.length !== currentPuzzle.solution.length)) {
@@ -1189,8 +1194,8 @@ function processClue(clue) {
 function renderClues() {
     cluesEl.innerHTML = '';
     usedCluesEl.innerHTML = '';
-    
-    // Use original clues order (ladder order) for display
+    shuffled clues order during gameplay, original order after completion
+    const clues = shuffledCluesOrder.length > 0 ? shuffledCluesOrder :al clues order (ladder order) for display
     const clues = currentPuzzle.clues;
     
     clues.forEach(clue => {
@@ -1526,6 +1531,30 @@ function showResult(success) {
         // Track completion
         markPuzzleCompleted(currentPuzzleIndex, hintsUsed.length);
         incrementStat('totalHints', hintsUsed.length);
+        
+        // Switch clues to ordered display and update headers
+        cluesHeading.textContent = 'Clues, in order';
+        usedCluesHeading.textContent = 'Clues, in order';
+        
+        // Clear shuffled order to trigger ordered display
+        shuffledCluesOrder = [];
+        
+        // Re-render clues in order with all moved to used section
+        cluesEl.innerHTML = '';
+        usedCluesEl.innerHTML = '';
+        usedCluesHeading.style.display = 'block';
+        
+        currentPuzzle.clues.forEach(clue => {
+            const clueDiv = document.createElement('div');
+            clueDiv.className = 'clue';
+            clueDiv.dataset.originalClue = clue;
+            
+            // Process clue to show all revealed words
+            const displayClue = processClue(clue);
+            clueDiv.innerHTML = displayClue;
+            
+            usedCluesEl.appendChild(clueDiv);
+        });
         
         // Calculate completion percentage (hints used / total middle words)
         const totalMiddleWords = currentPuzzle.solution.length - 2;
