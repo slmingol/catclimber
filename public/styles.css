@@ -653,7 +653,7 @@ header {
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
-    border-bottom: 1px solid var(--border-primary) !important;
+    border-bottom: 1px solid var(--border-secondary) !important;
     opacity: 1 !important;
     color: var(--text-primary) !important;
     cursor: default !important;
