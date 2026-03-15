@@ -22,11 +22,18 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Export Excalidraw to PNG
-        uses: hkusu/excalidraw-to-png-action@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          input: 'docs/diagrams/*.excalidraw'
-          output-dir: 'docs/diagrams'
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: |
+          npm install puppeteer
+      
+      - name: Generate PNGs from Excalidraw files
+        run: |
+          node scripts/export-diagrams.js
       
       - name: Configure Git
         run: |
