@@ -1496,6 +1496,17 @@ function showClueHint(index) {
         // Save the updated state
         saveGameState();
         
+        // Check if puzzle is now complete after revealing this hint
+        const allMiddleWordsFilled = currentPuzzle.solution.slice(1, -1).every((word, i) => {
+            const actualIndex = i + 1;
+            return userSolution[actualIndex] && userSolution[actualIndex].trim() !== '';
+        });
+        
+        if (allMiddleWordsFilled) {
+            // Puzzle is complete - show victory and hide clues sidebar
+            setTimeout(() => showResult(true), 300);
+        }
+        
         setTimeout(() => {
             renderClues(); // Re-render to move clue to used section
             
