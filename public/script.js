@@ -584,6 +584,12 @@ function loadPuzzle(index, isRestoring = false) {
     // Hide victory section
     victorySection.style.display = 'none';
     
+    // Show clues section (in case it was hidden on completion)
+    const cluesSection = document.querySelector('.clues-section');
+    if (cluesSection) {
+        cluesSection.style.display = '';
+    }
+    
     renderPuzzle();
     saveGameState();
 }
@@ -1747,6 +1753,12 @@ function showResult(success) {
         // Track completion
         markPuzzleCompleted(currentPuzzleIndex, hintsUsed.length);
         incrementStat('totalHints', hintsUsed.length);
+        
+        // Hide the clues sidebar since clues are now shown in ladder with transition boxes
+        const cluesSection = document.querySelector('.clues-section');
+        if (cluesSection) {
+            cluesSection.style.display = 'none';
+        }
         
         // Switch clues to ordered display and update headers
         cluesHeading.textContent = 'CLUES, IN ORDER';
