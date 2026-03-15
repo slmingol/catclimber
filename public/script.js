@@ -680,7 +680,32 @@ function getVisibleRungs() {
     return visibleSet;
 }
 
-// Update progressive reveal and hint buttons without full re-render (mobile optimization)
+// Update UI after word completion (works on both mobile and desktop)
+function updateAfterWordCompletion(completedIndex) {
+    if (completedIndex === undefined) return;
+    
+    // Remove hint button from completed word
+    const completedStep = document.querySelector(`.ladder-step[data-index="${completedIndex}"]`);
+    if (completedStep) {
+        const hintBtn = completedStep.querySelector('.hint-btn');
+        if (hintBtn) {
+            hintBtn.remove();
+        }
+    }
+    
+    // Update letter change boxes around the completed word
+    updateLetterChangeBoxes(completedIndex);
+    
+    // Add hint buttons to adjacent rungs that are now accessible
+    updateAdjacentHintButtons(completedIndex);
+    
+    // If mobile, also update progressive reveal
+    if (isMobileView()) {
+        updateMobileProgressiveReveal(completedIndex);
+    }
+}
+
+// Update progressive reveal (mobile-only feature)
 function updateMobileProgressiveReveal(completedIndex) {
     if (!isMobileView()) {
         return; // Only needed on mobile
@@ -702,23 +727,6 @@ function updateMobileProgressiveReveal(completedIndex) {
         } else if (!shouldBeVisible && isCurrentlyVisible) {
             step.classList.add('ladder-step-hidden');
         }
-    }
-    
-    // Remove hint button from completed word
-    if (completedIndex !== undefined) {
-        const completedStep = document.querySelector(`.ladder-step[data-index="${completedIndex}"]`);
-        if (completedStep) {
-            const hintBtn = completedStep.querySelector('.hint-btn');
-            if (hintBtn) {
-                hintBtn.remove();
-            }
-        }
-        
-        // Update letter change boxes around the completed word
-        updateLetterChangeBoxes(completedIndex);
-        
-        // Add hint buttons to adjacent rungs that are now accessible
-        updateAdjacentHintButtons(completedIndex);
     }
     
     // Update hidden gap indicators
@@ -1187,8 +1195,8 @@ function showClueHint(index) {
         setTimeout(() => {
             renderClues(); // Re-render to move clue to used section
             
-            // Update progressive reveal and hint buttons on mobile
-            updateMobileProgressiveReveal(index);
+            // Update hint buttons and letter boxes (both mobile and desktop)
+            updateAfterWordCompletion(index);
             
             // Focus next input without re-rendering ladder - keeps keyboard open on mobile
             const nextInput = document.querySelector(`input[data-index="${index + 1}"]`);
@@ -1310,8 +1318,8 @@ function handleInput(e) {
                     checkSolution();
                 }, 300);
             } else {
-                // Update progressive reveal and hint buttons on mobile
-                updateMobileProgressiveReveal(index);
+                // Update hint buttons and letter boxes (both mobile and desktop)
+                updateAfterWordCompletion(index);
                 
                 // Focus next available input - keeps keyboard open on mobile
                 for (let i = index + 1; i < currentPuzzle.solution.length - 1; i++) {
