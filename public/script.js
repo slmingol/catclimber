@@ -716,10 +716,54 @@ function updateMobileProgressiveReveal(completedIndex) {
         
         // Update letter change boxes around the completed word
         updateLetterChangeBoxes(completedIndex);
+        
+        // Add hint buttons to adjacent rungs that are now accessible
+        updateAdjacentHintButtons(completedIndex);
     }
     
     // Update hidden gap indicators
     updateHiddenGaps(visibleRungs);
+}
+
+// Add hint buttons to adjacent rungs that became accessible after completing a word
+function updateAdjacentHintButtons(completedIndex) {
+    const totalRungs = currentPuzzle.solution.length;
+    
+    // Helper to add hint button to a specific index
+    const addHintButton = (targetIndex) => {
+        const targetStep = document.querySelector(`[data-index="${targetIndex}"]`)?.parentElement;
+        if (!targetStep) return;
+        
+        const targetWord = userSolution[targetIndex];
+        const isTargetFilled = targetWord && targetWord.trim() !== '';
+        const hasHintBtn = targetStep.querySelector('.hint-btn');
+        
+        // Only add if the rung is not filled and doesn't already have a hint button
+        if (!isTargetFilled && !hasHintBtn) {
+            const hintBtn = document.createElement('button');
+            hintBtn.className = 'hint-btn';
+            hintBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6c0 2 1 3 2 4l2 2v2h4v-2l2-2c1-1 2-2 2-4a6 6 0 0 0-6-6z"></path><path d="M10 18h4"></path><path d="M11 20h2"></path></svg>`;
+            hintBtn.title = 'Show clue for this word';
+            hintBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                showClueHint(targetIndex);
+            });
+            targetStep.appendChild(hintBtn);
+        }
+    };
+    
+    // Check previous word (above the completed word)
+    const prevIndex = completedIndex - 1;
+    if (prevIndex > 0 && prevIndex < totalRungs - 1) {
+        addHintButton(prevIndex);
+    }
+    
+    // Check next word (below the completed word)
+    const nextIndex = completedIndex + 1;
+    if (nextIndex > 0 && nextIndex < totalRungs - 1) {
+        addHintButton(nextIndex);
+    }
 }
 
 // Update letter change boxes for a completed word
@@ -1129,30 +1173,10 @@ function showClueHint(index) {
             // Update progressive reveal and hint buttons on mobile
             updateMobileProgressiveReveal(index);
             
-            // Focus next input without re-rendering ladder
-            // This keeps keyboard open on mobile
+            // Focus next input without re-rendering ladder - keeps keyboard open on mobile
             const nextInput = document.querySelector(`input[data-index="${index + 1}"]`);
             if (nextInput && !nextInput.disabled) {
                 nextInput.focus();
-                
-                // Add hint button to next input if needed
-                const nextStep = nextInput.parentElement;
-                const nextWord = userSolution[index + 1];
-                const isNextFilled = nextWord && nextWord.trim() !== '';
-                const hasHintBtn = nextStep.querySelector('.hint-btn');
-                
-                if (!isNextFilled && !hasHintBtn) {
-                    const hintBtn = document.createElement('button');
-                    hintBtn.className = 'hint-btn';
-                    hintBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6c0 2 1 3 2 4l2 2v2h4v-2l2-2c1-1 2-2 2-4a6 6 0 0 0-6-6z"></path><path d="M10 18h4"></path><path d="M11 20h2"></path></svg>`;
-                    hintBtn.title = 'Show clue for this word';
-                    hintBtn.addEventListener('click', (event) => {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        showClueHint(index + 1);
-                    });
-                    nextStep.appendChild(hintBtn);
-                }
             }
         }, 150);
         return;
@@ -1272,39 +1296,12 @@ function handleInput(e) {
                 // Update progressive reveal and hint buttons on mobile
                 updateMobileProgressiveReveal(index);
                 
-                // Don't re-render ladder, just focus next available input
-                // This keeps keyboard open on mobile
+                // Focus next available input - keeps keyboard open on mobile
                 for (let i = index + 1; i < currentPuzzle.solution.length - 1; i++) {
                     const nextInput = document.querySelector(`input[data-index="${i}"]`);
                     if (nextInput && !nextInput.disabled) {
                         nextInput.focus();
                         break;
-                    }
-                }
-                
-                // Update only the necessary UI elements without full re-render
-                // Add hint buttons to newly accessible rungs
-                const nextIndex = index + 1;
-                if (nextIndex < currentPuzzle.solution.length - 1) {
-                    const nextStep = document.querySelector(`input[data-index="${nextIndex}"]`)?.parentElement;
-                    if (nextStep) {
-                        // Check if hint button needs to be added
-                        const nextWord = userSolution[nextIndex];
-                        const isNextFilled = nextWord && nextWord.trim() !== '';
-                        const hasHintBtn = nextStep.querySelector('.hint-btn');
-                        
-                        if (!isNextFilled && !hasHintBtn) {
-                            const hintBtn = document.createElement('button');
-                            hintBtn.className = 'hint-btn';
-                            hintBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6c0 2 1 3 2 4l2 2v2h4v-2l2-2c1-1 2-2 2-4a6 6 0 0 0-6-6z"></path><path d="M10 18h4"></path><path d="M11 20h2"></path></svg>`;
-                            hintBtn.title = 'Show clue for this word';
-                            hintBtn.addEventListener('click', (event) => {
-                                event.preventDefault();
-                                event.stopPropagation();
-                                showClueHint(nextIndex);
-                            });
-                            nextStep.appendChild(hintBtn);
-                        }
                     }
                 }
             }
