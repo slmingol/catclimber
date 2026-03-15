@@ -510,10 +510,14 @@ async function initGame() {
     const puzzleParam = urlParams.get('puzzle');
     if (puzzleParam !== null) {
         const puzzleIndex = parseInt(puzzleParam, 10);
+        console.log(`URL puzzle parameter: ${puzzleParam}, parsed: ${puzzleIndex}, PUZZLES.length: ${PUZZLES.length}`);
         if (!isNaN(puzzleIndex) && puzzleIndex >= 0 && puzzleIndex < PUZZLES.length) {
             currentPuzzleIndex = puzzleIndex;
+            console.log(`Loading puzzle ${currentPuzzleIndex}: ${PUZZLES[currentPuzzleIndex]?.start} → ${PUZZLES[currentPuzzleIndex]?.end}`);
             // Clear saved state when loading from archive
             clearGameState();
+        } else {
+            console.warn(`Invalid puzzle index: ${puzzleIndex} (valid range: 0-${PUZZLES.length - 1})`);
         }
         // Clear URL parameter after reading
         window.history.replaceState({}, document.title, window.location.pathname);

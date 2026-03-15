@@ -133,14 +133,6 @@ async function loadPuzzles() {
         const response = await fetch('/collected-puzzles.json');
         const data = await response.json();
         allPuzzles = data.puzzles || [];
-        
-        // Normalize puzzles: use scrapedDate if date is empty, convert theme slug to display name
-        allPuzzles = allPuzzles.map(puzzle => ({
-            ...puzzle,
-            date: puzzle.date || puzzle.scrapedDate || '',
-            theme: getThemeDisplayName(puzzle.theme)
-        }));
-        
         console.log(`Loaded ${allPuzzles.length} puzzles`);
         
         updateStats();
@@ -213,7 +205,7 @@ function renderPuzzles() {
     // Group puzzles by theme
     const puzzlesByTheme = {};
     filteredPuzzles.forEach((puzzle, index) => {
-        const themeKey = (puzzle.theme && puzzle.theme.trim()) || 'Uncategorized';
+        const themeKey = getThemeDisplayName(puzzle.theme) || 'Uncategorized';
         if (!puzzlesByTheme[themeKey]) {
             puzzlesByTheme[themeKey] = [];
         }
@@ -318,10 +310,11 @@ function renderPuzzles() {
             const source = puzzle.source || 'scraped';
             const clueCount = puzzle.clues?.length || 0;
             const ladderLength = puzzle.solution?.length || 0;
+            const displayDate = puzzle.date || puzzle.scrapedDate || '';
             
             html += `
                 <div class="puzzle-row" onclick="openPuzzle(${index})">
-                    <div class="puzzle-date">${formatDate(puzzle.date)}</div>
+                    <div class="puzzle-date">${formatDate(displayDate)}</div>
                     <div class="puzzle-transform">
                         <span class="puzzle-start">${puzzle.start}</span>
                         <span class="puzzle-arrow">→</span>
@@ -362,13 +355,20 @@ function formatDate(dateStr) {
 }
 
 function openPuzzle(index) {
-    // Find the puzzle index in the original allPuzzles array
+    // Get the puzzle from filtered list
     const puzzle = filteredPuzzles[index];
+    
+    // Find the puzzle index in the original allPuzzles array
     const originalIndex = allPuzzles.findIndex(p => 
         p.start === puzzle.start && 
         p.end === puzzle.end && 
-        p.date === puzzle.date
+        (p.theme === puzzle.theme || (!p.theme && !puzzle.theme))
     );
+    
+    if (originalIndex === -1) {
+        console.error('Could not find puzzle in original array');
+        return;
+    }
     
     // Redirect to main page with puzzle index
     window.location.href = `index.html?puzzle=${originalIndex}`;
