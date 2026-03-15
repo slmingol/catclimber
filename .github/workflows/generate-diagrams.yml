@@ -37,7 +37,7 @@ jobs:
             if [ -f "$file" ]; then
               output="${file%.excalidraw}.png"
               echo "Converting $file to $output"
-              excalidraw-export-cli "$file" "$output"
+              excalidraw-export "$file" "$output"
             fi
           done
       
