@@ -420,6 +420,11 @@ function loadGameState() {
     return null;
 }
 
+// Clear game state
+function clearGameState() {
+    localStorage.removeItem('cat-climber-game-state');
+}
+
 // Display stats modal
 function displayStats() {
     loadStats();
