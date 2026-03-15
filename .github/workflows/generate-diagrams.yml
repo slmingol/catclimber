@@ -27,9 +27,9 @@ jobs:
         with:
           node-version: '20'
       
-      - name: Install Excalidraw CLI
+      - name: Install Excalidraw Export CLI
         run: |
-          npm install -g excalidraw-cli
+          npm install -g excalidraw-export-cli
       
       - name: Generate PNGs from Excalidraw files
         run: |
@@ -37,7 +37,7 @@ jobs:
             if [ -f "$file" ]; then
               output="${file%.excalidraw}.png"
               echo "Converting $file to $output"
-              excalidraw-cli "$file" "$output"
+              excalidraw-export-cli "$file" "$output"
             fi
           done
       
