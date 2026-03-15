@@ -1501,7 +1501,8 @@ function renderClues() {
 // Render about section with puzzle-specific information
 function renderAbout() {
     const steps = currentPuzzle.solution.length - 2; // Exclude start and end
-    const description = currentPuzzle.description || 'A word ladder puzzle connecting two words through single-letter transformations.';
+    // Use note (from "About this Raddle") if available, otherwise fall back to description
+    const description = currentPuzzle.note || currentPuzzle.description || 'A word ladder puzzle connecting two words through single-letter transformations.';
     const aboutText = `
         <p><strong>${currentPuzzle.theme}:</strong> Transform <strong>${currentPuzzle.start}</strong> into <strong>${currentPuzzle.end}</strong> in ${steps} step${steps !== 1 ? 's' : ''}.</p>
         <p style="margin-top: 12px; font-style: italic;">${description}</p>
