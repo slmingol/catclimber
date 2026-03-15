@@ -657,15 +657,28 @@ function getDescriptiveTextFromClue(clue) {
         return 'reversed';
     }
     
-    // Extract text between "^ " and " ___" or " to get"
+    // Extract text between "^ " and ending markers like " ___", " to get", etc.
     // Examples: "A ^ runs on a ___", "A ^ is a ___"
-    const betweenPattern = /\^\s+([^_]+?)(?:\s+___|to get|to)/i;
+    const betweenPattern = /\^\s+([^_]+?)(?:\s+___|,|\.|to get|to\s|$)/i;
     const match = clue.match(betweenPattern);
     if (match) {
         let extracted = match[1].trim();
-        // Clean up common prefixes
+        // Clean up common prefixes  
         extracted = extracted.replace(/^(a|an|the)\s+/i, '');
-        // Limit to reasonable length (2-4 words)
+        // Remove trailing punctuation
+        extracted = extracted.replace(/[,.]$/, '');
+        // Limit to reasonable length (2-5 words that make sense)
+        const words = extracted.split(/\s+/);
+        if (words.length >= 1 && words.length <= 5) {
+            return extracted;
+        }
+    }
+    
+    // Extract phrases starting with "^", like "^ ___, a kind of"
+    const afterUnderscorePattern = /___, (a|an|the)?\s*(.+)$/i;
+    const afterMatch = clue.match(afterUnderscorePattern);
+    if (afterMatch) {
+        let extracted = afterMatch[2].trim();
         const words = extracted.split(/\s+/);
         if (words.length <= 4) {
             return extracted;
@@ -673,22 +686,22 @@ function getDescriptiveTextFromClue(clue) {
     }
     
     // Extract text like "\"^ of ___\"" → "of"
-    const ofPattern = /"\^\s+(of|on the|in the|at the)\s+___"/i;
+    const ofPattern = /"\^\s+(of|on the|in the|at the|from the)\s+___"/i;
     const ofMatch = clue.match(ofPattern);
     if (ofMatch) {
         return ofMatch[1];
     }
     
-    // Extract "vs" or "versus" pattern
-    if (lower.includes(' vs ') || lower.includes(' versus ')) {
-        return 'vs';
+    // Extract "A rival to" or similar relationship phrases
+    const rivalPattern = /^(a|an|the)\s+(rival to|opposite of|antonym of|synonym of)/i;
+    const rivalMatch = clue.match(rivalPattern);
+    if (rivalMatch) {
+        return rivalMatch[2];
     }
     
-    // Extract relationship words at start: "is a", "are", "was", etc.
-    const relationPattern = /^(is an?|are|was|were|on|in|at|to|from|for|with|of|by)\b/i;
-    const relationMatch = clue.match(relationPattern);
-    if (relationMatch) {
-        return relationMatch[1];
+    // Extract "vs" or "versus" pattern  
+    if (lower.includes(' vs ') || lower.includes(' versus ')) {
+        return 'vs';
     }
     
     return '';
@@ -699,13 +712,16 @@ function getTransformationFromClue(clue) {
     
     const lower = clue.toLowerCase();
     
-    // Drop/remove letter
-    if (lower.includes('drop') || lower.includes('remove')) {
-        const letterMatch = lower.match(/(?:drop|remove) (?:a |an |the )?([a-z])/i);
-        if (letterMatch) {
-            return `-${letterMatch[1].toUpperCase()}`;
-        }
-        return ''; // Can't extract specific transformation
+    // Drop/remove specific letter  
+    const letterMatch = lower.match(/(?:drop|remove) (?:a |an |the )?([a-z])\b/i);
+    if (letterMatch) {
+        return `-${letterMatch[1].toUpperCase()}`;
+    }
+    
+    // Drop/remove first/last letter (can't specify which without word comparison)
+    if (lower.includes('drop the first') || lower.includes('remove the first') ||
+        lower.includes('drop the last') || lower.includes('remove the last')) {
+        return ''; // Let getLetterChange calculate it
     }
     
     // Add letter + anagram
@@ -721,7 +737,7 @@ function getTransformationFromClue(clue) {
     }
     
     // Add letter (without anagram)
-    const addMatch = lower.match(/add (?:a |an )?([a-z])/i);
+    const addMatch = lower.match(/add (?:a |an )?([a-z])\b/i);
     if (addMatch) {
         return `+${addMatch[1].toUpperCase()}`;
     }
@@ -757,7 +773,8 @@ function getLetterChange(word1, word2) {
                     return `+${word2[i]}`;
                 }
             }
-            return `+${word2.length - word1.length} letter${word2.length - word1.length > 1 ? 's' : ''}`;
+            // Can't determine specific position - return empty for descriptive text fallback
+            return '';
         } else {
             // Letter(s) removed
             for (let i = 0; i < word1.length; i++) {
@@ -766,15 +783,28 @@ function getLetterChange(word1, word2) {
                     return `-${word1[i]}`;
                 }
             }
-            return `-${word1.length - word2.length} letter${word1.length - word2.length > 1 ? 's' : ''}`;
+            // Can't determine specific position - return empty for descriptive text fallback
+            return '';
         }
     }
     
-    // Same length - find substitution
+    // Same length - check for single letter substitution
+    let diffCount = 0;
+    let diffIndex = -1;
     for (let i = 0; i < word1.length; i++) {
         if (word1[i] !== word2[i]) {
-            return `${word1[i]}→${word2[i]}`;
+            diffCount++;
+            diffIndex = i;
+            if (diffCount > 1) {
+                // Multiple differences - too complex for simple display
+                return '';
+            }
         }
+    }
+    
+    // Exactly one difference
+    if (diffCount === 1) {
+        return `${word1[diffIndex]}→${word2[diffIndex]}`;
     }
     
     return '';
