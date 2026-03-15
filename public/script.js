@@ -713,6 +713,7 @@ function updateMobileProgressiveReveal(completedIndex) {
     
     const visibleRungs = getVisibleRungs();
     const totalRungs = currentPuzzle.solution.length;
+    const newlyRevealed = new Set();
     
     // Update visibility of all ladder steps
     for (let i = 0; i < totalRungs; i++) {
@@ -724,10 +725,16 @@ function updateMobileProgressiveReveal(completedIndex) {
         
         if (shouldBeVisible && !isCurrentlyVisible) {
             step.classList.remove('ladder-step-hidden');
+            newlyRevealed.add(i);
         } else if (!shouldBeVisible && isCurrentlyVisible) {
             step.classList.add('ladder-step-hidden');
         }
     }
+    
+    // Update transition boxes for all newly revealed words
+    newlyRevealed.forEach(index => {
+        updateLetterChangeBoxes(index);
+    });
     
     // Update hidden gap indicators
     updateHiddenGaps(visibleRungs);
@@ -1085,24 +1092,38 @@ function processClue(clue) {
         processedClue = processedClue.replace(/\^/g, wordToShow);
     }
     
-    // Highlight solved words (but always show all words)
-    // Only process middle words (not start/end which are always visible)
-    for (let i = 1; i < currentPuzzle.solution.length - 1; i++) {
+    // Determine which word this clue is FOR (the target word)
+    // Clue index i is for solution word at index i+1
+    const targetWordIndex = clueIndex !== -1 ? clueIndex + 1 : -1;
+    
+    // Mask or highlight all solution words based on whether they're revealed
+    for (let i = 0; i < currentPuzzle.solution.length; i++) {
         const word = currentPuzzle.solution[i];
         const userWord = userSolution[i];
         
-        // Check if word is correctly solved
-        const isSolved = userWord && 
-                        userWord.trim() !== '' && 
-                        userWord.length === word.length &&
-                        userWord.toUpperCase() === word.toUpperCase();
+        // Check if word is revealed (start/end always revealed, middle only if solved)
+        const isRevealed = (i === 0 || i === currentPuzzle.solution.length - 1) ||
+                          (userWord && 
+                           userWord.trim() !== '' && 
+                           userWord.length === word.length &&
+                           userWord.toUpperCase() === word.toUpperCase());
         
-        if (isSolved) {
-            // Highlight solved words
-            const regex = new RegExp(`\\b${word}\\b`, 'gi');
-            processedClue = processedClue.replace(regex, `<span class="clue-revealed-word">${word}</span>`);
+        // Skip the target word - it should always be visible in its clue
+        if (i === targetWordIndex) {
+            continue;
         }
-        // Note: We don't hide unsolved words - they remain visible in clues
+        
+        // Create regex to match whole word (case insensitive)
+        const regex = new RegExp(`\\b${word}\\b`, 'gi');
+        
+        if (isRevealed) {
+            // Highlight revealed words
+            processedClue = processedClue.replace(regex, `<span class="clue-revealed-word">${word}</span>`);
+        } else if (i > 0 && i < currentPuzzle.solution.length - 1) {
+            // Mask unrevealed middle words (not start/end)
+            const placeholder = '_'.repeat(word.length);
+            processedClue = processedClue.replace(regex, placeholder);
+        }
     }
     
     return processedClue;
