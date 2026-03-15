@@ -4,9 +4,12 @@ This document describes the Continuous Integration and Continuous Deployment (CI
 
 ## Pipeline Overview
 
-![CI/CD Pipeline](diagrams/cicd-pipeline.excalidraw.png)
+**[View CI/CD Pipeline Diagram →](diagrams/cicd-pipeline.excalidraw)**
 
-_You can also open the [editable diagram](diagrams/cicd-pipeline.excalidraw) in [Excalidraw](https://excalidraw.com) or VS Code with the Excalidraw extension._
+Open the diagram file in:
+- [Excalidraw.com](https://excalidraw.com) - Upload the file or open it online
+- VS Code with the [Excalidraw extension](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor)
+- Download and view locally
 
 ## Workflow Architecture
 
