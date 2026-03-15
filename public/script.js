@@ -657,51 +657,57 @@ function getDescriptiveTextFromClue(clue) {
         return 'reversed';
     }
     
-    // Extract text between "^ " and ending markers like " ___", " to get", etc.
-    // Examples: "A ^ runs on a ___", "A ^ is a ___"
-    const betweenPattern = /\^\s+([^_]+?)(?:\s+___|,|\.|to get|to\s|$)/i;
-    const match = clue.match(betweenPattern);
-    if (match) {
-        let extracted = match[1].trim();
-        // Clean up common prefixes  
-        extracted = extracted.replace(/^(a|an|the)\s+/i, '');
-        // Remove trailing punctuation
-        extracted = extracted.replace(/[,.]$/, '');
-        // Limit to reasonable length (2-5 words that make sense)
-        const words = extracted.split(/\s+/);
-        if (words.length >= 1 && words.length <= 5) {
-            return extracted;
-        }
-    }
-    
-    // Extract phrases starting with "^", like "^ ___, a kind of"
-    const afterUnderscorePattern = /___, (a|an|the)?\s*(.+)$/i;
-    const afterMatch = clue.match(afterUnderscorePattern);
-    if (afterMatch) {
-        let extracted = afterMatch[2].trim();
-        const words = extracted.split(/\s+/);
-        if (words.length <= 4) {
-            return extracted;
-        }
+    // Handle "rival" → "vs"
+    if (lower.includes('rival')) {
+        return 'vs';
     }
     
     // Extract text like "\"^ of ___\"" → "of"
-    const ofPattern = /"\^\s+(of|on the|in the|at the|from the)\s+___"/i;
-    const ofMatch = clue.match(ofPattern);
-    if (ofMatch) {
-        return ofMatch[1];
+    const quotedPattern = /"\^\s+(of|on the|in the|at the|from the)\s+___"/i;
+    const quotedMatch = clue.match(quotedPattern);
+    if (quotedMatch) {
+        return quotedMatch[1];
     }
     
-    // Extract "A rival to" or similar relationship phrases
-    const rivalPattern = /^(a|an|the)\s+(rival to|opposite of|antonym of|synonym of)/i;
-    const rivalMatch = clue.match(rivalPattern);
-    if (rivalMatch) {
-        return rivalMatch[2];
+    // Extract pattern "^ ___, text" → grab text after comma, but clean it
+    // Example: "^ ___, one skilled at ^s" → "one skilled at"
+    const underscoreCommaPattern = /\^\s+___,\s+(.+?)(?:\s+\^|$)/i;
+    const underscoreMatch = clue.match(underscoreCommaPattern);
+    if (underscoreMatch) {
+        let extracted = underscoreMatch[1].trim();
+        // Remove ^ placeholders
+        extracted = extracted.replace(/\^s?/g, '').trim();
+        // Take first 1-3 words only
+        const words = extracted.split(/\s+/).slice(0, 3).join(' ');
+        return words;
     }
     
-    // Extract "vs" or "versus" pattern  
-    if (lower.includes(' vs ') || lower.includes(' versus ')) {
-        return 'vs';
+    // Extract pattern "___ ^, text" → grab text after comma
+    // Example: "___ ^, a way to score" → "a way to"
+    const commaAfterCaretPattern = /___\s+\^,\s+(.+)$/i;
+    const commaMatch = clue.match(commaAfterCaretPattern);
+    if (commaMatch) {
+        let extracted = commaMatch[1].trim();
+        // Take first 1-3 words only
+        const words = extracted.split(/\s+/).slice(0, 3).join(' ');
+        return words;
+    }
+    
+    // Extract text between "^ " and markers
+    // Examples: "A ^ runs on a ___", "A ^ is a ___"
+    const betweenPattern = /\^\s+([^_^]+?)(?:\s+___|\s+to\s+(?:get|obtain)|,|$)/i;
+    const match = clue.match(betweenPattern);
+    if (match) {
+        let extracted = match[1].trim();
+        // Clean up
+        extracted = extracted.replace(/^(a|an|the)\s+/i, '');
+        extracted = extracted.replace(/[,.]$/, '');
+        
+        // Shorten to max 3 words
+        const words = extracted.split(/\s+/);
+        if (words.length >= 1) {
+            return words.slice(0, 3).join(' ');
+        }
     }
     
     return '';
