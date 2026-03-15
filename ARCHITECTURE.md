@@ -13,12 +13,9 @@ CAT·CLIMBER is a containerized static web application that serves word ladder p
 
 ## Architecture Diagram
 
-**[View Architecture Diagram →](docs/diagrams/cat-climber-architecture.excalidraw)**
+![CAT·CLIMBER Architecture](docs/diagrams/cat-climber-architecture.png)
 
-Open the diagram file in:
-- [Excalidraw.com](https://excalidraw.com) - Upload the file or open it online
-- VS Code with the [Excalidraw extension](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor)
-- Download and view locally
+_View the [editable diagram](docs/diagrams/cat-climber-architecture.excalidraw) in [Excalidraw](https://excalidraw.com) or VS Code with the Excalidraw extension._
 
 ## Components
 
