@@ -1190,8 +1190,8 @@ function renderClues() {
     cluesEl.innerHTML = '';
     usedCluesEl.innerHTML = '';
     
-    // Use pre-shuffled clues order (shuffled once when puzzle loads)
-    const clues = shuffledCluesOrder.length > 0 ? shuffledCluesOrder : currentPuzzle.clues;
+    // Use original clues order (ladder order) for display
+    const clues = currentPuzzle.clues;
     
     clues.forEach(clue => {
         const clueDiv = document.createElement('div');
