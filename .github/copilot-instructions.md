@@ -22,7 +22,7 @@
 ├── Caddyfile
 ├── VERSION
 └── .github/workflows/
-    ├── docker-publish.yml
+    ├── docker-build.yml
     └── version-bump.yml
 ```
 
@@ -59,7 +59,7 @@ podman-compose down
 
 ## CI/CD Notes
 
-- `docker-publish.yml`: builds and publishes image to GHCR on push
+- `docker-build.yml`: builds and publishes image to GHCR on push
 - `version-bump.yml`: updates version automatically
 
 ## Common Pitfalls
