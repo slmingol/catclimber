@@ -143,14 +143,25 @@ cat-climber/
 │   ├── daily-scraper.js         # Automated puzzle collection
 │   ├── merge-puzzles.js         # Puzzle merge utility
 │   └── scraper.js               # Batch puzzle scraper
+├── docs/
+│   ├── diagrams/                # Architecture diagrams
+│   ├── DOCKER.md                # Docker/Podman guide
+│   └── PUZZLE-MANAGEMENT.md     # Puzzle management guide
 ├── Caddyfile                    # Caddy web server config
 ├── Dockerfile                   # Docker container definition
 ├── docker-compose.yml           # Docker Compose configuration
 ├── package.json                 # Node.js dependencies
-├── PUZZLE-MANAGEMENT.md         # Puzzle management guide
+├── ARCHITECTURE.md              # System architecture documentation
 ├── README.md                    # This file
 └── VERSION                      # Semantic version tracking
 ```
+
+## 📚 Documentation
+
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System architecture and design decisions
+- **[docs/CICD.md](docs/CICD.md)** - CI/CD pipeline and deployment workflow
+- **[docs/DOCKER.md](docs/DOCKER.md)** - Docker/Podman deployment guide
+- **[docs/PUZZLE-MANAGEMENT.md](docs/PUZZLE-MANAGEMENT.md)** - Puzzle creation and management
 
 ## 🎨 Customization
 
