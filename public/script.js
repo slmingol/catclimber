@@ -680,6 +680,73 @@ function getVisibleRungs() {
     return visibleSet;
 }
 
+// Update progressive reveal and hint buttons without full re-render (mobile optimization)
+function updateMobileProgressiveReveal(completedIndex) {
+    if (!isMobileView()) {
+        return; // Only needed on mobile
+    }
+    
+    const visibleRungs = getVisibleRungs();
+    const totalRungs = currentPuzzle.solution.length;
+    
+    // Update visibility of all ladder steps
+    for (let i = 0; i < totalRungs; i++) {
+        const step = document.querySelector(`[data-index="${i}"]`)?.parentElement;
+        if (!step) continue;
+        
+        const shouldBeVisible = visibleRungs.has(i);
+        const isCurrentlyVisible = !step.classList.contains('ladder-step-hidden');
+        
+        if (shouldBeVisible && !isCurrentlyVisible) {
+            step.classList.remove('ladder-step-hidden');
+        } else if (!shouldBeVisible && isCurrentlyVisible) {
+            step.classList.add('ladder-step-hidden');
+        }
+    }
+    
+    // Remove hint button from completed word
+    if (completedIndex !== undefined) {
+        const completedStep = document.querySelector(`[data-index="${completedIndex}"]`)?.parentElement;
+        if (completedStep) {
+            const hintBtn = completedStep.querySelector('.hint-btn');
+            if (hintBtn) {
+                hintBtn.remove();
+            }
+        }
+    }
+    
+    // Update hidden gap indicators
+    updateHiddenGaps(visibleRungs);
+}
+
+// Update hidden gap indicators between visible sections
+function updateHiddenGaps(visibleRungs) {
+    // Remove existing gap indicators
+    document.querySelectorAll('.ladder-hidden-gap').forEach(gap => gap.remove());
+    
+    const totalRungs = currentPuzzle.solution.length;
+    const visibleArray = Array.from(visibleRungs).sort((a, b) => a - b);
+    
+    // Find gaps and insert indicators
+    for (let i = 0; i < visibleArray.length - 1; i++) {
+        const currentVisible = visibleArray[i];
+        const nextVisible = visibleArray[i + 1];
+        
+        if (nextVisible > currentVisible + 1) {
+            const hiddenCount = nextVisible - currentVisible - 1;
+            const gapDiv = document.createElement('div');
+            gapDiv.className = 'ladder-hidden-gap';
+            gapDiv.innerHTML = `<div class="ladder-hidden-gap-content">${hiddenCount} hidden</div>`;
+            
+            // Insert gap after the current visible step
+            const currentStep = document.querySelector(`[data-index="${currentVisible}"]`)?.parentElement;
+            if (currentStep && currentStep.nextSibling) {
+                currentStep.parentNode.insertBefore(gapDiv, currentStep.nextSibling);
+            }
+        }
+    }
+}
+
 // Render ladder steps
 function renderLadder() {
     ladderEl.innerHTML = '';
@@ -995,6 +1062,9 @@ function showClueHint(index) {
         setTimeout(() => {
             renderClues(); // Re-render to move clue to used section
             
+            // Update progressive reveal and hint buttons on mobile
+            updateMobileProgressiveReveal(index);
+            
             // Focus next input without re-rendering ladder
             // This keeps keyboard open on mobile
             const nextInput = document.querySelector(`input[data-index="${index + 1}"]`);
@@ -1135,6 +1205,9 @@ function handleInput(e) {
                     checkSolution();
                 }, 300);
             } else {
+                // Update progressive reveal and hint buttons on mobile
+                updateMobileProgressiveReveal(index);
+                
                 // Don't re-render ladder, just focus next available input
                 // This keeps keyboard open on mobile
                 for (let i = index + 1; i < currentPuzzle.solution.length - 1; i++) {
