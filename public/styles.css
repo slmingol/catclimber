@@ -404,6 +404,7 @@ header {
     border-bottom: 2px solid var(--border-secondary);
     background: var(--bg-input);
     transition: all 0.2s ease;
+    margin-bottom: 16px;
 }
 
 .ladder-step:last-child {
@@ -423,7 +424,7 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 12px;
+    padding: 16px 12px;
     color: var(--text-primary);
     font-family: "chivo-mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     text-align: center;
@@ -470,7 +471,7 @@ header {
 
 .ladder-input {
     width: 100%;
-    padding: 12px;
+    padding: 16px 12px;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
@@ -529,7 +530,7 @@ header {
 .letter-change-box {
     position: absolute !important;
     left: 50%;
-    bottom: -14px;
+    bottom: -22px;
     transform: translateX(-50%);
     font-size: 12px;
     color: var(--text-primary);
