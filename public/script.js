@@ -633,18 +633,6 @@ function focusFirstAvailableInput() {
 }
 
 // Helper function to extract transformation description from clue
-// Helper function to check if a transformation should be shown in a box
-function shouldShowTransformationBox(text) {
-    if (!text) return false;
-    
-    // Show box for specific single letter changes: -T, R→J, +O, etc.
-    if (/^[A-Z]→[A-Z]$/.test(text)) return true; // Single letter substitution
-    if (/^[-+][A-Z]$/.test(text)) return true; // Single letter add/remove
-    if (text === '⋯') return true; // Unknown transformation
-    
-    // Don't show box for multi-letter changes, descriptive text, or anagrams
-    return false;
-}
 
 // Helper function to extract descriptive text from clue for plain display
 function getDescriptiveTextFromClue(clue) {
@@ -1013,7 +1001,6 @@ function updateLetterChangeBoxes(completedIndex) {
                 // Get the clue for this transition (clue index is for the target word)
                 const clueIndex = completedIndex - 1;
                 let transformText = '';
-                let useBox = false;
                 
                 // Try to get specific transformation from clue or calculation
                 if (clueIndex >= 0 && clueIndex < currentPuzzle.clues.length) {
@@ -1025,34 +1012,20 @@ function updateLetterChangeBoxes(completedIndex) {
                     transformText = getLetterChange(prevWord, currentWord);
                 }
                 
-                // Check if this should be shown in a box
-                if (transformText && shouldShowTransformationBox(transformText)) {
-                    useBox = true;
-                } else {
-                    // Try to get descriptive text from clue for plain text display
+                // If still no transformation, try descriptive text or use ellipsis
+                if (!transformText) {
                     if (clueIndex >= 0 && clueIndex < currentPuzzle.clues.length) {
-                        const descriptiveText = getDescriptiveTextFromClue(currentPuzzle.clues[clueIndex]);
-                        if (descriptiveText) {
-                            transformText = descriptiveText;
-                            useBox = false;
-                        } else if (!transformText) {
-                            // No specific transformation and no descriptive text - use ellipsis
-                            transformText = '⋯';
-                            useBox = true;
-                        }
-                    } else if (!transformText) {
+                        transformText = getDescriptiveTextFromClue(currentPuzzle.clues[clueIndex]) || '⋯';
+                    } else {
                         transformText = '⋯';
-                        useBox = true;
                     }
                 }
                 
                 if (transformText) {
                     const changeBox = document.createElement('div');
-                    changeBox.className = useBox ? 'letter-change-box' : 'letter-change';
+                    changeBox.className = 'letter-change-box';
                     changeBox.textContent = transformText;
-                    if (useBox) {
-                        changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
-                    }
+                    changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
                     prevStep.appendChild(changeBox);
                 }
             }
@@ -1078,7 +1051,6 @@ function updateLetterChangeBoxes(completedIndex) {
                 // Get the clue for this transition
                 const clueIndex = nextIndex - 1;
                 let transformText = '';
-                let useBox = false;
                 
                 // Try to get specific transformation from clue or calculation
                 if (clueIndex >= 0 && clueIndex < currentPuzzle.clues.length) {
@@ -1090,34 +1062,20 @@ function updateLetterChangeBoxes(completedIndex) {
                     transformText = getLetterChange(currentWord, nextWord);
                 }
                 
-                // Check if this should be shown in a box
-                if (transformText && shouldShowTransformationBox(transformText)) {
-                    useBox = true;
-                } else {
-                    // Try to get descriptive text from clue for plain text display
+                // If still no transformation, try descriptive text or use ellipsis
+                if (!transformText) {
                     if (clueIndex >= 0 && clueIndex < currentPuzzle.clues.length) {
-                        const descriptiveText = getDescriptiveTextFromClue(currentPuzzle.clues[clueIndex]);
-                        if (descriptiveText) {
-                            transformText = descriptiveText;
-                            useBox = false;
-                        } else if (!transformText) {
-                            // No specific transformation and no descriptive text - use ellipsis
-                            transformText = '⋯';
-                            useBox = true;
-                        }
-                    } else if (!transformText) {
+                        transformText = getDescriptiveTextFromClue(currentPuzzle.clues[clueIndex]) || '⋯';
+                    } else {
                         transformText = '⋯';
-                        useBox = true;
                     }
                 }
                 
                 if (transformText) {
                     const changeBox = document.createElement('div');
-                    changeBox.className = useBox ? 'letter-change-box' : 'letter-change';
+                    changeBox.className = 'letter-change-box';
                     changeBox.textContent = transformText;
-                    if (useBox) {
-                        changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
-                    }
+                    changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
                     currentStep.appendChild(changeBox);
                 }
             }
@@ -1345,7 +1303,6 @@ function renderLadder() {
                 // Get the clue for this transition (clue index corresponds to the target word)
                 const clueIndex = nextIndex - 1;
                 let transformText = '';
-                let useBox = false;
                 
                 // Try to get specific transformation from clue or calculation
                 if (clueIndex >= 0 && clueIndex < currentPuzzle.clues.length) {
@@ -1357,34 +1314,20 @@ function renderLadder() {
                     transformText = getLetterChange(currentWord, nextWord);
                 }
                 
-                // Check if this should be shown in a box
-                if (transformText && shouldShowTransformationBox(transformText)) {
-                    useBox = true;
-                } else {
-                    // Try to get descriptive text from clue for plain text display
+                // If still no transformation, try descriptive text or use ellipsis
+                if (!transformText) {
                     if (clueIndex >= 0 && clueIndex < currentPuzzle.clues.length) {
-                        const descriptiveText = getDescriptiveTextFromClue(currentPuzzle.clues[clueIndex]);
-                        if (descriptiveText) {
-                            transformText = descriptiveText;
-                            useBox = false;
-                        } else if (!transformText) {
-                            // No specific transformation and no descriptive text - use ellipsis
-                            transformText = '⋯';
-                            useBox = true;
-                        }
-                    } else if (!transformText) {
+                        transformText = getDescriptiveTextFromClue(currentPuzzle.clues[clueIndex]) || '⋯';
+                    } else {
                         transformText = '⋯';
-                        useBox = true;
                     }
                 }
                 
                 if (transformText) {
                     const changeBox = document.createElement('div');
-                    changeBox.className = useBox ? 'letter-change-box' : 'letter-change';
+                    changeBox.className = 'letter-change-box';
                     changeBox.textContent = transformText;
-                    if (useBox) {
-                        changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
-                    }
+                    changeBox.style.cssText = 'display: block !important; visibility: visible !important;';
                     stepDiv.appendChild(changeBox);
                 }
             }
