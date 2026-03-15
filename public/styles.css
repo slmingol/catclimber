@@ -1169,6 +1169,16 @@ header {
         justify-content: center;
     }
     
+    /* Move focus background to step container on mobile so it fills space between rungs */
+    .ladder-step:focus-within {
+        background: var(--accent-bg);
+    }
+    
+    .ladder-step.start-word:focus-within,
+    .ladder-step.end-word:focus-within {
+        background: var(--victory-bg);
+    }
+    
     .ladder-word-text {
         font-size: 16px;
         padding: 0 8px;
@@ -1179,6 +1189,11 @@ header {
         font-size: 16px;
         padding: 0 8px;
         line-height: 1.2;
+    }
+    
+    /* Remove background from input itself on mobile since step has it */
+    .ladder-input:focus {
+        background: transparent;
     }
     
     .hint-btn {
