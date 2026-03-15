@@ -5,40 +5,69 @@ const puppeteer = require('puppeteer');
 async function convertExcalidrawToPNG(inputPath, outputPath) {
   const excalidrawData = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
   
+  // Calculate bounds from elements
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  
+  if (excalidrawData.elements && excalidrawData.elements.length > 0) {
+    excalidrawData.elements.forEach(el => {
+      if (el.x !== undefined && el.y !== undefined && !el.isDeleted) {
+        const elMinX = el.x;
+        const elMinY = el.y;
+        const elMaxX = el.x + (el.width || 0);
+        const elMaxY = el.y + (el.height || 0);
+        
+        minX = Math.min(minX, elMinX);
+        minY = Math.min(minY, elMinY);
+        maxX = Math.max(maxX, elMaxX);
+        maxY = Math.max(maxY, elMaxY);
+      }
+    });
+  }
+  
+  const padding = 40;
+  const width = Math.ceil(maxX - minX + padding * 2);
+  const height = Math.ceil(maxY - minY + padding * 2);
+  
+  // Create HTML that renders the diagram
   const html = `
     <!DOCTYPE html>
     <html>
     <head>
       <meta charset="UTF-8">
-      <script src="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js"></script>
       <style>
-        body { margin: 0; padding: 0; }
-        #app { width: 100vw; height: 100vh; }
+        body { 
+          margin: 0; 
+          padding: 0; 
+          background: white;
+        }
+        svg {
+          display: block;
+        }
       </style>
     </head>
     <body>
-      <div id="app"></div>
-      <script>
+      <div id="container"></div>
+      <script type="module">
+        import { exportToSvg } from 'https://esm.sh/@excalidraw/excalidraw@0.18.0';
+        
         const data = ${JSON.stringify(excalidrawData)};
-        const appElement = document.getElementById('app');
         
-        const { exportToBlob } = window.ExcalidrawLib;
-        
-        // Calculate dimensions from elements
-        if (data.elements && data.elements.length > 0) {
-          let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-          data.elements.forEach(el => {
-            if (el.x !== undefined && el.y !== undefined) {
-              minX = Math.min(minX, el.x);
-              minY = Math.min(minY, el.y);
-              maxX = Math.max(maxX, el.x + (el.width || 0));
-              maxY = Math.max(maxY, el.y + (el.height || 0));
-            }
+        try {
+          const svg = await exportToSvg({
+            elements: data.elements,
+            appState: {
+              ...data.appState,
+              exportBackground: true,
+              viewBackgroundColor: '#ffffff'
+            },
+            files: data.files || {}
           });
           
-          window.diagramReady = true;
-          window.diagramData = data;
-          window.bounds = { minX, minY, maxX, maxY };
+          document.getElementById('container').appendChild(svg);
+          window.renderComplete = true;
+        } catch (error) {
+          console.error('Export error:', error);
+          window.renderError = error.message;
         }
       </script>
     </body>
@@ -46,39 +75,41 @@ async function convertExcalidrawToPNG(inputPath, outputPath) {
   `;
   
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    headless: 'new',
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-web-security'
+    ]
   });
   
   const page = await browser.newPage();
-  await page.setContent(html);
-  
-  // Wait for Excalidraw to load
-  await page.waitForFunction('window.diagramReady === true', { timeout: 10000 });
-  
-  // Get bounds
-  const bounds = await page.evaluate(() => window.bounds);
-  const padding = 40;
-  const width = Math.ceil(bounds.maxX - bounds.minX + padding * 2);
-  const height = Math.ceil(bounds.maxY - bounds.minY + padding * 2);
-  
   await page.setViewport({ width, height });
+  await page.setContent(html, { waitUntil: 'networkidle0' });
   
-  // Export as PNG
+  // Wait for rendering to complete
+  await page.waitForFunction(
+    'window.renderComplete === true || window.renderError',
+    { timeout: 30000 }
+  );
+  
+  // Check for errors
+  const renderError = await page.evaluate(() => window.renderError);
+  if (renderError) {
+    throw new Error(`Rendering failed: ${renderError}`);
+  }
+  
+  // Take screenshot
   const screenshot = await page.screenshot({
     type: 'png',
-    clip: {
-      x: bounds.minX - padding,
-      y: bounds.minY - padding,
-      width,
-      height
-    }
+    fullPage: false
   });
   
   fs.writeFileSync(outputPath, screenshot);
-  
   await browser.close();
-  console.log(`✓ Converted ${inputPath} → ${outputPath}`);
+  
+  console.log(`✓ Converted ${inputPath} → ${outputPath} (${width}x${height})`);
 }
 
 async function main() {
