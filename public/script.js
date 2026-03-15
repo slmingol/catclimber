@@ -637,12 +637,12 @@ function focusFirstAvailableInput() {
 function shouldShowTransformationBox(text) {
     if (!text) return false;
     
-    // Show box for specific letter changes: -T, R→J, +O, etc.
+    // Show box for specific single letter changes: -T, R→J, +O, etc.
     if (/^[A-Z]→[A-Z]$/.test(text)) return true; // Single letter substitution
     if (/^[-+][A-Z]$/.test(text)) return true; // Single letter add/remove
     if (text === '⋯') return true; // Unknown transformation
     
-    // Don't show box for descriptive text
+    // Don't show box for multi-letter changes, descriptive text, or anagrams
     return false;
 }
 
@@ -652,33 +652,43 @@ function getDescriptiveTextFromClue(clue) {
     
     const lower = clue.toLowerCase();
     
-    // Short descriptive phrases that should be shown as plain text
-    // These are typically 1-3 words that describe the relationship
+    // Handle "Reverse" pattern
+    if (lower.includes('reverse')) {
+        return 'reversed';
+    }
     
-    // Check for simple relationship words
-    const simplePatterns = [
-        /^(is an?|are|was|were)\b/i,
-        /^(on|in|at|to|from|for|with|of|by)\b/i,
-        /^(vs\.?|versus|and)\b/i,
-        /^(precedes?|follows?)\b/i,
-        /^(reversed?|backwards?|flipped?)\b/i,
-    ];
-    
-    for (const pattern of simplePatterns) {
-        if (pattern.test(lower)) {
-            // Extract the short phrase (up to first 3-4 words or until we hit transformation language)
-            const words = clue.split(/\s+/);
-            const stopWords = ['change', 'add', 'drop', 'remove', 'anagram', 'insert', 'symbol'];
-            let extractedWords = [];
-            
-            for (let i = 0; i < Math.min(words.length, 5); i++) {
-                const word = words[i];
-                if (stopWords.some(sw => word.toLowerCase().includes(sw))) break;
-                extractedWords.push(word);
-            }
-            
-            return extractedWords.join(' ');
+    // Extract text between "^ " and " ___" or " to get"
+    // Examples: "A ^ runs on a ___", "A ^ is a ___"
+    const betweenPattern = /\^\s+([^_]+?)(?:\s+___|to get|to)/i;
+    const match = clue.match(betweenPattern);
+    if (match) {
+        let extracted = match[1].trim();
+        // Clean up common prefixes
+        extracted = extracted.replace(/^(a|an|the)\s+/i, '');
+        // Limit to reasonable length (2-4 words)
+        const words = extracted.split(/\s+/);
+        if (words.length <= 4) {
+            return extracted;
         }
+    }
+    
+    // Extract text like "\"^ of ___\"" → "of"
+    const ofPattern = /"\^\s+(of|on the|in the|at the)\s+___"/i;
+    const ofMatch = clue.match(ofPattern);
+    if (ofMatch) {
+        return ofMatch[1];
+    }
+    
+    // Extract "vs" or "versus" pattern
+    if (lower.includes(' vs ') || lower.includes(' versus ')) {
+        return 'vs';
+    }
+    
+    // Extract relationship words at start: "is a", "are", "was", etc.
+    const relationPattern = /^(is an?|are|was|were|on|in|at|to|from|for|with|of|by)\b/i;
+    const relationMatch = clue.match(relationPattern);
+    if (relationMatch) {
+        return relationMatch[1];
     }
     
     return '';
@@ -975,11 +985,11 @@ function updateLetterChangeBoxes(completedIndex) {
         const prevIndex = completedIndex - 1;
         const prevStep = document.querySelector(`.ladder-step[data-index="${prevIndex}"]`);
         if (prevStep) {
-            // Remove existing letter change box if any
+            // Remove existing transition elements if any
             const existingBox = prevStep.querySelector('.letter-change-box');
-            if (existingBox) {
-                existingBox.remove();
-            }
+            if (existingBox) existingBox.remove();
+            const existingText = prevStep.querySelector('.letter-change');
+            if (existingText) existingText.remove();
             
             // Add new letter change box - prev word to completed word
             const prevWord = getRevealedWord(prevIndex);
@@ -1040,11 +1050,11 @@ function updateLetterChangeBoxes(completedIndex) {
         const nextIndex = completedIndex + 1;
         const currentStep = document.querySelector(`.ladder-step[data-index="${completedIndex}"]`);
         if (currentStep) {
-            // Remove existing letter change box if any
+            // Remove existing transition elements if any
             const existingBox = currentStep.querySelector('.letter-change-box');
-            if (existingBox) {
-                existingBox.remove();
-            }
+            if (existingBox) existingBox.remove();
+            const existingText = currentStep.querySelector('.letter-change');
+            if (existingText) existingText.remove();
             
             // Add new letter change box - completed word to next word
             const currentWord = getRevealedWord(completedIndex);
