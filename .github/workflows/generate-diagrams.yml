@@ -22,24 +22,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Export Excalidraw to PNG
+        uses: hkusu/excalidraw-to-png-action@v1
         with:
-          node-version: '20'
-      
-      - name: Install Excalidraw CLI
-        run: |
-          npm install -g @excalidraw/excalidraw-cli
-      
-      - name: Generate PNGs from Excalidraw files
-        run: |
-          for file in docs/diagrams/*.excalidraw; do
-            if [ -f "$file" ]; then
-              output="${file%.excalidraw}.png"
-              echo "Converting $file to $output"
-              excalidraw-cli --excalidraw "$file" --output "$output" --scale 2
-            fi
-          done
+          input: 'docs/diagrams/*.excalidraw'
+          output-dir: 'docs/diagrams'
       
       - name: Configure Git
         run: |
