@@ -34,6 +34,8 @@ jobs:
           echo "Cleanup complete!"
       
       - name: Summary
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TOTAL=$(gh run list --limit 200 --json databaseId --jq 'length' --repo ${{ github.repository }})
           echo "### Workflow Cleanup Summary" >> $GITHUB_STEP_SUMMARY
