@@ -1,0 +1,27 @@
+# Lightweight version - serves static files only (no scraping)
+FROM caddy:alpine
+
+# Copy all static files to Caddy's default serving directory
+COPY public/index.html /usr/share/caddy/index.html.tmp
+COPY public/archive.html /usr/share/caddy/
+COPY public/styles.css /usr/share/caddy/
+COPY public/archive-styles.css /usr/share/caddy/
+COPY public/script.js /usr/share/caddy/
+COPY public/archive-script.js /usr/share/caddy/
+COPY public/cat-climber-logo.png /usr/share/caddy/
+COPY data/collected-puzzles.json /usr/share/caddy/
+COPY Caddyfile /etc/caddy/Caddyfile
+
+# Version argument
+ARG VERSION=dev
+ENV APP_VERSION=${VERSION}
+
+# Replace version placeholder in HTML
+RUN sed "s/__VERSION__/${APP_VERSION}/g" /usr/share/caddy/index.html.tmp > /usr/share/caddy/index.html && \
+    rm /usr/share/caddy/index.html.tmp
+
+# Expose port 80
+EXPOSE 80
+
+# Start caddy
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]

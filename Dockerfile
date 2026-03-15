@@ -22,7 +22,9 @@ WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package*.json ./
-RUN npm install --production
+RUN npm install --production && \
+    npm cache clean --force && \
+    rm -rf /tmp/* /root/.npm
 
 # Copy scraper scripts and data
 COPY scripts/daily-scraper.js /app/
@@ -45,9 +47,10 @@ COPY Caddyfile /etc/caddy/Caddyfile
 ARG VERSION=dev
 ENV APP_VERSION=${VERSION}
 
-# Replace version placeholder in HTML
+# Replace version placeholder in HTML and clean up
 RUN sed "s/__VERSION__/${APP_VERSION}/g" /usr/share/caddy/index.html.tmp > /usr/share/caddy/index.html && \
-    rm /usr/share/caddy/index.html.tmp
+    rm /usr/share/caddy/index.html.tmp && \
+    rm -rf /var/cache/apk/* /tmp/*
 
 # Set up cron job to run 4 times daily (12:05 AM, 6:05 AM, 12:05 PM, 6:05 PM)
 RUN echo "5 0,6,12,18 * * * cd /app && /usr/bin/node daily-scraper.js >> /var/log/daily-scraper.log 2>&1" > /etc/crontabs/root
