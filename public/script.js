@@ -661,11 +661,11 @@ function getDescriptiveTextFromClue(clue) {
         return 'vs';
     }
     
-    // "^ by [Company/Person]" → "by [name]"
+    // "^ by [Company/Person]" → "by [name]" (lowercase)
     const byPattern = /\^\s+by\s+([a-z]+)/i;
     const byMatch = clue.match(byPattern);
     if (byMatch) {
-        return `by ${byMatch[1]}`;
+        return `by ${byMatch[1].toLowerCase()}`;
     }
     
     // "What a ^ is [verb] with" → "is [verb] with"
@@ -675,8 +675,34 @@ function getDescriptiveTextFromClue(clue) {
         return `is ${whatMatch[1].trim()} with`;
     }
     
-    // "___ ^[,.]" or "^ ___" patterns (contextual clues) → "…"
-    if (/___\s*\^|^\s*\^/.test(clue) || /\^\s*___/.test(clue)) {
+    // "[something] ^ ___" patterns for names → extract relationship
+    // "Modern TV anti-hero ^ ___" → "last name"
+    // "^ ___ is a character" → could be "first name"
+    const namePattern = /(first name|last name|nickname|stage name|maiden name|pen name)/i;
+    const nameMatch = clue.match(namePattern);
+    if (nameMatch && /\^\s*___|\s+\^\s+___/.test(clue)) {
+        return nameMatch[1].toLowerCase();
+    }
+    
+    // "happens on a ___^" → "for"
+    // "works at a ___^" → generic preposition
+    if (/\s(on|at|in|for)\s+a?\s*___\^/.test(lower)) {
+        const prepMatch = lower.match(/\s(on|at|in|for)\s+a?\s*___\^/);
+        return prepMatch ? 'for' : '';
+    }
+    
+    // "___ ^[,.]" patterns → "is a"
+    if (/^___\s*\^[,.]/.test(clue)) {
+        return 'is a';
+    }
+    
+    // "^ ___" patterns at end → "…"
+    if (/\^\s*___\s*$/.test(clue)) {
+        return '…';
+    }
+    
+    // "___ turn ^" or similar end patterns → "…"
+    if (/turn\s+\^|makes.*\^/.test(lower)) {
         return '…';
     }
     
