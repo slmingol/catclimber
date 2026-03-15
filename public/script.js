@@ -821,10 +821,10 @@ function updateLetterChangeBoxes(completedIndex) {
         if (index === totalRungs - 1) {
             return currentPuzzle.solution[totalRungs - 1];
         }
-        // Middle word - only return if user has solved it
+        // Middle word - only return if user has solved it correctly
         const userWord = userSolution[index];
-        if (userWord && userWord.toUpperCase() === currentPuzzle.solution[index].toUpperCase()) {
-            return userWord.toUpperCase();
+        if (userWord && userWord.trim() !== '' && userWord.toUpperCase() === currentPuzzle.solution[index].toUpperCase()) {
+            return currentPuzzle.solution[index]; // Return solution word for consistency
         }
         return null;
     };
@@ -1064,39 +1064,45 @@ function renderLadder() {
         
         ladderEl.appendChild(stepDiv);
         
-        // Add letter change box on the bottom border (rung) if the next word is revealed
+        // Add letter change box on the bottom border (rung) if both current and next words are revealed
         if (index < currentPuzzle.solution.length - 1) {
             const nextIndex = index + 1;
             
-            // Get current word (always available for start/end, user-entered for middle)
+            // Determine if current word is revealed (visible to user)
             let currentWord = null;
             if (index === 0) {
-                currentWord = currentPuzzle.solution[0];  // Start word always visible
+                // Start word is always revealed
+                currentWord = currentPuzzle.solution[0];
             } else if (index === currentPuzzle.solution.length - 1) {
-                currentWord = currentPuzzle.solution[index];  // End word always visible
+                // End word is always revealed
+                currentWord = currentPuzzle.solution[index];
             } else {
-                // Middle word - use user's entry if it matches the solution
+                // Middle word - check if user has filled it AND it matches solution
                 const userWord = userSolution[index];
-                if (userWord && userWord.toUpperCase() === currentPuzzle.solution[index].toUpperCase()) {
-                    currentWord = userWord.toUpperCase();
+                if (userWord && userWord.trim() !== '' && userWord.toUpperCase() === currentPuzzle.solution[index].toUpperCase()) {
+                    currentWord = currentPuzzle.solution[index]; // Use solution word for consistency
                 }
             }
             
-            // Get next word (always available for end, user-entered for middle)
+            // Determine if next word is revealed
             let nextWord = null;
-            if (nextIndex === currentPuzzle.solution.length - 1) {
-                nextWord = currentPuzzle.solution[nextIndex];  // End word always visible
+            if (nextIndex === 0) {
+                // Start word is always revealed
+                nextWord = currentPuzzle.solution[0];
+            } else if (nextIndex === currentPuzzle.solution.length - 1) {
+                // End word is always revealed
+                nextWord = currentPuzzle.solution[nextIndex];
             } else {
-                // Middle word - use user's entry if it matches the solution
+                // Middle word - check if user has filled it AND it matches solution
                 const userWord = userSolution[nextIndex];
-                if (userWord && userWord.toUpperCase() === currentPuzzle.solution[nextIndex].toUpperCase()) {
-                    nextWord = userWord.toUpperCase();
+                if (userWord && userWord.trim() !== '' && userWord.toUpperCase() === currentPuzzle.solution[nextIndex].toUpperCase()) {
+                    nextWord = currentPuzzle.solution[nextIndex]; // Use solution word for consistency
                 }
             }
             
             // Add transition box if both words are revealed
             if (currentWord && nextWord && currentWord.length === nextWord.length) {
-                const change = getLetterChange(currentWord.toUpperCase(), nextWord.toUpperCase());
+                const change = getLetterChange(currentWord, nextWord);
                 if (change) {
                     const changeBox = document.createElement('div');
                     changeBox.className = 'letter-change-box';
