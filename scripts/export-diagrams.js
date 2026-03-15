@@ -82,7 +82,7 @@ async function convertExcalidrawToPNG(inputPath, outputPath) {
 }
 
 async function main() {
-  const diagramsDir = path.join(__dirname, 'docs', 'diagrams');
+  const diagramsDir = path.join(process.cwd(), 'docs', 'diagrams');
   const files = fs.readdirSync(diagramsDir).filter(f => f.endsWith('.excalidraw'));
   
   for (const file of files) {
