@@ -1163,15 +1163,19 @@ header {
         padding-bottom: 20px;
     }
     
+    .ladder-step {
+        padding-bottom: 14px;
+    }
+    
     .ladder-word-text {
         font-size: 16px;
-        padding: 10px 8px 26px 8px;
+        padding: 18px 8px 18px 8px;
         line-height: 1.2;
     }
     
     .ladder-input {
         font-size: 16px;
-        padding: 10px 8px 26px 8px;
+        padding: 18px 8px 18px 8px;
         line-height: 1.2;
     }
     
