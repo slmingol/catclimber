@@ -419,6 +419,16 @@ header {
     background: var(--victory-bg);
 }
 
+/* Apply focus background to step container so it fills space between rungs */
+.ladder-step:focus-within {
+    background: var(--accent-bg);
+}
+
+.ladder-step.start-word:focus-within,
+.ladder-step.end-word:focus-within {
+    background: var(--victory-bg);
+}
+
 .ladder-word-text {
     font-size: 16px;
     font-weight: 700;
@@ -489,8 +499,9 @@ header {
     font-weight: 400;
 }
 
+/* Remove background from input since step container has it */
 .ladder-input:focus {
-    background: var(--accent-bg);
+    background: transparent;
 }
 
 .ladder-input.correct {
