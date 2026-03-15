@@ -1201,7 +1201,7 @@ header {
     .letter-change-box {
         font-size: 10px;
         padding: 2px 5px;
-        bottom: -10px;
+        bottom: 0;
     }
     
     .solve-direction {
