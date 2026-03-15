@@ -503,8 +503,16 @@ header {
 .step-hint {
     font-size: 11px;
     color: var(--error-color);
-    min-height: 14px;
     text-align: center;
+    padding: 0;
+    min-height: 0;
+    line-height: 1;
+    background: transparent;
+    display: none;
+}
+
+.step-hint:not(:empty) {
+    display: block;
     padding: 2px 8px;
     background: rgba(0, 0, 0, 0.2);
 }
