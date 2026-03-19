@@ -25,7 +25,7 @@ A word ladder puzzle game inspired by Raddle.quest where you transform one word 
 
 ## ✨ Features
 
-- **16 Built-in Puzzles** with varying difficulty levels and themes
+- **398 Built-in Puzzles** with varying difficulty levels and themes (383 collected + 15 custom)
 - **Shuffled Clues** to increase the challenge
 - **Real-time Validation** checks if words differ by one letter
 - **Visual Feedback** shows correct and incorrect entries
@@ -105,8 +105,8 @@ GitHub Actions automatically builds and publishes Docker images when changes are
 
 Docker images are published to GitHub Container Registry:
 ```bash
-docker pull ghcr.io/slmingol/chanjinxamagig:latest
-docker pull ghcr.io/slmingol/chanjinxamagig:v1.1.0
+docker pull ghcr.io/slmingol/cat-climber:latest
+docker pull ghcr.io/slmingol/cat-climber:v1.1.0
 ```
 
 ### Version Display

@@ -1,7 +1,376 @@
 {
-  "count": 383,
-  "collected": "2026-03-14T20:14:04.730Z",
+  "count": 399,
+  "collected": "2026-03-19T20:31:43.081Z",
   "puzzles": [
+    {
+      "start": "SAVE",
+      "end": "PLAN",
+      "solution": [
+        "SAVE",
+        "SAGE",
+        "PAGE",
+        "PALE",
+        "PALS",
+        "PLAN"
+      ],
+      "clues": [
+        "Change one letter in SAVE to get a wise person → SAGE",
+        "Change one letter in SAGE to get a sheet of paper → PAGE",
+        "Change one letter in PAGE to get not dark or colorful → PALE",
+        "Change one letter in PALE to get plural friends → PALS",
+        "Change one letter in PALS to get a scheme or strategy → PLAN"
+      ],
+      "theme": "Word Transformations",
+      "description": "The best things we SAVE aren't always tangible. Sometimes we need a careful PLAN to protect what truly matters, transforming simple intentions into meaningful actions through small, deliberate changes.",
+      "date": "March 7, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "COLD",
+      "end": "WARM",
+      "solution": [
+        "COLD",
+        "CORD",
+        "WORD",
+        "WORM",
+        "WARM"
+      ],
+      "clues": [
+        "Change one letter in COLD to get a rope or cable → CORD",
+        "Change one letter in CORD to get what you're reading now → WORD",
+        "Change one letter in WORD to get a wiggly invertebrate → WORM",
+        "Change one letter in WORM to get a cozy temperature → WARM"
+      ],
+      "theme": "Temperature",
+      "description": "A COLD morning transforms gradually as the sun rises, each degree bringing subtle shifts in how we feel. By afternoon, the same air that made us shiver now feels WARM and welcoming, proving that comfort is just COLD given time and patience.",
+      "date": "March 7, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "HEAD",
+      "end": "TAIL",
+      "solution": [
+        "HEAD",
+        "HEAL",
+        "TEAL",
+        "TELL",
+        "TALL",
+        "TAIL"
+      ],
+      "clues": [
+        "Change one letter in HEAD to cure or repair → HEAL",
+        "Change one letter in HEAL to get a blue-green color → TEAL",
+        "Change one letter in TEAL to speak or narrate → TELL",
+        "Change one letter in TELL to get having great height → TALL",
+        "Change one letter in TALL to get the opposite end from HEAD → TAIL"
+      ],
+      "theme": "Opposites",
+      "description": "Every journey needs two markers: the starting HEAD and the finishing TAIL. Like a coin spinning through air, we flip between these opposites, never quite one or the other until we finally land and see which side faces up.",
+      "date": "March 7, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "WORK",
+      "end": "PLAY",
+      "solution": [
+        "WORK",
+        "PORK",
+        "PORT",
+        "POST",
+        "PAST",
+        "PLAT",
+        "PLAY"
+      ],
+      "clues": [
+        "Change one letter in WORK to get meat from a pig → PORK",
+        "Change one letter in PORK to get a harbor for ships → PORT",
+        "Change one letter in PORT to get where you mail letters → POST",
+        "Change one letter in POST to get the opposite of future → PAST",
+        "Change one letter in PAST to get a measured piece of land → PLAT",
+        "Change one letter in PLAT to have fun → PLAY"
+      ],
+      "theme": "Life Balance",
+      "description": "Finding the balance between WORK and PLAY defines a life well-lived. Too much responsibility crushes the spirit, while too much leisure leaves us unfulfilled—the sweet spot lies somewhere between these extremes, where obligation meets joy.",
+      "date": "March 7, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "LOVE",
+      "end": "HATE",
+      "solution": [
+        "LOVE",
+        "HOVE",
+        "HAVE",
+        "HATE"
+      ],
+      "clues": [
+        "Change one letter in LOVE to get past tense of heave (nautical) → HOVE",
+        "Change one letter in HOVE to possess something → HAVE",
+        "Change one letter in HAVE to get strong dislike → HATE"
+      ],
+      "theme": "Emotions",
+      "description": "LOVE and HATE sit closer together than we'd like to admit. These twin emotions, seemingly opposite, share the same intensity and passion—only their direction differs, making the journey between them surprisingly short yet infinitely complex.",
+      "date": "March 7, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "FAST",
+      "end": "SLOW",
+      "solution": [
+        "FAST",
+        "LAST",
+        "LASH",
+        "LATH",
+        "LOATH",
+        "SLOTH",
+        "SLOE",
+        "SLOW"
+      ],
+      "clues": [
+        "Change one letter in FAST to get coming after all others → LAST",
+        "Change one letter in LAST to whip or strike → LASH",
+        "Change one letter in LASH to get a thin strip of wood → LATH",
+        "Change one letter in LATH to get reluctant or unwilling → LOATH",
+        "Change one letter in LOATH to get a very slow-moving animal → SLOTH",
+        "Change one letter in SLOTH to get a type of berry → SLOE",
+        "Change one letter in SLOE to get not fast → SLOW"
+      ],
+      "theme": "Speed",
+      "description": "Racing through life FAST, we often miss what matters most. Only when we finally embrace going SLOW do we discover that velocity isn't everything—sometimes the longest path teaches us more than the quickest route ever could.",
+      "date": "March 7, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "RAIN",
+      "end": "SNOW",
+      "solution": [
+        "RAIN",
+        "PAIN",
+        "PAWN",
+        "SAWN",
+        "SEWN",
+        "SHOW",
+        "SNOW"
+      ],
+      "clues": [
+        "Change one letter in RAIN to get physical or emotional hurt → PAIN",
+        "Change one letter in PAIN to get a chess piece → PAWN",
+        "Change one letter in PAWN to get cut with a saw (past tense) → SAWN",
+        "Change one letter in SAWN to get stitched together → SEWN",
+        "Change one letter in SEWN to get a performance or display → SHOW",
+        "Change one letter in SHOW to get frozen precipitation → SNOW"
+      ],
+      "theme": "Weather",
+      "description": "Spring RAIN and winter SNOW are siblings separated by temperature. Both fall from clouds, both nourish the earth, yet one flows while the other drifts—proving that nature's transformations often require just the smallest shift in conditions.",
+      "date": "March 8, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "IRON",
+      "end": "GOLD",
+      "solution": [
+        "IRON",
+        "ICON",
+        "COIN",
+        "CORN",
+        "CORD",
+        "COLD",
+        "GOLD"
+      ],
+      "clues": [
+        "Change one letter in IRON to get a symbol or religious image → ICON",
+        "Change one letter in ICON to get metal currency → COIN",
+        "Change one letter in COIN to get yellow grain on the cob → CORN",
+        "Change one letter in CORN to get rope or cable → CORD",
+        "Change one letter in CORD to get low temperature → COLD",
+        "Change one letter in COLD to get precious yellow metal → GOLD"
+      ],
+      "theme": "Metals",
+      "description": "Medieval alchemists spent lifetimes trying to transmute common IRON into precious GOLD. While they never achieved their literal goal, they discovered something more valuable: true transformation comes through patience, wisdom, and carefully measured steps forward.",
+      "date": "March 9, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "DARK",
+      "end": "LITE",
+      "solution": [
+        "DARK",
+        "DART",
+        "TART",
+        "TART",
+        "LART",
+        "LITE"
+      ],
+      "clues": [
+        "Change one letter in DARK to get a throwing projectile → DART",
+        "Change one letter in DART to get a sweet pastry or sharp taste → TART",
+        "Anagram TART to get colloquial spelling of light → LITE"
+      ],
+      "theme": "Light vs Dark",
+      "description": "Moving from DARK to LITE isn't about banishing shadows entirely—it's about finding the first spark that breaks the blackness. Even the smallest illumination can guide us forward, proving that enlightenment begins with a single, simple change.",
+      "date": "March 10, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "MEAT",
+      "end": "TACO",
+      "solution": [
+        "MEAT",
+        "MELT",
+        "MOLT",
+        "MOOT",
+        "TOOT",
+        "TACO"
+      ],
+      "clues": [
+        "Change one letter in MEAT to liquify from heat → MELT",
+        "Change one letter in MELT to shed feathers or skin → MOLT",
+        "Change one letter in MOLT to get a debatable point → MOOT",
+        "Change one letter in MOOT to sound a horn → TOOT",
+        "Anagram TOOT to get Mexican food in a shell → TACO"
+      ],
+      "theme": "Food",
+      "description": "The journey from raw MEAT to a perfect TACO illustrates culinary alchemy at its finest. Through heat, spices, and technique, simple ingredients transform into complex flavors—each step of preparation adding depth until something entirely new emerges.",
+      "date": "March 11, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "BOOK",
+      "end": "READ",
+      "solution": [
+        "BOOK",
+        "TOOK",
+        "TOAD",
+        "ROAD",
+        "READ"
+      ],
+      "clues": [
+        "Change one letter in BOOK to get past tense of take → TOOK",
+        "Change one letter in TOOK to get a warty amphibian → TOAD",
+        "Change one letter in TOAD to get a path for vehicles → ROAD",
+        "Change one letter in ROAD to look at and comprehend text → READ"
+      ],
+      "theme": "Literature",
+      "description": "A BOOK remains just bound paper until someone opens it to READ. That act of reading transforms static text into living stories, transporting us from our comfortable chairs into adventures we never imagined, all through the magic of words.",
+      "date": "March 12, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "RICH",
+      "end": "POOR",
+      "solution": [
+        "RICH",
+        "RICK",
+        "ROCK",
+        "ROOK",
+        "ROOF",
+        "POOF",
+        "POOR"
+      ],
+      "clues": [
+        "Change one letter in RICH to get a stack of hay → RICK",
+        "Change one letter in RICK to get a stone → ROCK",
+        "Change one letter in ROCK to get a castle piece in chess → ROOK",
+        "Change one letter in ROOK to get top covering of a house → ROOF",
+        "Change one letter in ROOF to get exclamation when something disappears → POOF",
+        "Change one letter in POOF to get having little money → POOR"
+      ],
+      "theme": "Economics",
+      "description": "The distance between RICH and POOR is shorter than it appears. Fortunes rise and fall, circumstances shift unexpectedly, and what seems permanent today may vanish tomorrow—teaching us that true wealth lies in resilience, not in what we temporarily hold.",
+      "date": "March 13, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "BLUE",
+      "end": "PINK",
+      "solution": [
+        "BLUE",
+        "GLUE",
+        "GLUT",
+        "GOUT",
+        "POUT",
+        "PUNT",
+        "PINK"
+      ],
+      "clues": [
+        "Change one letter in BLUE to get sticky adhesive → GLUE",
+        "Change one letter in GLUE to get an oversupply → GLUT",
+        "Change one letter in GLUT to get painful joint condition → GOUT",
+        "Change one letter in GOUT to push out your lips in displeasure → POUT",
+        "Change one letter in POUT to kick a football → PUNT",
+        "Change one letter in PUNT to get light red color → PINK"
+      ],
+      "theme": "Colors",
+      "description": "Watch the sky transform from deep BLUE to soft PINK during sunset. This daily metamorphosis reminds us that colors exist on a spectrum, and the journey from one hue to another passes through shades we rarely pause to appreciate.",
+      "date": "March 14, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "MOON",
+      "end": "STAR",
+      "solution": [
+        "MOON",
+        "MOAN",
+        "LOAN",
+        "LEAN",
+        "LEAR",
+        "SEAR",
+        "STAR"
+      ],
+      "clues": [
+        "Change one letter in MOON to get a groan or complaint → MOAN",
+        "Change one letter in MOAN to get borrowed money → LOAN",
+        "Change one letter in LOAN to tilt or be thin → LEAN",
+        "Change one letter in LEAN to get King in Shakespeare play → LEAR",
+        "Change one letter in LEAR to burn the surface → SEAR",
+        "Change one letter in SEAR to get celestial body that twinkles → STAR"
+      ],
+      "theme": "Astronomy",
+      "description": "Ancient sailors navigated by both MOON and STAR, each celestial body offering its own guidance. While one waxes and wanes, the others remain constant—together they map the heavens, showing us that even the night sky tells stories of transformation and permanence.",
+      "date": "March 15, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "FIRE",
+      "end": "SAFE",
+      "solution": [
+        "FIRE",
+        "FARE",
+        "CAFE",
+        "SAFE"
+      ],
+      "clues": [
+        "Change one letter in FIRE to get transportation cost → FARE",
+        "Change one letter in FARE to get a coffee shop → CAFE",
+        "Change one letter in CAFE to get secure and protected → SAFE"
+      ],
+      "theme": "Safety",
+      "description": "Running from FIRE toward somewhere SAFE is instinct, but the transformation between danger and security happens through deliberate choices. What once threatened to consume us can become controlled, useful, even comforting when we learn to contain and direct it properly.",
+      "date": "March 16, 2026",
+      "source": "custom"
+    },
+    {
+      "start": "PUGSLEY",
+      "end": "WEDNESDAY",
+      "clues": [
+        "________ ____, part of many cars",
+        "Add a letter to the start of ____ to get a dog",
+        "Dog at the start of ____",
+        "Drop the last letter from ____ and anagram to get a breakfast foodstuff",
+        "Drop the outside letters from ____ to get an expectated level of quality",
+        "Having ____ strength",
+        "Insert a letter into ____ to get a stopper",
+        "Number resembling a ____",
+        "Timeframe that sounds like \"____\"",
+        "Two better than ____"
+      ],
+      "solution": [],
+      "theme": "",
+      "date": "Thu, March 19, 2026",
+      "url": "https://raddle.quest/2026/03/19",
+      "note": "Pugsley and Wednesday Addams have a dangerous sibling dynamic. As the older sister, Wednesday takes it upon herself to test Pugsley’s mettle through attempted beheadings and electrocutions. Theme: Fictional Siblings Based on a request by Raddle fan Ness, this week we're featuring pairs of fictional siblings.",
+      "source": "scraped"
+    },
     {
       "start": "BATTLE",
       "end": "BATTLE",

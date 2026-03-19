@@ -325,6 +325,29 @@ header {
     color: var(--text-secondary);
 }
 
+.return-daily-btn {
+    background: var(--bg-button);
+    border: 1px solid var(--border-secondary);
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.return-daily-btn:hover {
+    background: var(--bg-button-hover);
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+    transform: translateY(-1px);
+}
+
 /* Victory Section */
 .victory-section {
     background: transparent;

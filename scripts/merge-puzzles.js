@@ -6,12 +6,20 @@
  */
 
 const fs = require('fs');
+const path = require('path');
+
+// Determine paths based on environment
+const isContainer = fs.existsSync('/usr/share/caddy/');
+const dataDir = isContainer ? '/usr/share/caddy' : path.join(__dirname, '../data');
+const publicDir = isContainer ? '/usr/share/caddy' : path.join(__dirname, '../public');
 
 function loadJSON(file) {
-    if (!fs.existsSync(file)) {
+    const filePath = path.join(dataDir, file);
+    if (!fs.existsSync(filePath)) {
+        console.log(`Note: ${filePath} not found, using empty dataset`);
         return { puzzles: [] };
     }
-    return JSON.parse(fs.readFileSync(file, 'utf8'));
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
 function normalizeDate(dateStr) {
@@ -79,7 +87,13 @@ function main() {
         puzzles: allPuzzles
     };
     
-    fs.writeFileSync('collected-puzzles.json', JSON.stringify(result, null, 2));
+    // Save to data directory
+    const outputPath = path.join(dataDir, 'collected-puzzles.json');
+    fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
+    
+    // Also copy to public directory for serving
+    const publicPath = path.join(publicDir, 'collected-puzzles.json');
+    fs.writeFileSync(publicPath, JSON.stringify(result, null, 2));
     
     const scrapedCount = allPuzzles.filter(p => p.source === 'scraped' || !p.source).length;
     const customCount = allPuzzles.filter(p => p.source === 'custom').length;
@@ -97,7 +111,8 @@ function main() {
     console.log(`  Scraped (raddle.quest): ${scrapedCount}`);
     console.log(`  Custom: ${customCount}`);
     console.log(`  Dates with both variants: ${duplicates}`);
-    console.log(`  Saved to collected-puzzles.json`);
+    console.log(`  Saved to: ${outputPath}`);
+    console.log(`  Copied to: ${publicPath}`);
 }
 
 main();

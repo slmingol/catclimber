@@ -53,6 +53,27 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
     }
 });
 
+// Daily puzzle configuration
+const DAILY_PUZZLE_START_DATE = new Date('2026-03-07'); // First puzzle date
+
+function getDailyPuzzleIndex() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const start = new Date(DAILY_PUZZLE_START_DATE);
+    start.setHours(0, 0, 0, 0);
+    const daysSinceStart = Math.floor((today - start) / (1000 * 60 * 60 * 24));
+    return daysSinceStart % PUZZLES.length;
+}
+
+function isPlayingDailyPuzzle() {
+    return currentPuzzleIndex === getDailyPuzzleIndex();
+}
+
+function getDailyPuzzleDate() {
+    const today = new Date();
+    return today.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
 // Puzzle database - will be loaded from collected-puzzles.json
 let PUZZLES = [
     {
@@ -285,6 +306,7 @@ let PUZZLES = [
 // Game state
 let currentPuzzle = null;
 let currentPuzzleIndex = 0;
+let startedOnDailyPuzzle = false; // Track if user started on daily puzzle
 let userSolution = [];
 let revealedHintIndex = null;
 let usedClues = [];
@@ -305,6 +327,7 @@ const revealBtn = document.getElementById('reveal-btn');
 const clearBtn = document.getElementById('clear-btn');
 const prevPuzzleBtn = document.getElementById('prev-puzzle-btn');
 const nextPuzzleBtn = document.getElementById('next-puzzle-btn');
+const returnDailyBtn = document.getElementById('return-daily-btn');
 const resultModal = document.getElementById('result-modal');
 const resultMessage = document.getElementById('result-message');
 const closeModal = document.querySelector('.close');
@@ -336,8 +359,12 @@ let gameStats = {
     totalHints: 0,
     currentStreak: 0,
     bestStreak: 0,
+    dailyStreak: 0,
+    bestDailyStreak: 0,
     puzzlesCompleted: {}, // Track which puzzles are completed
-    lastPlayed: null
+    dailyPuzzlesCompleted: {}, // Track daily puzzle completions by date
+    lastPlayed: null,
+    lastDailyPlayed: null
 };
 
 // Load stats from localStorage
@@ -384,7 +411,45 @@ function markPuzzleCompleted(puzzleIndex, hintsCount) {
             gameStats.bestStreak = gameStats.currentStreak;
         }
         
+        // Track daily puzzle completion
+        if (isPlayingDailyPuzzle()) {
+            const today = new Date().toISOString().split('T')[0];
+            if (!gameStats.dailyPuzzlesCompleted[today]) {
+                gameStats.dailyPuzzlesCompleted[today] = {
+                    puzzleIndex: puzzleIndex,
+                    hints: hintsCount,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Update daily streak
+                updateDailyStreak();
+            }
+        }
+        
         saveStats();
+    }
+}
+
+// Update daily streak
+function updateDailyStreak() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    const todayStr = today.toISOString().split('T')[0];
+    const yesterdayStr = yesterday.toISOString().split('T')[0];
+    
+    // Check if played yesterday
+    if (gameStats.dailyPuzzlesCompleted[yesterdayStr]) {
+        gameStats.dailyStreak = (gameStats.dailyStreak || 0) + 1;
+    } else {
+        gameStats.dailyStreak = 1;
+    }
+    
+    if (gameStats.dailyStreak > (gameStats.bestDailyStreak || 0)) {
+        gameStats.bestDailyStreak = gameStats.dailyStreak;
     }
 }
 
@@ -445,6 +510,9 @@ function displayStats() {
     document.getElementById('stat-avg-hints').textContent = avgHints;
     document.getElementById('stat-best-streak').textContent = gameStats.bestStreak;
     document.getElementById('stat-total-hints').textContent = gameStats.totalHints;
+    document.getElementById('stat-daily-streak').textContent = gameStats.dailyStreak || 0;
+    document.getElementById('stat-best-daily-streak').textContent = gameStats.bestDailyStreak || 0;
+    document.getElementById('stat-daily-completed').textContent = Object.keys(gameStats.dailyPuzzlesCompleted || {}).length;
     document.getElementById('current-puzzle-info').textContent = `#${currentPuzzleIndex + 1} - ${currentPuzzle.theme}`;
     
     if (gameStats.lastPlayed) {
@@ -467,8 +535,12 @@ function resetStats() {
             totalHints: 0,
             currentStreak: 0,
             bestStreak: 0,
+            dailyStreak: 0,
+            bestDailyStreak: 0,
             puzzlesCompleted: {},
-            lastPlayed: null
+            dailyPuzzlesCompleted: {},
+            lastPlayed: null,
+            lastDailyPlayed: null
         };
         saveStats();
         localStorage.removeItem('cat-climber-game-state');
@@ -518,6 +590,7 @@ async function initGame() {
         console.log(`URL puzzle parameter: ${puzzleParam}, parsed: ${puzzleIndex}, PUZZLES.length: ${PUZZLES.length}`);
         if (!isNaN(puzzleIndex) && puzzleIndex >= 0 && puzzleIndex < PUZZLES.length) {
             currentPuzzleIndex = puzzleIndex;
+            startedOnDailyPuzzle = false;
             console.log(`Loading puzzle ${currentPuzzleIndex}: ${PUZZLES[currentPuzzleIndex]?.start} → ${PUZZLES[currentPuzzleIndex]?.end}`);
             // Clear saved state when loading from archive
             clearGameState();
@@ -526,6 +599,10 @@ async function initGame() {
         }
         // Clear URL parameter after reading
         window.history.replaceState({}, document.title, window.location.pathname);
+    } else {
+        // No URL param - load daily puzzle by default
+        currentPuzzleIndex = getDailyPuzzleIndex();
+        startedOnDailyPuzzle = true;
     }
     
     loadStats();
@@ -600,17 +677,27 @@ function renderPuzzle() {
     startWordEl.textContent = currentPuzzle.start;
     endWordEl.textContent = currentPuzzle.end;
     
-    // Format date with day of week
-    if (currentPuzzle.date) {
-        const dateObj = new Date(currentPuzzle.date);
-        const dayOfWeek = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
-        puzzleDateEl.textContent = `${dayOfWeek}, ${currentPuzzle.date}`;
+    // Update puzzle number and theme with daily indicator
+    const isDailyPuzzle = isPlayingDailyPuzzle();
+    if (isDailyPuzzle) {
+        puzzleNumberTextEl.textContent = `Today's Puzzle • #${currentPuzzleIndex + 1}`;
+        puzzleDateEl.textContent = getDailyPuzzleDate();
     } else {
-        puzzleDateEl.textContent = currentPuzzle.date;
+        puzzleNumberTextEl.textContent = `Archive • #${currentPuzzleIndex + 1}`;
+        // Format date with day of week for archive puzzles
+        if (currentPuzzle.date) {
+            const dateObj = new Date(currentPuzzle.date);
+            const dayOfWeek = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
+            puzzleDateEl.textContent = `${dayOfWeek}, ${currentPuzzle.date}`;
+        } else {
+            puzzleDateEl.textContent = currentPuzzle.date || 'Archive Puzzle';
+        }
     }
     
-    puzzleNumberTextEl.textContent = `Cat Climber: #${currentPuzzleIndex + 1}`;
     puzzleThemeTextEl.textContent = currentPuzzle.theme;
+    
+    // Update return to daily button visibility
+    updateReturnToDailyButton();
     
     // Render ladder
     renderLadder();
@@ -1853,10 +1940,14 @@ function showResult(success) {
         }
         pathEmojis += '🟢'; // End
         
+        // Check if this is the daily puzzle
+        const isDailyPuzzle = isPlayingDailyPuzzle();
+        const dailyBadge = isDailyPuzzle ? '<span style="display: inline-block; background: var(--accent-primary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px;">📅 Daily</span>' : '';
+        
         // Simplified victory message
         victoryContent.innerHTML = `
             <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--success-color);">
-                ✓ Puzzle Complete
+                ✓ Puzzle Complete${dailyBadge}
             </div>
             <div style="font-size: 14px; margin-bottom: 12px; color: var(--text-secondary);">
                 ${currentPuzzle.start} ${pathEmojis} ${currentPuzzle.end} · ${percentNoHints}% solved without hints
@@ -1947,6 +2038,7 @@ function newPuzzle() {
 function prevPuzzle() {
     currentPuzzleIndex = (currentPuzzleIndex - 1 + PUZZLES.length) % PUZZLES.length;
     userSolution = []; // Force reset for new puzzle
+    clearGameState();
     loadPuzzle(currentPuzzleIndex);
 }
 
@@ -1954,7 +2046,31 @@ function prevPuzzle() {
 function nextPuzzle() {
     currentPuzzleIndex = (currentPuzzleIndex + 1) % PUZZLES.length;
     userSolution = []; // Force reset for new puzzle
+    clearGameState();
     loadPuzzle(currentPuzzleIndex);
+}
+
+// Return to today's puzzle
+function returnToDaily() {
+    const dailyIndex = getDailyPuzzleIndex();
+    if (currentPuzzleIndex !== dailyIndex) {
+        currentPuzzleIndex = dailyIndex;
+        userSolution = [];
+        clearGameState();
+        loadPuzzle(currentPuzzleIndex);
+    }
+}
+
+// Update return to daily button visibility
+function updateReturnToDailyButton() {
+    const returnBtn = document.getElementById('return-daily-btn');
+    if (returnBtn) {
+        if (isPlayingDailyPuzzle()) {
+            returnBtn.style.display = 'none';
+        } else {
+            returnBtn.style.display = 'inline-block';
+        }
+    }
 }
 
 // Event listeners
@@ -1963,6 +2079,9 @@ revealBtn.addEventListener('click', revealAnswer);
 clearBtn.addEventListener('click', clearAll);
 prevPuzzleBtn.addEventListener('click', prevPuzzle);
 nextPuzzleBtn.addEventListener('click', nextPuzzle);
+if (returnDailyBtn) {
+    returnDailyBtn.addEventListener('click', returnToDaily);
+}
 closeModal.addEventListener('click', () => {
     resultModal.style.display = 'none';
 });
@@ -2075,9 +2194,9 @@ To import collected puzzles:
 3. Open script.js
 4. Replace or extend the PUZZLES array with the collected data
 5. Rebuild the container:
-   podman stop chanjinxamagig && podman rm chanjinxamagig && \\
-   podman build -t chanjinxamagig . && \\
-   podman run -d -p 3992:80 --name chanjinxamagig chanjinxamagig
+   podman stop cat-climber && podman rm cat-climber && \\
+   podman build -t cat-climber . && \\
+   podman run -d -p 3992:80 --name cat-climber cat-climber
     `.trim();
     
     alert(instructions);

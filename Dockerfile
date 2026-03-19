@@ -10,7 +10,6 @@ RUN apk add --no-cache \
     harfbuzz \
     ca-certificates \
     ttf-freefont \
-    dcron \
     libstdc++
 
 # Set Puppeteer to use installed chromium
@@ -29,6 +28,7 @@ RUN npm install --production && \
 # Copy scraper scripts and data
 COPY scripts/daily-scraper.js /app/
 COPY scripts/scraper.js /app/
+COPY scripts/scheduler.js /app/
 COPY scripts/merge-puzzles.js /app/
 COPY data/custom-puzzles.json /app/
 
@@ -52,17 +52,16 @@ RUN sed "s/__VERSION__/${APP_VERSION}/g" /usr/share/caddy/index.html.tmp > /usr/
     rm /usr/share/caddy/index.html.tmp && \
     rm -rf /var/cache/apk/* /tmp/*
 
-# Set up cron job to run 4 times daily (12:05 AM, 6:05 AM, 12:05 PM, 6:05 PM)
-RUN echo "5 0,6,12,18 * * * cd /app && /usr/bin/node daily-scraper.js >> /var/log/daily-scraper.log 2>&1" > /etc/crontabs/root
-
-# Create startup script
+# Create startup script that runs scheduler in background
 RUN echo '#!/bin/sh' > /start.sh && \
-    echo 'crond -b' >> /start.sh && \
+    echo 'echo "Starting Cat Climber puzzle scheduler..."' >> /start.sh && \
+    echo 'cd /app && node scheduler.js > /var/log/scheduler.log 2>&1 &' >> /start.sh && \
+    echo 'echo "Starting Caddy web server..."' >> /start.sh && \
     echo 'exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile' >> /start.sh && \
     chmod +x /start.sh
 
 # Expose port 80
 EXPOSE 80
 
-# Start both cron and caddy
+# Start scheduler in background and Caddy in foreground
 CMD ["/start.sh"]

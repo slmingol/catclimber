@@ -1,8 +1,8 @@
-# Chanjinxamagig - Copilot Agent Instructions
+# Cat Climber - Copilot Agent Instructions
 
 ## Project Overview
 
-**Chanjinxamagig** is a static word-ladder puzzle game (vanilla HTML/CSS/JS) served by Caddy in a container.
+**Cat Climber** is a static word-ladder puzzle game (vanilla HTML/CSS/JS) served by Caddy in a container.
 
 - **Type**: Static web app
 - **Languages**: HTML, CSS, JavaScript
@@ -38,10 +38,10 @@ python3 -m http.server 8000
 
 ### Podman (preferred)
 ```bash
-podman build -t chanjinxamagig .
-podman run -d --name chanjinxamagig -p 3992:80 chanjinxamagig
-podman logs -f chanjinxamagig
-podman rm -f chanjinxamagig
+podman build -t cat-climber .
+podman run -d --name cat-climber -p 3992:80 cat-climber
+podman logs -f cat-climber
+podman rm -f cat-climber
 ```
 
 ### Compose

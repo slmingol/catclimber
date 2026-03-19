@@ -92,7 +92,13 @@ async function getTodaysPuzzle() {
         }
         
         // Merge with existing collection
-        const collectionPath = '/usr/share/caddy/collected-puzzles.json';
+        // Use container path if running in container, else use local data directory
+        const isContainer = fs.existsSync('/usr/share/caddy/');
+        const collectionPath = isContainer 
+            ? '/usr/share/caddy/collected-puzzles.json'
+            : path.join(__dirname, '../data/collected-puzzles.json');
+        
+        console.log(`Using collection path: ${collectionPath}`);
         let collection = { collected: new Date().toISOString(), count: 0, puzzles: [] };
         
         if (fs.existsSync(collectionPath)) {
@@ -137,7 +143,8 @@ if (require.main === module) {
             console.log('Running merge with custom puzzles...');
             const { execSync } = require('child_process');
             try {
-                execSync('node merge-puzzles.js', { cwd: __dirname, stdio: 'inherit' });
+                const mergeScript = path.join(__dirname, 'merge-puzzles.js');
+                execSync(`node "${mergeScript}"`, { cwd: __dirname, stdio: 'inherit' });
             } catch (err) {
                 console.error('Warning: Merge script failed:', err.message);
             }

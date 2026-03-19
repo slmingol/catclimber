@@ -4,8 +4,9 @@
   "description": "Word ladder puzzle game with automatic daily puzzle collection",
   "main": "script.js",
   "scripts": {
-    "scrape": "node scraper.js",
-    "daily": "node daily-scraper.js"
+    "scrape": "node scripts/scraper.js",
+    "daily": "node scripts/daily-scraper.js",
+    "scheduler": "node scripts/scheduler.js"
   },
   "dependencies": {
     "puppeteer": "^24.39.1"
