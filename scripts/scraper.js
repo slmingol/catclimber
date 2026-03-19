@@ -29,8 +29,8 @@ async function scrapeWithPuppeteer() {
         await new Promise(resolve => setTimeout(resolve, 3000)); // Additional wait
         
         // Take a screenshot for debugging
-        await page.screenshot({ path: 'raddle-screenshot.png' });
-        console.log('Screenshot saved to raddle-screenshot.png');
+        await page.screenshot({ path: 'docs/images/raddle-screenshot.png' });
+        console.log('Screenshot saved to docs/images/raddle-screenshot.png');
         
         // Get the full text content
         const fullText = await page.evaluate(() => document.body.textContent);
