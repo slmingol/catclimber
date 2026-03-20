@@ -1,6 +1,6 @@
 {
-  "count": 399,
-  "collected": "2026-03-19T20:31:43.081Z",
+  "count": 396,
+  "collected": "2026-03-20T01:03:17.126Z",
   "puzzles": [
     {
       "start": "SAVE",
@@ -14,11 +14,11 @@
         "PLAN"
       ],
       "clues": [
-        "Change one letter in SAVE to get a wise person → SAGE",
-        "Change one letter in SAGE to get a sheet of paper → PAGE",
-        "Change one letter in PAGE to get not dark or colorful → PALE",
-        "Change one letter in PALE to get plural friends → PALS",
-        "Change one letter in PALS to get a scheme or strategy → PLAN"
+        "Change one letter in ^ to get a wise person",
+        "Change one letter in ^ to get a sheet of paper",
+        "Change one letter in ^ to get not dark or colorful",
+        "Change one letter in ^ to get plural friends",
+        "Change one letter in ^ to get a scheme or strategy"
       ],
       "theme": "Word Transformations",
       "description": "The best things we SAVE aren't always tangible. Sometimes we need a careful PLAN to protect what truly matters, transforming simple intentions into meaningful actions through small, deliberate changes.",
@@ -36,10 +36,10 @@
         "WARM"
       ],
       "clues": [
-        "Change one letter in COLD to get a rope or cable → CORD",
-        "Change one letter in CORD to get what you're reading now → WORD",
-        "Change one letter in WORD to get a wiggly invertebrate → WORM",
-        "Change one letter in WORM to get a cozy temperature → WARM"
+        "Change one letter in ^ to get a rope or cable",
+        "Change one letter in ^ to get what you're reading now",
+        "Change one letter in ^ to get a wiggly invertebrate",
+        "Change one letter in ^ to get a cozy temperature"
       ],
       "theme": "Temperature",
       "description": "A COLD morning transforms gradually as the sun rises, each degree bringing subtle shifts in how we feel. By afternoon, the same air that made us shiver now feels WARM and welcoming, proving that comfort is just COLD given time and patience.",
@@ -58,11 +58,11 @@
         "TAIL"
       ],
       "clues": [
-        "Change one letter in HEAD to cure or repair → HEAL",
-        "Change one letter in HEAL to get a blue-green color → TEAL",
-        "Change one letter in TEAL to speak or narrate → TELL",
-        "Change one letter in TELL to get having great height → TALL",
-        "Change one letter in TALL to get the opposite end from HEAD → TAIL"
+        "Change one letter in ^ to cure or repair",
+        "Change one letter in ^ to get a blue-green color",
+        "Change one letter in ^ to speak or narrate",
+        "Change one letter in ^ to get having great height",
+        "Change one letter in ^ to get the opposite end from HEAD"
       ],
       "theme": "Opposites",
       "description": "Every journey needs two markers: the starting HEAD and the finishing TAIL. Like a coin spinning through air, we flip between these opposites, never quite one or the other until we finally land and see which side faces up.",
@@ -82,12 +82,12 @@
         "PLAY"
       ],
       "clues": [
-        "Change one letter in WORK to get meat from a pig → PORK",
-        "Change one letter in PORK to get a harbor for ships → PORT",
-        "Change one letter in PORT to get where you mail letters → POST",
-        "Change one letter in POST to get the opposite of future → PAST",
-        "Change one letter in PAST to get a measured piece of land → PLAT",
-        "Change one letter in PLAT to have fun → PLAY"
+        "Change one letter in ^ to get meat from a pig",
+        "Change one letter in ^ to get a harbor for ships",
+        "Change one letter in ^ to get where you mail letters",
+        "Change one letter in ^ to get the opposite of future",
+        "Change one letter in ^ to get a measured piece of land",
+        "Change one letter in ^ to have fun"
       ],
       "theme": "Life Balance",
       "description": "Finding the balance between WORK and PLAY defines a life well-lived. Too much responsibility crushes the spirit, while too much leisure leaves us unfulfilled—the sweet spot lies somewhere between these extremes, where obligation meets joy.",
@@ -104,9 +104,9 @@
         "HATE"
       ],
       "clues": [
-        "Change one letter in LOVE to get past tense of heave (nautical) → HOVE",
-        "Change one letter in HOVE to possess something → HAVE",
-        "Change one letter in HAVE to get strong dislike → HATE"
+        "Change one letter in ^ to get past tense of heave (nautical)",
+        "Change one letter in ^ to possess something",
+        "Change one letter in ^ to get strong dislike"
       ],
       "theme": "Emotions",
       "description": "LOVE and HATE sit closer together than we'd like to admit. These twin emotions, seemingly opposite, share the same intensity and passion—only their direction differs, making the journey between them surprisingly short yet infinitely complex.",
@@ -127,13 +127,13 @@
         "SLOW"
       ],
       "clues": [
-        "Change one letter in FAST to get coming after all others → LAST",
-        "Change one letter in LAST to whip or strike → LASH",
-        "Change one letter in LASH to get a thin strip of wood → LATH",
-        "Change one letter in LATH to get reluctant or unwilling → LOATH",
-        "Change one letter in LOATH to get a very slow-moving animal → SLOTH",
-        "Change one letter in SLOTH to get a type of berry → SLOE",
-        "Change one letter in SLOE to get not fast → SLOW"
+        "Change one letter in ^ to get coming after all others",
+        "Change one letter in ^ to whip or strike",
+        "Change one letter in ^ to get a thin strip of wood",
+        "Change one letter in ^ to get reluctant or unwilling",
+        "Change one letter in ^ to get a very slow-moving animal",
+        "Change one letter in ^ to get a type of berry",
+        "Change one letter in ^ to get not fast"
       ],
       "theme": "Speed",
       "description": "Racing through life FAST, we often miss what matters most. Only when we finally embrace going SLOW do we discover that velocity isn't everything—sometimes the longest path teaches us more than the quickest route ever could.",
@@ -153,12 +153,12 @@
         "SNOW"
       ],
       "clues": [
-        "Change one letter in RAIN to get physical or emotional hurt → PAIN",
-        "Change one letter in PAIN to get a chess piece → PAWN",
-        "Change one letter in PAWN to get cut with a saw (past tense) → SAWN",
-        "Change one letter in SAWN to get stitched together → SEWN",
-        "Change one letter in SEWN to get a performance or display → SHOW",
-        "Change one letter in SHOW to get frozen precipitation → SNOW"
+        "Change one letter in ^ to get physical or emotional hurt",
+        "Change one letter in ^ to get a chess piece",
+        "Change one letter in ^ to get cut with a saw (past tense)",
+        "Change one letter in ^ to get stitched together",
+        "Change one letter in ^ to get a performance or display",
+        "Change one letter in ^ to get frozen precipitation"
       ],
       "theme": "Weather",
       "description": "Spring RAIN and winter SNOW are siblings separated by temperature. Both fall from clouds, both nourish the earth, yet one flows while the other drifts—proving that nature's transformations often require just the smallest shift in conditions.",
@@ -178,12 +178,12 @@
         "GOLD"
       ],
       "clues": [
-        "Change one letter in IRON to get a symbol or religious image → ICON",
-        "Change one letter in ICON to get metal currency → COIN",
-        "Change one letter in COIN to get yellow grain on the cob → CORN",
-        "Change one letter in CORN to get rope or cable → CORD",
-        "Change one letter in CORD to get low temperature → COLD",
-        "Change one letter in COLD to get precious yellow metal → GOLD"
+        "Change one letter in ^ to get a symbol or religious image",
+        "Change one letter in ^ to get metal currency",
+        "Change one letter in ^ to get yellow grain on the cob",
+        "Change one letter in ^ to get rope or cable",
+        "Change one letter in ^ to get low temperature",
+        "Change one letter in ^ to get precious yellow metal"
       ],
       "theme": "Metals",
       "description": "Medieval alchemists spent lifetimes trying to transmute common IRON into precious GOLD. While they never achieved their literal goal, they discovered something more valuable: true transformation comes through patience, wisdom, and carefully measured steps forward.",
@@ -202,9 +202,9 @@
         "LITE"
       ],
       "clues": [
-        "Change one letter in DARK to get a throwing projectile → DART",
-        "Change one letter in DART to get a sweet pastry or sharp taste → TART",
-        "Anagram TART to get colloquial spelling of light → LITE"
+        "Change one letter in ^ to get a throwing projectile",
+        "Change one letter in ^ to get a sweet pastry or sharp taste",
+        "Anagram ^ to get colloquial spelling of light"
       ],
       "theme": "Light vs Dark",
       "description": "Moving from DARK to LITE isn't about banishing shadows entirely—it's about finding the first spark that breaks the blackness. Even the smallest illumination can guide us forward, proving that enlightenment begins with a single, simple change.",
@@ -223,11 +223,11 @@
         "TACO"
       ],
       "clues": [
-        "Change one letter in MEAT to liquify from heat → MELT",
-        "Change one letter in MELT to shed feathers or skin → MOLT",
-        "Change one letter in MOLT to get a debatable point → MOOT",
-        "Change one letter in MOOT to sound a horn → TOOT",
-        "Anagram TOOT to get Mexican food in a shell → TACO"
+        "Change one letter in ^ to liquify from heat",
+        "Change one letter in ^ to shed feathers or skin",
+        "Change one letter in ^ to get a debatable point",
+        "Change one letter in ^ to sound a horn",
+        "Anagram ^ to get Mexican food in a shell"
       ],
       "theme": "Food",
       "description": "The journey from raw MEAT to a perfect TACO illustrates culinary alchemy at its finest. Through heat, spices, and technique, simple ingredients transform into complex flavors—each step of preparation adding depth until something entirely new emerges.",
@@ -245,10 +245,10 @@
         "READ"
       ],
       "clues": [
-        "Change one letter in BOOK to get past tense of take → TOOK",
-        "Change one letter in TOOK to get a warty amphibian → TOAD",
-        "Change one letter in TOAD to get a path for vehicles → ROAD",
-        "Change one letter in ROAD to look at and comprehend text → READ"
+        "Change one letter in ^ to get past tense of take",
+        "Change one letter in ^ to get a warty amphibian",
+        "Change one letter in ^ to get a path for vehicles",
+        "Change one letter in ^ to look at and comprehend text"
       ],
       "theme": "Literature",
       "description": "A BOOK remains just bound paper until someone opens it to READ. That act of reading transforms static text into living stories, transporting us from our comfortable chairs into adventures we never imagined, all through the magic of words.",
@@ -268,12 +268,12 @@
         "POOR"
       ],
       "clues": [
-        "Change one letter in RICH to get a stack of hay → RICK",
-        "Change one letter in RICK to get a stone → ROCK",
-        "Change one letter in ROCK to get a castle piece in chess → ROOK",
-        "Change one letter in ROOK to get top covering of a house → ROOF",
-        "Change one letter in ROOF to get exclamation when something disappears → POOF",
-        "Change one letter in POOF to get having little money → POOR"
+        "Change one letter in ^ to get a stack of hay",
+        "Change one letter in ^ to get a stone",
+        "Change one letter in ^ to get a castle piece in chess",
+        "Change one letter in ^ to get top covering of a house",
+        "Change one letter in ^ to get exclamation when something disappears",
+        "Change one letter in ^ to get having little money"
       ],
       "theme": "Economics",
       "description": "The distance between RICH and POOR is shorter than it appears. Fortunes rise and fall, circumstances shift unexpectedly, and what seems permanent today may vanish tomorrow—teaching us that true wealth lies in resilience, not in what we temporarily hold.",
@@ -293,12 +293,12 @@
         "PINK"
       ],
       "clues": [
-        "Change one letter in BLUE to get sticky adhesive → GLUE",
-        "Change one letter in GLUE to get an oversupply → GLUT",
-        "Change one letter in GLUT to get painful joint condition → GOUT",
-        "Change one letter in GOUT to push out your lips in displeasure → POUT",
-        "Change one letter in POUT to kick a football → PUNT",
-        "Change one letter in PUNT to get light red color → PINK"
+        "Change one letter in ^ to get sticky adhesive",
+        "Change one letter in ^ to get an oversupply",
+        "Change one letter in ^ to get painful joint condition",
+        "Change one letter in ^ to push out your lips in displeasure",
+        "Change one letter in ^ to kick a football",
+        "Change one letter in ^ to get light red color"
       ],
       "theme": "Colors",
       "description": "Watch the sky transform from deep BLUE to soft PINK during sunset. This daily metamorphosis reminds us that colors exist on a spectrum, and the journey from one hue to another passes through shades we rarely pause to appreciate.",
@@ -318,12 +318,12 @@
         "STAR"
       ],
       "clues": [
-        "Change one letter in MOON to get a groan or complaint → MOAN",
-        "Change one letter in MOAN to get borrowed money → LOAN",
-        "Change one letter in LOAN to tilt or be thin → LEAN",
-        "Change one letter in LEAN to get King in Shakespeare play → LEAR",
-        "Change one letter in LEAR to burn the surface → SEAR",
-        "Change one letter in SEAR to get celestial body that twinkles → STAR"
+        "Change one letter in ^ to get a groan or complaint",
+        "Change one letter in ^ to get borrowed money",
+        "Change one letter in ^ to tilt or be thin",
+        "Change one letter in ^ to get King in Shakespeare play",
+        "Change one letter in ^ to burn the surface",
+        "Change one letter in ^ to get celestial body that twinkles"
       ],
       "theme": "Astronomy",
       "description": "Ancient sailors navigated by both MOON and STAR, each celestial body offering its own guidance. While one waxes and wanes, the others remain constant—together they map the heavens, showing us that even the night sky tells stories of transformation and permanence.",
@@ -340,14 +340,59 @@
         "SAFE"
       ],
       "clues": [
-        "Change one letter in FIRE to get transportation cost → FARE",
-        "Change one letter in FARE to get a coffee shop → CAFE",
-        "Change one letter in CAFE to get secure and protected → SAFE"
+        "Change one letter in ^ to get transportation cost",
+        "Change one letter in ^ to get a coffee shop",
+        "Change one letter in ^ to get secure and protected"
       ],
       "theme": "Safety",
       "description": "Running from FIRE toward somewhere SAFE is instinct, but the transformation between danger and security happens through deliberate choices. What once threatened to consume us can become controlled, useful, even comforting when we learn to contain and direct it properly.",
       "date": "March 16, 2026",
       "source": "custom"
+    },
+    {
+      "start": "MABEL",
+      "end": "DIPPER",
+      "clues": [
+        "____ ____ ________, a mythical ________",
+        "____ ________, a pastime of politicians",
+        "____ ________, something to spot in the sky",
+        "Anagram ____ to get a good way to arrive, often",
+        "Anagram ____ to hold accountable",
+        "Change one letter in ____ to get a part of the body",
+        "Drop the first letter from ____ to get a coat, for instance",
+        "Hate: ____ :: Love : ________",
+        "Let's give them a ________ ____",
+        "What ____ is better than, so it's said"
+      ],
+      "solution": [],
+      "theme": "",
+      "date": "Tue, March 17, 2026",
+      "url": "https://raddle.quest/2026/03/17",
+      "source": "scraped",
+      "scrapedDate": "2026-03-20T00:09:47.826Z"
+    },
+    {
+      "start": "JEM",
+      "end": "SCOUT",
+      "clues": [
+        "____________, a kind of success",
+        "________ ____, American rock band from the '60s",
+        "____________ (everywhere)",
+        "________-____, how relationships end",
+        "Add a C to ____ and anagram to get an organ",
+        "Add two letters to the front of ____ to get kind of spotter",
+        "A fast ________ is called a ____",
+        "Change one letter in ____ to get part of a jacuzzi",
+        "Drop a bigram (two letters) from ____ to get a worldwide company",
+        "Food poisoning can cause an ________ ____",
+        "US president ________ ____"
+      ],
+      "solution": [],
+      "theme": "",
+      "date": "Wed, March 18, 2026",
+      "url": "https://raddle.quest/2026/03/18",
+      "source": "scraped",
+      "scrapedDate": "2026-03-20T00:09:38.726Z"
     },
     {
       "start": "PUGSLEY",
@@ -370,6 +415,28 @@
       "url": "https://raddle.quest/2026/03/19",
       "note": "Pugsley and Wednesday Addams have a dangerous sibling dynamic. As the older sister, Wednesday takes it upon herself to test Pugsley’s mettle through attempted beheadings and electrocutions. Theme: Fictional Siblings Based on a request by Raddle fan Ness, this week we're featuring pairs of fictional siblings.",
       "source": "scraped"
+    },
+    {
+      "start": "KATNISS",
+      "end": "PRIMROSE",
+      "clues": [
+        "________ ____' Day",
+        "____ ________, part of a pirate costume",
+        "________ ____, Shakespearean coinage about foolish pursuit",
+        "Anagram ____ to get get a shape",
+        "Change one letter in ____ to get a rapper",
+        "Drop a letter from ____ to get a way to go",
+        "Drop a trigram (three letters) from ____ to get an adverb",
+        "Drop the K from ____ and anagram to get some holy figures",
+        "Part of the body that has many a ____",
+        "\"____ That ________\", 1979 movie"
+      ],
+      "solution": [],
+      "theme": "",
+      "date": "Fri, March 20, 2026",
+      "url": "https://raddle.quest/2026/03/20",
+      "source": "scraped",
+      "scrapedDate": "2026-03-20T00:24:57.181Z"
     },
     {
       "start": "BATTLE",
@@ -1675,150 +1742,6 @@
       "date": "",
       "source": "scraped",
       "scrapedDate": "2026-03-14T20:13:21.860Z"
-    },
-    {
-      "start": "GROUND",
-      "end": "HOG",
-      "clues": [
-        "Kind of beans sometimes bought pre-^",
-        "^ in French, or where you might buy a ^",
-        "Swap the consonants of ^ to get a part of the body",
-        "A ___ ^ doesn't tell much?",
-        "Hold ___ is a style of ^",
-        "It comes immediately after ^",
-        "Change ^’s first letter to get a preposition",
-        "Double a letter ^ ^ to get a place to stay",
-        "___ ^, chain with a vacation-y name",
-        "Jazz singer ___ ^",
-        "Often-spicy food that rhymes with ^",
-        "^ ___, a messy handheld meal",
-        "Change one letter in ^ to keep for yourself"
-      ],
-      "solution": [
-        "GROUND",
-        "COFFEE",
-        "CAFE",
-        "FACE",
-        "POKER",
-        "EM",
-        "EN",
-        "IN",
-        "INN",
-        "HOLIDAY",
-        "BILLIE",
-        "CHILI",
-        "DOG",
-        "HOG"
-      ],
-      "theme": "groundhog_day",
-      "date": "",
-      "source": "scraped",
-      "scrapedDate": "2026-03-14T20:13:22.110Z"
-    },
-    {
-      "start": "GROUND",
-      "end": "HOG",
-      "clues": [
-        "^ ___, a good place to get in on",
-        "Opposite of the ^",
-        "Kind of wax that sounds like \\\"^\\\"",
-        "Insert a letter into ^ to get a crime",
-        "Sport that features ^",
-        "Home ___, destination in ^",
-        "Insert a letter into ^ to get a biblical figure",
-        "Profession that sounds like \\\"^\\\"",
-        "A ^ writes in a ___book",
-        "Change the first letter of ^ to get an animal"
-      ],
-      "solution": [
-        "GROUND",
-        "FLOOR",
-        "CEILING",
-        "SEALING",
-        "STEALING",
-        "BASEBALL",
-        "PLATE",
-        "PILATE",
-        "PILOT",
-        "LOG",
-        "HOG"
-      ],
-      "theme": "groundhog_day",
-      "date": "",
-      "source": "scraped",
-      "scrapedDate": "2026-03-14T20:13:22.226Z"
-    },
-    {
-      "start": "GROUND",
-      "end": "HOG",
-      "clues": [
-        "A ___^ is found outside many an elementary school",
-        "\\\"The ^’s ___\\\" -Shakespeare",
-        "Director of \\\"^\\\"",
-        "Slender tool found inside ^",
-        "Counterpart of a ^ (that has a ^ inside of it?)",
-        "Add an A to ^ and anagram to get a bird",
-        "Large, prominent part of a ^",
-        "Insert an R into ^ to get an interruption",
-        "___ ^, a week of debauchery, for some",
-        "Drop the odd-placed letters in ^ to get a mammal",
-        "A large, domestic ^"
-      ],
-      "solution": [
-        "GROUND",
-        "PLAY",
-        "THE THING",
-        "CARPENTER",
-        "PEN",
-        "PENCIL",
-        "PELICAN",
-        "BEAK",
-        "BREAK",
-        "SPRING",
-        "PIG",
-        "HOG"
-      ],
-      "theme": "groundhog_day",
-      "date": "",
-      "source": "scraped",
-      "scrapedDate": "2026-03-14T20:13:22.350Z"
-    },
-    {
-      "start": "GROUND",
-      "end": "HOG",
-      "clues": [
-        "Drop the first letter of ^ to get something you might buy in an act of generosity",
-        "^___ (indirect)",
-        "\\\"___ ^ Nothing\\\"",
-        "Name found inside ^",
-        "^ is in ___",
-        "Longest river in ^",
-        "Swap the consonants of ^ to get something one-dimensional",
-        "What Brits call a ^",
-        "Signal that sounds like \\\"^\\\"",
-        "You use a ^ to ___ at the start of a certain game",
-        "^___, an important discovery",
-        "Drop the odd-positioned letters of ^ to get a greedy person"
-      ],
-      "solution": [
-        "GROUND",
-        "ROUND",
-        "ABOUT",
-        "MUCH ADO",
-        "CHAD",
-        "AFRICA",
-        "NILE",
-        "LINE",
-        "QUEUE",
-        "CUE",
-        "BREAK",
-        "THROUGH",
-        "HOG"
-      ],
-      "theme": "groundhog_day",
-      "date": "",
-      "source": "scraped",
-      "scrapedDate": "2026-03-14T20:13:22.467Z"
     },
     {
       "start": "TOCO",
@@ -9103,39 +9026,6 @@
       "scrapedDate": "2026-03-14T20:13:47.319Z"
     },
     {
-      "start": "FERRIS",
-      "end": "WHEEL",
-      "clues": [
-        "^ who had a day off",
-        "Magazine name hidden inside ^",
-        "Competitor of ^ that might be in?",
-        "Singer of \"^",
-        "Titular movie role for ^",
-        "Award won 7 times by ^",
-        "Change one letter in ^ to get a quality of one's voice",
-        "Remove a letter in ^ to get a body part",
-        "Some people walk ^ to ___",
-        "Add a letter to ^ to get something that goes around"
-      ],
-      "solution": [
-        "FERRIS",
-        "BUELLER",
-        "ELLE",
-        "VOGUE",
-        "MADONNA",
-        "EVITA",
-        "TONY",
-        "TONE",
-        "TOE",
-        "HEEL",
-        "WHEEL"
-      ],
-      "theme": "Tour de France",
-      "date": "",
-      "source": "scraped",
-      "scrapedDate": "2026-03-14T20:13:47.438Z"
-    },
-    {
       "start": "TIRE",
       "end": "SWING",
       "clues": [
@@ -9669,39 +9559,6 @@
       "date": "",
       "source": "scraped",
       "scrapedDate": "2026-03-14T20:13:49.257Z"
-    },
-    {
-      "start": "CORN",
-      "end": "HOLE",
-      "clues": [
-        "Prepend a letter to ^ to get a nut",
-        "Creature that loves to collect ^s",
-        "Something one might ^ away",
-        "Change a letter in ^ to get something sweet",
-        "^___ pattern",
-        "What you usually use a ^ on",
-        "Lacking ^",
-        "Bird that might be \"^",
-        "Sport where ^ is a great achievement",
-        "One of many on a ^ course"
-      ],
-      "solution": [
-        "CORN",
-        "ACORN",
-        "SQUIRREL",
-        "MONEY",
-        "HONEY",
-        "COMB",
-        "HAIR",
-        "BALD",
-        "EAGLE",
-        "GOLF",
-        "HOLE"
-      ],
-      "theme": "Summer produce",
-      "date": "",
-      "source": "scraped",
-      "scrapedDate": "2026-03-14T20:13:49.375Z"
     },
     {
       "start": "CHERRY",

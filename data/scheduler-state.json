@@ -1,9 +1,13 @@
 {
-  "lastRun": null,
-  "lastCheckDate": "2026-03-19",
-  "checksToday": 0,
+  "lastRun": "2026-03-20T00:54:59.384Z",
+  "lastCheckDate": "2026-03-20",
+  "checksToday": 4,
   "consecutiveErrors": 0,
-  "totalRuns": 0,
+  "totalRuns": 4,
   "totalErrors": 0,
-  "backfillStatus": {}
+  "backfillStatus": {
+    "2026-03-20": "success",
+    "2026-03-18": "success",
+    "2026-03-17": "success"
+  }
 }
