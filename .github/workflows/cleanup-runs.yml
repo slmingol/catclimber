@@ -1,4 +1,4 @@
-name: Cleanup Old Workflow Runs & Releases
+name: Cleanup Release Artifacts
 
 on:
   schedule:
@@ -6,54 +6,106 @@ on:
     - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
-      keep_releases:
-        description: 'Number of recent releases to keep'
-        default: '10'
-        required: false
       days_old:
-        description: 'Delete releases older than N days'
-        default: '90'
+        description: 'Delete artifacts older than this many days'
         required: false
+        default: '7'
+        type: number
+      dry_run:
+        description: 'Dry run (do not actually delete)'
+        required: false
+        default: false
+        type: boolean
 
-permissions:
-  actions: write
-  contents: write
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  cleanup:
+  cleanup-workflow-runs:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    
+    steps:
+      - name: Cleanup old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: ${{ inputs.days_old || 7 }}
+          keep_minimum_runs: 3
+
+  cleanup-artifacts:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    
+    steps:
+      - name: Cleanup old artifacts
+        uses: c-hive/gha-remove-artifacts@v1
+        with:
+          age: '${{ inputs.days_old || 7 }} days'
+          skip-recent: 3
+
+  cleanup-docker-images:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    
+    steps:
+      - name: Cleanup old Docker images
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: 'cat-climber'
+          package-type: 'container'
+          min-versions-to-keep: 5
+          delete-only-untagged-versions: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  cleanup-cache:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Delete old workflow runs
+      - name: Cleanup old caches
+        run: |
+          echo "Cleaning up caches older than 7 days..."
+          gh extension install actions/gh-actions-cache
+          
+          REPO=${{ github.repository }}
+          BRANCH="refs/heads/main"
+          
+          # Get cache list
+          cacheKeysForPR=$(gh actions-cache list -R $REPO -B $BRANCH | cut -f 1)
+          
+          # Set max cache age (7 days)
+          max_age_seconds=$((7 * 24 * 60 * 60))
+          current_time=$(date +%s)
+          
+          for cacheKey in $cacheKeysForPR; do
+            echo "Evaluating cache: $cacheKey"
+            if [ "${{ inputs.dry_run }}" = "true" ]; then
+              echo "DRY RUN: Would delete cache $cacheKey"
+            else
+              gh actions-cache delete $cacheKey -R $REPO -B $BRANCH --confirm || true
+            fi
+          done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Fetching workflow runs..."
-          
-          # Keep the last 10 runs, delete the rest
-          gh run list \
-            --limit 200 \
-            --json databaseId \
-            --jq '.[10:] | .[].databaseId' \
-            --repo ${{ github.repository }} \
-          | xargs -I {} gh run delete {} --repo ${{ github.repository }} || true
-          
-          echo "Cleanup complete!"
-      
-      - name: Summary
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          TOTAL=$(gh run list --limit 200 --json databaseId --jq 'length' --repo ${{ github.repository }})
-          echo "### Workflow Cleanup Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- Kept: Last 10 workflow runs" >> $GITHUB_STEP_SUMMARY
-          echo "- Current total: $TOTAL runs" >> $GITHUB_STEP_SUMMARY
   
   cleanup-releases:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout code
@@ -65,8 +117,8 @@ jobs:
         run: |
           echo "Fetching releases..."
           
-          KEEP_COUNT=${{ inputs.keep_releases || '10' }}
-          DAYS_OLD=${{ inputs.days_old || '90' }}
+          KEEP_COUNT=10
+          DAYS_OLD=${{ inputs.days_old || 90 }}
           CUTOFF_DATE=$(date -u -d "$DAYS_OLD days ago" +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date -u -v-${DAYS_OLD}d +%Y-%m-%dT%H:%M:%SZ)
           
           echo "Strategy: Keep last $KEEP_COUNT releases, delete releases older than $DAYS_OLD days (before $CUTOFF_DATE)"
@@ -87,7 +139,11 @@ jobs:
           | while read -r tag; do
             if [ -n "$tag" ]; then
               echo "Deleting release: $tag"
-              gh release delete "$tag" --yes --repo ${{ github.repository }} || true
+              if [ "${{ inputs.dry_run }}" = "true" ]; then
+                echo "DRY RUN: Would delete release $tag"
+              else
+                gh release delete "$tag" --yes --repo ${{ github.repository }} || true
+              fi
             fi
           done
           
@@ -99,6 +155,9 @@ jobs:
         run: |
           TOTAL=$(gh release list --limit 200 --json tagName --jq 'length' --repo ${{ github.repository }})
           echo "### Release Cleanup Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- Strategy: Keep last ${{ inputs.keep_releases || '10' }} releases + latest" >> $GITHUB_STEP_SUMMARY
-          echo "- Max age: ${{ inputs.days_old || '90' }} days" >> $GITHUB_STEP_SUMMARY
+          echo "- Strategy: Keep last 10 releases + latest" >> $GITHUB_STEP_SUMMARY
+          echo "- Max age: ${{ inputs.days_old || 90 }} days" >> $GITHUB_STEP_SUMMARY
           echo "- Current total: $TOTAL releases" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            echo "- Mode: DRY RUN (no deletions performed)" >> $GITHUB_STEP_SUMMARY
+          fi
