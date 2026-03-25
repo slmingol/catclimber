@@ -1,13 +1,23 @@
-name: Cleanup Old Workflow Runs
+name: Cleanup Old Workflow Runs & Releases
 
 on:
   schedule:
     # Run daily at 2 AM UTC
     - cron: '0 2 * * *'
   workflow_dispatch:
+    inputs:
+      keep_releases:
+        description: 'Number of recent releases to keep'
+        default: '10'
+        required: false
+      days_old:
+        description: 'Delete releases older than N days'
+        default: '90'
+        required: false
 
 permissions:
   actions: write
+  contents: write
 
 jobs:
   cleanup:
@@ -41,3 +51,54 @@ jobs:
           echo "### Workflow Cleanup Summary" >> $GITHUB_STEP_SUMMARY
           echo "- Kept: Last 10 workflow runs" >> $GITHUB_STEP_SUMMARY
           echo "- Current total: $TOTAL runs" >> $GITHUB_STEP_SUMMARY
+  
+  cleanup-releases:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Delete old releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Fetching releases..."
+          
+          KEEP_COUNT=${{ inputs.keep_releases || '10' }}
+          DAYS_OLD=${{ inputs.days_old || '90' }}
+          CUTOFF_DATE=$(date -u -d "$DAYS_OLD days ago" +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date -u -v-${DAYS_OLD}d +%Y-%m-%dT%H:%M:%SZ)
+          
+          echo "Strategy: Keep last $KEEP_COUNT releases, delete releases older than $DAYS_OLD days (before $CUTOFF_DATE)"
+          
+          # Get all releases sorted by creation date
+          gh release list \
+            --limit 200 \
+            --json tagName,createdAt,isLatest \
+            --repo ${{ github.repository }} \
+          | jq -r --arg cutoff "$CUTOFF_DATE" --argjson keep "$KEEP_COUNT" '
+            map(select(.isLatest == false)) |
+            sort_by(.createdAt) |
+            reverse |
+            to_entries |
+            map(select(.key >= $keep and .value.createdAt < $cutoff)) |
+            .[].value.tagName
+          ' \
+          | while read -r tag; do
+            if [ -n "$tag" ]; then
+              echo "Deleting release: $tag"
+              gh release delete "$tag" --yes --repo ${{ github.repository }} || true
+            fi
+          done
+          
+          echo "Release cleanup complete!"
+      
+      - name: Summary
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TOTAL=$(gh release list --limit 200 --json tagName --jq 'length' --repo ${{ github.repository }})
+          echo "### Release Cleanup Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Strategy: Keep last ${{ inputs.keep_releases || '10' }} releases + latest" >> $GITHUB_STEP_SUMMARY
+          echo "- Max age: ${{ inputs.days_old || '90' }} days" >> $GITHUB_STEP_SUMMARY
+          echo "- Current total: $TOTAL releases" >> $GITHUB_STEP_SUMMARY
