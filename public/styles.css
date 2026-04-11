@@ -1225,6 +1225,7 @@ header {
         font-size: 16px;
         padding: 0 8px;
         line-height: 1.2;
+        letter-spacing: 0.02em; /* Reduce letter spacing on mobile to prevent text overflow */
     }
     
     /* Remove background from input itself on mobile since step has it */
