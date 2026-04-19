@@ -1,0 +1,11 @@
+# Doco-CD deployment configuration
+# This file tells doco-cd how to deploy the cat-climber application
+# Documentation: https://doco.cd/latest/Deploy-Settings/
+
+name: cat-climber
+working_dir: cat-climber/
+compose_files:
+  - docker-compose.yml
+
+# After successful deployment, pull the latest image and restart
+recreate: true
