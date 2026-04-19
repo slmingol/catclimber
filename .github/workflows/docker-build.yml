@@ -87,4 +87,6 @@ jobs:
           curl -X POST https://webhooks.lamolabs.org/v1/webhook/host1 \
             -H "Content-Type: application/json" \
             -H "X-Hub-Signature-256: $SIGNATURE" \
+            -H "X-GitHub-Event: push" \
+            -H "X-GitHub-Delivery: ${{ github.run_id }}" \
             -d "$PAYLOAD"
